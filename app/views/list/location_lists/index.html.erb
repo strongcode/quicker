@@ -1,0 +1,62 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%= javascript_include_tag 'google_map/jquery.geocomplete' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+<% end %>
+
+<div class="popup-container" style="margin-top:25px;">
+  <fieldset class="fieldset-border sg-fieldset-surround">
+    <legend>
+      <h2 class="sg-legend-margin">Location Lists</h2>
+    </legend>
+
+    <div class="row-fluid">
+      <div class="span5">
+        <button class="btn btn-info" data-type="anchor" data-href="<%= new_list_location_list_url %>"><%= t('dashboard.new_list') %></button>
+      </div>
+    </div>
+    <br />
+
+    <div class="row-fluid">
+      <div class="span12">
+        <%= render @location_lists %>
+      </div>
+    </div>
+    <!-- <a class="fancybox jQuery-sidekick-loc-trigger jQuerydBAddLoc" style="display:none;" href="#jQueryOtherLocFields">add</a>
+    <div id="jQueryOtherLocFields" style="display:none;">
+<%#= render :partial => 'sidekick/locations/sg_major_category_list' %>
+    </div> -->
+  </fieldset>
+</div>
+
+<div id="map-container" style="width:50px; height: 50px; display: none !important;"></div>
+
+<script type="text/javascript">
+  //After uploading or creating, location list should be in the expanded. Without this page refreshes and closes the expanded div
+  jQuery(document).ready(function($) {
+    var lat, lng;
+    var address = '<%= current_user.user_profile.location_name %>';
+    geocoder.geocode({'address': address},
+    function(results, status)
+    {
+      if(status == google.maps.GeocoderStatus.OK) {
+        lat = results[0].geometry.location.lat();
+        lng = results[0].geometry.location.lng();
+        Google_Map.init(lat, lng);
+        $('.location-autocomplete').each(function(){
+          Google_Map.location_autocomplete($(this).attr('id'), "", "");
+        });
+      }
+    });
+
+<% if params[:location_list_id].present? %>
+      $("#jQueryLocList-<%= params[:location_list_id] %>").click();
+<% end %>
+
+  });
+  
+</script>
+

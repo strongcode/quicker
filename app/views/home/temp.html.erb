@@ -1,0 +1,132 @@
+
+<!Doctype html>
+<html>
+
+  <head>
+    <title>SnapGadget - Social On Your Side</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="SnapGadget - Social On Your Side">
+    <meta name="description" content="SnapGadget - Social On Your Side">
+    <meta name="author" content="SnapGadget">
+    <meta name="robots" content="noarchive">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/snapgadget.css">
+    <link rel="stylesheet" type="text/css" href="css/snapgadget_responsive.css">
+    <script src="js/jquery.js"></script>
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+
+  </head>
+
+  <body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <a class="brand visible-desktop" data-placement="right" rel="tooltip"  href="#" data-original-title="SnapGadet - Social On Your Side" data-animation="true"><img src="assets/snapgadget_logo.png" alt="SnapGadget.com" class="img"></a>
+            <a class="brand hidden-desktop" data-placement="right" rel="tooltip"  href="#" data-original-title="SnapGadet - Social On Your Side" data-animation="true"><img src="assets/snapgadget_logo_small.png" alt="SnapGadget.com" class="img"></a>
+            <a href="#" class="login_btn pull-right"><button class="btn btn-info" type="button">Login</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--3d icons -->
+    <div class="container">
+      <div class="row-fluid">
+        <!-- Video Column -->
+        <div class="span8">
+          <h1>Explore Social On Your Side</h1>
+          <div class="span12">
+            <div class="flex-video widescreen" id="video"></div>
+          </div>
+        </div>
+        <!-- 3-Advisors -->
+        <div class="span4">
+          <h1>Meet Your Advisors!</h1>
+          <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="assets/icon_sidekick.png" alt="Sidekick" class="img icon_inner">
+            </div>
+            <div class="icon_txt clear-fix">
+              <h2>Your Sidekick</h2>
+              <p>Helps To Personalize Your Community</p>
+            </div>
+          </div>
+          <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="assets/icon_insider.png" alt="Insider" class="img icon_inner">
+            </div>
+            <div class="icon_txt">
+              <h2>Your Insider</h2>
+              <p>Brings You Offers, Suggestions And Activities</p>
+            </div>
+          </div>
+          <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="assets/icon_assistant.png" alt="Assistant" class="img icon_inner">
+            </div>
+            <div class="icon_txt">
+              <h2>Your Assistant</h2>
+              <p>Helps To Monitor And Achieve Your Goals</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call of action for Desktop -->
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span12 snaptoit_bgcolor">
+          <div class="snaptoit_inner visible-desktop">
+            <p>Join <img src="assets/sg_logo.png" alt="SnapGadget" class="img"> Today For Free<button class="btn1 btn-primary1" type="button"><span><img src="assets/snap_icon.png" alt="snap_icon image"></span> Snap To It</button></p>
+          </div>
+          <div class="snaptoit_inner hidden-desktop">
+            <h1>Join <img src="assets/sg_logo.png" alt="SnapGadget" class="img"> Today For Free<button class="btn1 btn-primary1" type="button"><span><img src="assets/snap_icon.png" alt="snap_icon image"></span> Snap To It</button></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        $('#jQuerySubmit').click(function(e){
+          if($('#user_email').val() == '') {
+            e.preventDefault();
+            alert("Please enter email address and click request invite")
+          }
+          else {
+            $('input[name="user[city]"]').val(geoip_city());
+            $('input[name="user[region_name]"]').val(geoip_region_name());
+            console.log($('input[name="user[city]"]').val())
+            console.log($('input[name="user[region_name]"]').val())
+            return true;
+          }
+        });
+
+        $('#video')
+        .css({
+          background: 'url("assets/video_thumbnail.png") no-repeat scroll center center transparent',
+          position: 'relative'
+        })
+        .append(
+        $('<div class="play" style="background:url(assets/play.png) no-repeat scroll 50% 40%; cursor:pointer; position:absolute; top:0;left:0;right:0;bottom:0"/>')
+        .css('opacity', 0.7)
+        .on('mouseover', function() {
+          $(this).stop().animate({ 'opacity': 0.9 });
+        })
+        .on('mouseout', function() {
+          $(this).stop().animate({ 'opacity': 0.7 });
+        })
+        .on('click', function(e) {
+          $(this).parent().html('<iframe src="http://player.vimeo.com/video/52892973?autoplay=1&amp;api=1&amp;player_id=vimeo-52892973" frameborder="0" allowfullscreen=""></iframe>');
+        })
+      );
+      });
+    </script>
+

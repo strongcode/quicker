@@ -1,0 +1,11 @@
+﻿<div>
+ <div class="container sg_container content_area">
+ <div class="faq_h1"> Our Mission</div> 
+ <div class="sg_policy">
+   <p>We are truly passionate about making sense of the information overload of the Internet today. We have determined a great need for streamlining information as well as social collaboration where trusted information meets organization. We are truly On YOUR Side - Social On Your Side.</p>
+ </div>
+ <div class="faq_h1"> Our Company</div> 
+ <div class="sg_policy">
+  <p>We understand that you have a busy life - and that is a good thing! That is why we created "one web site" of your most relevant information - Just for you! SnapGadget acts as a safe-haven from "generic/non-relevant" emails bombarding your inbox's and offers a solution to the frustration of time-consuming "generic" searches. </p>
+ </div>
+</div>

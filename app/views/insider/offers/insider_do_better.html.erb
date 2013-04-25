@@ -1,0 +1,212 @@
+<div class="container-fluid sidekick_drill_head insider_head insider_title">
+  <div class="span12 insider_head_margin">
+    <%= current_user.first_name.split(' ').each{|nam| nam.capitalize}.join(' ') %>, <%= t('insider.offer.insider_recommends')%>
+  </div>
+</div>
+<div class="container-fluid insider_container_margin">
+  <div class="row-fluid">
+    <div class="insider_row effect2">
+      <div class="span4">
+        <div class="insider_offer_title"><%= t(:you_may_like) %></div>
+        <div class="insider_offer_image_div"><img src='<%= offer_image_path(@insider_do_better_offer) %>' alt="" /></div>
+      </div>
+      <div class="span5">
+        <div class="insider_sug_title">
+          <%= formatted_offer_title(@insider_do_better_offer) %>
+        </div>
+        <div class="insider_trip-advicer"><%= @insider_do_better_offer.deal_header if @insider_do_better_offer.present? %> </div>
+        <div class="insider_sug_price">
+          <%= @insider_do_better_offer.offer_options.order('price_amount ASC').first.price_amount if @insider_do_better_offer.present? %>
+          <%= "YOU SAVE #{@insider_do_better_offer.offer_options.order('price_amount ASC').first.discount_amount} (#{@insider_do_better_offer.offer_options.order('price_amount ASC').first.discount_percent}%)" if @insider_do_better_offer.present? && @insider_do_better_offer.offer_options.present? %>
+        </div>
+        <div class="insider_btn">
+          <%= link_to "<button style='font-weight: bold;'' class='btn1 snap_it_btn btn-info'>
+<img alt='snap_it_icon image' src='/assets/snap_icon.png'>
+Snap it Up</button>".html_safe, track_snapped_insider_offer_path(@insider_do_better_offer),
+                    :target => "blank" if @insider_do_better_offer.present? %>
+        </div>
+      </div>
+      <div class="span3 insider-share">
+        <div class="insider_share_btn">
+          <%= custom_share_link(new_insider_offer_share_url(@insider_do_better_offer),
+                                new_insider_offer_share_url(@insider_do_better_offer),
+                                'fancybox_iframe_large fancybox.iframe')
+                                if @insider_do_better_offer.present? %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid insider_container_margin">
+  <div class="row-fluid " >
+    <div class="insider_row effect2">
+      <% trending_offer1 = @trending_deals[0] %>
+      <%= render :partial => 'trending_deal', :locals => {:offer => @trending_deals[0]} %>
+      <%= render :partial => 'trending_deal', :locals => {:offer => @trending_deals[1]} %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid insider_container_margin">
+  <!-- desktop view -->
+  <div class="row-fluid hidden-tablet" >
+    <div class="insider_row effect2">
+      <div class="span8 offer-search">
+        <div class="row-fluid">
+          <div class="span4">
+            <div class=" insider_offer_title "><%= t(:something_else) %>
+            </div>
+          </div>
+          <div class="span8">
+            <div class="insider_dobetter_search" style="margin-left: 0px;"><%= t(:search_for_a_deal) %>
+            </div>
+          </div>
+        </div>
+
+        <%= form_tag('/insider_search') %>
+        <div class="row-fluid">
+          <div class="span2"> </div>
+          <!--<div class="span2">
+            <div class="insider_dobetter_search"><%= t(:time_period) %>
+            </div>
+          </div> 
+          <div class="span8">
+            <select class="insider_dobetter_select" name='search_offers[offer_upto]'>
+              <option value='7'>Next 7 days</option>
+              <option value='30'>Next 30 days</option>
+            </select>
+          </div> -->
+        </div>
+        <div class="row-fluid">
+          <div class="span2"> </div>
+          <div class="span2">
+            <div class="insider_dobetter_search"><%= t(:major_category) %>
+            </div>
+          </div>
+          <div class="span8">
+            <select class="insider_dobetter_select major_categories" name='search_offers[major_category]'>
+              <%= options_for_select(get_categories) %>
+            </select>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span2"> </div>
+          <div class="span2">
+            <div class="insider_dobetter_search"><%= t(:minor_category) %>
+            </div>
+          </div>
+          <div class="span8">
+            <select class="insider_dobetter_select" id='search_minor_categories' name='search_offers[minor_category]'>
+              <%= options_for_select(@minor_categories.collect{|category|[category.minor_category, category.minor_category.downcase]}) %>
+            </select>
+          </div>
+        </div>
+        <div class="row-fluid" style="margin-top: 10px;">
+          <div class="span2">
+          </div>
+          <div class="span2">
+            <div class="insider_dobetter_search" style="margin-top:0px;"><%= t(:local) %></div>
+          </div>
+          <div class="span8">
+            <input type="checkbox" name='search_offers[local]' value='true' />
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span4">
+
+          </div>
+          <div class="span5">
+            <div class="insider_dobetter_search_btn">
+              <button class="btn btn-info">
+                <i class="icon-search icon-white"></i><%= t(:search) %>
+              </button>
+              <%= link_to "Show All", show_all_insider_offers_url, :class => 'btn btn-info', :style => 'margin-left:5px;' %>
+            </div>
+          </div>
+          <div class="span3">
+
+          </div>
+        </div>
+      </div>
+      <div class="span4"> </div>
+    </div>
+  </div>
+
+  <!-- Tablet view 
+  <div class="row-fluid visible-tablet" >
+    <div class="insider_row effect2">
+      <div class="span8">
+        <div class="row-fluid">
+          <div class="span6">
+            <div class=" insider_offer_title ">Something else?
+            </div>
+          </div>
+          <div class="span6">
+            <div class="insider_dobetter_search" style="margin-left: 0px;">Search for a Deal
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span1"> </div>
+          <div class="span4">
+            <div class="insider_dobetter_search">Type of Deal?
+            </div>
+          </div>
+          <div class="span7">
+            <select class="insider_dobetter_select">
+              <option>Adventure</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span1"> </div>
+          <div class="span4">
+            <div class="insider_dobetter_search">Time Period
+            </div>
+          </div>
+          <div class="span7">
+            <select class="insider_dobetter_select">
+              <option>Next 7 days</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="row-fluid" style="margin-top: 20px;">
+          <div class="span3">
+
+          </div>
+          <div class="span3">
+            <label class="checkbox">
+              <input type="checkbox" /> Local
+            </label>
+          </div>
+          <div class="span3">
+            <label class="checkbox">
+              <input type="checkbox" /> National
+            </label>
+          </div>
+          <div class="span3">
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span6">
+
+          </div>
+          <div class="span6">
+            <div class="insider_dobetter_search_btn"> <button class="btn btn-info">
+                <i class="icon-search icon-white"></i> Search</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="span4"> </div>
+    </div>
+  </div> View Ends -->
+</div>

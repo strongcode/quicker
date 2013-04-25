@@ -1,0 +1,51 @@
+<div class="popup-container friends-popup-margin">
+  <%= form_for @friend_request, :url => friends_requests_url do |f| %>
+    <fieldset class="fieldset-border sg-fieldset-surround">
+      <legend><h2 class="sg-legend-margin"><%= t(:add_new_friends) %></h2></legend>
+      <%= f.hidden_field :friend_from_id, :value => @profile_user.id %>
+      <%= f.hidden_field :friend_to_id %>
+
+      <div class="row-fluid ">
+        <div class="span3"><p><%=  t(:name)%></p></div>
+        <div class="span8"><%= text_field_tag :friend_name, '', :placeholder => t(:search), :id => "friends-search", :class => "span12" %>
+        </div>
+        <p id="friends_searchError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span3"><p><%=  t(:message)%></p></div>
+        <div class="span8"><%= f.text_area :friend_from_message, :rows => "5",:cols => "18", :class => "span12" %></div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="float_r category-btn-margin" style="margin-right:67px;">
+          <%= link_to t(:cancel), new_friends_request_url, :class => 'btn btn-info cancelbtn' %>
+        </div>
+        
+        <div class="float_r">
+          <%= f.submit t(:invite),:id => 'invite_frnd', :class => "btn btn-info savebtn" %>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+       
+    $('#friends-search').autocomplete({
+      minLength: 2,
+      source: '<%= autocomplete_url %>',
+      select: function(event, ui) {
+        $('#friends_request_friend_to_id').val(ui.item.id);
+      }
+
+    })
+    .data( "autocomplete" )._renderItem = function( ul, item ) {
+      return $( "<li>" )
+      .data( "item.autocomplete", item )
+      .append( "<a><div style='float:left;width:45px;height:45px;margin-right:10px'><img width='45px' height='45px' src="+ item.image +"></img></div><div style='float:left;line-height:15px'>"+ item.value + "<br>" + item.address + "</div><div class='clear'></div></a>")
+      .appendTo( ul );
+    };
+  });
+</script>

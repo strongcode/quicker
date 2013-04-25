@@ -1,0 +1,28 @@
+<div class="span1 span1-custom-width">
+  <div class="db_icons">
+    <img src="assets/friends/friends.png" alt= ""/>
+  </div>
+  <div class="social" style="margin-left:11px;">
+    <ul class="channels">
+      <li class="facebook facebook-pull-left">
+        <%= link_to 'Facebook', invite_facebook_friends_path, :class => 'fancybox_iframe_large fancybox.iframe' %>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="span2 span2-custom-width" style="">
+  <%= link_to 'Add', new_friends_request_url, :class => 'btn btn-info cancelbtn fancybox_iframe fancybox.iframe right-margin' %>
+  <%= custom_friend_submit_tag %>
+</div>
+<div class="span3 div-friend-details" style="margin-top:17px; font-size: 18px;">
+  <%= render :partial => 'friend_details' %>
+</div>
+
+<div class="span6 jQueryFriendsCarousel">
+  <%= render :partial => 'slider', :locals => {:friends => @friends, :slider => "slider1" } %>
+</div>
+
+
+

@@ -1,0 +1,113 @@
+<div>
+  <button data-target="#passionate<%= passionate.id rescue nil %>" class="btn_collapse btn-danger " type="button">
+    <%= passionate.user.full_name + " - " if readonly %><%= passionate.name %>
+    <img class="collapse_minus_img" alt="minus_icon image" src="assets/plus_icon.png"/>
+  </button>
+</div>
+<div class="collapse1" id="passionate<%= passionate.id rescue nil %>" style="display: none;">
+  <%= form_for passionate, :html => {:method => 'put'} do |f| %>
+    <div class="row-fluid">
+      <div class="span4 isr_img">
+        <div class="isr_image_div">
+          <%= f.fields_for :photo do |p| %>
+            <%= image_tag passionate.photo.image_url(:standard_image) %>
+            <% unless readonly %>
+              <p class="center">
+                <label class="btn btn-info" for="sgPassionateImage_<%= passionate.id %>">New Image</label>
+              </p>
+            <% end %>
+            <div style="position:absolute;left:-999px;">
+              <%= p.file_field :image, :id => "sgPassionateImage_#{passionate.id}" %>
+            </div>
+            <%= p.hidden_field :image_cache %>
+          <% end %>
+        </div>
+      </div>
+      <div class="span8">
+        <% unless readonly %>
+          <div class="row-fluid">
+            <div class="span3"></div>
+            <div class="span9">
+              <%= link_to '<img alt="share_btn image" src="/assets/share_btn.png">'.html_safe, new_sidekick_passionate_passionate_share_path(passionate) %>
+            </div>
+          </div>
+        <% end %>
+        <div class="row-fluid">
+          <div class="span3"><p>Passionate name</p></div>
+          <div class="span9">
+            <%= f.text_field :name, :class => 'span8',:size => '0', :placeholder => "Passionate Name", :disabled => readonly %>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3"><p>Passionate Type</p></div>
+          <div class="span9">
+            <%= select_tag 'passionate[passionate_type]', options_for_select(get_categories),{:disabled => readonly} %>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3"><p>My Location</p></div>
+          <div class="span9">
+            <%= text_field_tag 'location[name]', get_passionate_location(passionate) , :id => "jQueryMyLocation#{passionate.id}", :class => 'span8', :placeholder => t(:my_location), :disabled => readonly %>
+            <%= f.hidden_field :location_id %>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3"><p>Passionate Because</p></div>
+          <div class="span9">
+            <%= f.text_area :passionate_text, :class => 'span8', :rows => 5,:cols =>18, :disabled => readonly %>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3"><p>Web-Link</p></div>
+          <div class="span9">
+            <%= f.text_field :url, :class => 'span8', :size => '0',:disabled => readonly %>
+          </div>
+        </div>
+        <% unless readonly %>
+          <div class="row-fluid hidden-phone">
+            <div class="span9">
+              <div class="pull-right">
+                <button type="submit" class="btn btn-info">Update</button>
+                <%= link_to 'Archive', passionate, :class => "btn btn-info", :method => :delete, :data => {:confirm => "Are you Sure?"} %>
+              </div>
+            </div>
+          </div>
+         <div class="row-fluid visible-phone">
+            <div class="span9">
+              <div class="">
+                <button type="submit" class="btn btn-info">Update</button>
+                <%= link_to 'Archive', passionate, :class => "btn btn-info", :method => :delete, :data => {:confirm => "Are you Sure?"} %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    $("#jQueryMyLocation<%= passionate.id %>").autocomplete({
+      minLength:2,
+      source:'<%= location_list_passionates_url %>',
+      select:function (event, ui) {
+        $(this).next('#passionate_location_id').val(ui.item.id);
+      }
+
+    });
+
+    $('#sgPassionateImage_<%= passionate.id %>').change(function () {
+      var filename = $(this).val();
+      status = validate_file_extn(filename);
+      if (status == "true") {
+        $('#sg-image-path').val(true);
+        $(this).closest('form').submit();
+      }
+      else {
+        alert(filename + " This file type is not supported. Please upload only images.")
+        $(this).val(null);
+      }
+    });
+
+  });
+</script>

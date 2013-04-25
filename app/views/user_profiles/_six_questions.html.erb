@@ -1,0 +1,16 @@
+<div class="span2 control-label">
+  <%= t(:quick_questions) %>
+</div>
+<div style="margin-top:16px;" class="span8">
+  <div class="progress prefer_prog_height">
+    <div class="bar progress_bar_width" style="width:<%= "#{@perf_completeness}%" %>">
+      <div class="profress_bar_text"><%= "#{@perf_completeness}% " %><%= t(:complete)%></div>
+    </div>
+  </div>
+</div>
+<div class="span2 bp_revisit_btn">
+  <a class="fancybox_iframe_large fancybox.iframe btn btn-info prefer_revist_btn"
+           href="<%= adv_preference_user_profile_url %>">
+    <%= @user_profile.visit_or_revisit %>
+  </a>
+</div>

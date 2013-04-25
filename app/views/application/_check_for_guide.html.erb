@@ -1,0 +1,13 @@
+<% if params[:controller].match(/locations/i) && current_user.user_profile.show_sidekick_guide == true  %>
+  <script type="text/javascript">
+    alert("hi");
+    console.log(jQuery('#jQuerySidekickLink').length);
+  </script>
+<% else %>
+  <%= yield %>
+<% end %>
+
+<%= link_to 'sidekick guide', '#jQuerySidekickGuide', :id => 'jQuerySidekickLink', :style => 'display:none'; %>
+<div id="jQuerySidekickGuide" style="display: none;">
+  Testing
+</div>

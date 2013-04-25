@@ -1,0 +1,24 @@
+/* jQuery(function () {
+    $('body').prepend('<div id="fb-root"></div>');
+    return $.ajax({
+        url:"" + window.location.protocol + "//connect.facebook.net/en_US/all.js",
+        dataType:'script',
+        cache:true
+    });
+});
+
+window.fbAsyncInit = function () {
+    FB.init({
+        appId:'<%#= configatron.omniAuth.facebook.api_key %>',
+        cookie:true
+    });
+    $('.signup_facebook').click(function (e) {
+        a = this
+        e.preventDefault();
+        return FB.login(function (response) {
+            if (response.authResponse) {
+                return window.location = $(a).attr('href');
+            }
+        }, {scope: 'email,friends_subscriptions'});
+    });
+}; */

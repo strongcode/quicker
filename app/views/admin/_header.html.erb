@@ -1,0 +1,23 @@
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row-fluid">
+        <a class="brand visible-desktop" data-placement="right" rel="tooltip"  href="<%= root_url %>" data-original-title="SnapGadet - Social On Your Side" data-animation="true"><%= logo_image %></a>
+        <% if admin_signed_in? %>
+          <%= link_to get_button("Logout"), destroy_admin_session_path, :method => :delete,
+            :class => "login_btn pull-right" %>
+        <% else %>
+          <%= link_to get_button, new_admin_session_path, :class=> "login_btn pull-right raghu" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  $(document).ready(function () {
+    if ($("[rel=tooltip]").length) {
+      $("[rel=tooltip]").tooltip();
+    }
+  });
+</script>

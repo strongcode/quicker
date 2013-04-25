@@ -1,0 +1,8 @@
+
+<% if @contact.errors.any? %>
+  jQuery('div.contact_error').html('<%= escape_javascript(error_messages_for @contact ) %>');
+<% else %>
+  jQuery('#EmailError').html('Successfully sent email to');
+  jQuery('#EmailError').show();
+  window.location = "<%= new_user_session_url %>"
+<% end %>

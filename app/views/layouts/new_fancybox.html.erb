@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "db_forms", :media => "all" unless params[:controller].match(/assistant/) %>
+    <%= yield :dashboard_css %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'jquery.validate.localization/messages_es' if I18n.locale == :es %>
+    <%= javascript_include_tag 'jquery.ui.datepicker-es' if I18n.locale == :es  %>
+    <%= yield :javascript %>
+    <%= yield :stylesheet %>
+    <script>
+      // date picker //
+      jQuery(document).ready(function () {
+        $(".datetime_select").datepicker({ dateFormat:'yy-mm-dd',
+          showAnim:'slide',
+          showButtonPanel:false,
+          onSelect:function (dateText, inst) {
+            $($(this).next('input[type="hidden"]')[0]).attr('value', dateText)
+          }});
+
+        $("input[data-datetime-select='true']").each(function (index) {
+          $(this).prev().datepicker('setDate', $(this).val());
+        });
+      });
+      // end of date picker //
+    </script>
+    <%= yield :google_map %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield :snap_to_it %>
+    <%= render :partial => "ajax_indicator" %>
+    <div class="wFull">
+      <div class="mAuto fNone" style="width:770px;text-align: center;">
+        <%= render :partial => "flash", :locals => {:flash => flash} %>
+        <%= render 'utils/gritter', :text => flash[:failure] if flash[:failure].present? %>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
+</html>
+
+
+<!--<div class="wFull">
+  <div class="mAuto fNone" style="width:770px;text-align: center;">
+    <%#= render :partial => "flash", :locals => {:flash => flash} unless (params[:controller].match(/sessions/) || params[:controller].match(/passionates/)) %>
+    <%#= render 'utils/gritter', :text => flash[:failure] if flash[:failure].present? %>
+  </div>
+</div> -->

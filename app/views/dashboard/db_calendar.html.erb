@@ -1,0 +1,86 @@
+<% content_for :dashboard_css do %>
+    <%= stylesheet_link_tag "db_forms", :media => "all" %>
+<% end %>
+<% content_for :stylesheet do %>
+    <%= stylesheet_link_tag "fullcalendar", :media => "all" %>
+<% end %>
+<% content_for :javascript do %>
+    <%= javascript_include_tag "fullcalendar" %>
+<% end %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- side menu bar -->
+    <%#= render :partial => 'sidebar' %>
+    <!-- title starts -->
+    <div class="span9 act_title_margin">
+      <div class="status_head row-fluid">
+        <div class="span7 insider_title db_head_margin">
+          <%= t 'dashboard.all_your_activities_on_the_site'%>
+        </div>
+        <div class="span5">
+          <div class="row-fluid" style="padding-top: 10px;">
+            <div class="span5">
+              <div class="db_text">
+                <a href="#" class="db_text_list_img">
+                  <img src="/assets/list_icon.png" alt="list_icon_inactive image"/>
+                </a>
+                <a class=" hidden-phone hidden-tablet" href="<%= db_activities_url %>"><%= t 'dashboard.list_view' %></a>
+              </div>
+            </div>
+            <div class="span1 hidden-phone hidden-tablet">
+              <div class="db_pipe">
+                <img src="/assets/pipe.png" alt="pipe image"/>
+              </div>
+            </div>
+            <div class="span6">
+              <div class="db_text">
+                <a href="#" class="db_text_list_img">
+                  <img src="/assets/calender_icon_inactive.png" alt="calender_icon image"/>
+                </a>
+                <a class=" hidden-phone hidden-tablet" href="<%= db_calendar_url %>"><%= t 'dashboard.calendar_view'%></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- title ends --><!-- calendar starts -->
+    <div class="span9 cal_continer">
+      <div id="calendar"></div>
+    </div>
+    <!-- calendar ends -->
+  </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        jQuery('#calendar').fullCalendar({
+            events:[
+                <% @activities.each do |activity|%>
+                {
+                    title:'<%= activity.description %>',
+                    start:'<%= activity.updated_at.to_date.to_s %>',
+                    backgroundColor: '#<%= my_color_is?(activity)%>'
+                },
+                <% end %>
+            ],
+            eventColor: '#e6e6e6',
+            eventTextColor: '#fff',
+            monthNames: <%= raw I18n.t('date.month_names').compact %>,
+            monthNamesShort: <%= raw I18n.t('date.abbr_month_names').compact %>,
+            dayNames: <%= raw I18n.t('date.day_names').compact %>,
+            dayNamesShort: <%= raw I18n.t('date.abbr_day_names').compact %>,
+            buttonText: {
+                today: '<%= t 'today'%>'
+            }
+        });
+
+    });
+</script>

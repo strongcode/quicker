@@ -1,0 +1,40 @@
+<% if offer.present? %>
+  <div class="container insider_container_margin">
+    <div class="row-fluid">
+      <div class="insider_row">
+        <div class="span3">
+          <div class="insider_offer_image_div">
+            <img class="" alt="" src='<%= offer_image_path(offer) %>' title="<%= share.comment if share.present? %>" />
+          </div>
+        </div>
+        <div class="span4 sg-insider-details">
+          <div class="insider_sug_title red-color bold-font black-on-gray margin-top18"><%= formatted_offer_title(offer) + " - Shared By #{share.present? ? (share.get_shared_user.full_name) : ('')}" %></div>
+          <div class="insider_sug_title black-on-gray margin-top18"><%= offer.deal_header %></div>
+          <div class="insider_sug_title bold-font black-on-gray margin-top18">
+            <%= offer.offer_options.order('price_amount ASC').first.price_amount %>
+            <%= "YOU SAVE #{offer.offer_options.order('price_amount ASC').first.discount_amount} (#{offer.offer_options.order('price_amount ASC').first.discount_percent}%)" %>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="insider_btn text_align_center">
+            <a href="<%= track_snapped_insider_offer_path(offer) %>" class="btn1 snap_it_btn btn-info bold" target="_blank">Snap It Up</a>
+          </div>
+          <div style='margin-top:10px; text-align:center;'>
+            <%= link_to 'More Deals', more_shared_deals_insider_offers_path, :class => 'btn btn-info' if @deal_trackers.count > 1 %>
+          </div>
+          <div  class="jQueryIgnoreBtn" style='margin-top:10px; text-align:center;'>&nbsp;
+            <%= link_to 'Ignore', ignore_offer_insider_offer_path(offer), :class => 'black-on-gray', :style => 'display:none;' %>
+          </div>
+        </div>
+
+        <div class="span2 insider-share">
+          <div class="insider_share_btn text_align_center">
+            <%= custom_share_link(offer, new_insider_offer_share_url(offer),
+              'fancybox_iframe_large fancybox.iframe') %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

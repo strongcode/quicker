@@ -1,0 +1,64 @@
+<div class="container insider_container_margin" style="text-align: center;">
+  <div class="insider_row_bottom">
+    <div class="row-fluid">
+      <div class="span12 ast-goal-min-height custom-assistant-title"><%= "My Completed Goals" %></div>
+    </div>
+    <div class="row-fluid">
+      <div class="span1 slider_arrow disabled hidden-phone" style="padding-top: 15px;">
+        <%= paginate @finished_goals, :theme => 'sg_left', :param_name => 'completed_goal_page' %>
+      </div>
+
+      <div class="span10" style="text-align: left; border-top: 1px solid; border-bottom: 1px solid;">
+        <% for goal in @finished_goals %>
+          <div class="span6">
+            <div class="row-fluid">
+              <div class="span7">
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">Goal</div>
+                  <div class="span7 ast-goal-min-height"><%= goal.description %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">Start</div>
+                  <div class="span7 ast-goal-min-height"><%= l goal.started_date.to_date %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">End</div>
+                  <div class="span7 ast-goal-min-height"><%= l goal.end_date.to_date %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">Completed</div>
+                  <div class="span7 ast-goal-min-height"><%= l goal.ended_date.to_date %></div>
+                </div>
+              </div>
+              <div class="span5">
+                <div class="row-fluid" style="margin-top: 15px;">
+                  <% for photo in goal.photos %>
+                    <div class="ast_profile_img <%= goal.photos.limit(3).map(&:id).include?(photo.id) ? 'dBlock' : 'dNone' %>">
+                      <a rel="example_group_friend_<%= goal.id %>" href="<%= photo.image.url %>">
+                        <%= image_tag photo.image.standard_image.url, :style => 'height:45px;' %>
+                      </a>
+                    </div>
+                    <script type='text/javascript'>
+                      jQuery(document).ready(function () {
+                        $("a[rel=example_group_friend_<%= goal.id%>]").fancybox({
+                          'transitionIn':'none',
+                          'transitionOut':'none',
+                          'titlePosition':'over'
+                        });
+                      });
+                    </script>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="span1 slider_arrow hidden-phone" style="padding-top: 15px;">
+        <%= paginate @finished_goals, :theme => 'sg_right', :param_name => 'completed_goal_page' %>
+      </div>
+
+    </div>
+  </div>
+</div>

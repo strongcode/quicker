@@ -1,0 +1,13 @@
+<% if @new_list.errors.any? %>
+
+<% else %>
+  <% if @new_list.original_share_id.present? %>
+    window.location = '<%= j (list_location_lists_url(:location_list_id => @new_list.id)) %>';
+  <% else %>
+    jQuery('#jQueryLocList-<%= @new_list.id %>').find('span').text('<%= j @new_list.custom_title(@trackers) %>');
+    jQuery('#locationlist_<%= @new_list.id %>').find('div.jQueryUpdateLocList').html('<%= j (render :partial => 'location',
+      :collection => @new_list.locations, :as => :location,
+      :locals => {:location_list => @new_list}) %>');
+  <% end %>
+
+<% end %>

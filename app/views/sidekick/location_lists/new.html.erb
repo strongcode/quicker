@@ -1,0 +1,37 @@
+<%= form_for @location_list, :url => sidekick_location_lists_url, :html => {:id => 'jQueryMapLL', :method => 'POST'} do |f| %>
+  <fieldset class="fieldset-border sg-fieldset-surround-2">
+    <legend>
+      <h2 class="sg-legend-margin"><%= t('sidekick.save_current_map_locations') %></h2>
+    </legend>
+
+    <%= custom_error_message_no_margin_no_field_name(@new_list, :location_linked_loc_lists) %>
+
+    <%= hidden_field_tag 'location_id', params[:location_id].presence || session[:location_id], :id => 'hidden_location_id'  %>
+    <div class="row-fluid" style="margin-top:20px;">
+      <div class="span3"><p><%= t('location_list.new_list_name') %></p></div>
+      <div class="span9">
+        <%= f.text_field :name, :value => '', :class => 'span12 input-location-list-name' %>
+        <%= custom_error_message_no_margin_no_field_name(@location_list, :name) %>
+      </div>
+    </div>
+
+    <% if current_user.location_lists.count > 0 %>
+      <div class="row-fluid" style="margin-top:20px;">
+        <div class="span3"><p><%= t('location_list.Existing List Name') %></p></div>
+        <div class="span9">
+          <%= select_tag 'location_list_id',
+            options_for_select([["-- #{t('sidekick.choose_list')} --", nil]] + @all_location_lists.
+              map{|location_list|["#{location_list.user.full_name} - #{location_list.name}", location_list.id]}, :selected => @new_list.present? ? (@new_list.id) :('')), :class => 'select-new-or-existing-ll' %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="row-fluid jQueryAddLocIds">
+      <div class="span12">
+        <input type="submit" value="Save" name="commit"
+               class="btn btn-info float_r savebtn" />
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>

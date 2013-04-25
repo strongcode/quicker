@@ -1,0 +1,34 @@
+<div class="container sgPasswordErr">
+  <%= devise_error_messages! %>
+</div>
+<div class="edit_profile_title"> Change Password</div>
+
+<div class="container contaimer_profile_page chg_pwd_page">
+  <div class="container">
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :put}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <%= f.hidden_field :reset_password_token %>
+
+        <div style="margin-top: 5px;" class="">
+          <%= f.label :password, "New password", :class => "control-label" %>
+          <br/>
+          <%= f.password_field :password, :class => "profile_input", :maxlength => 32 %></div>
+        <div style="margin-left:271px;">
+          <p id="NewPasswordError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+        </div>
+        <hr class="profile_hr"></hr>
+        <div style="margin-top: 5px;" class="">
+          <%= f.label :password_confirmation, "Confirm new password", :class => "control-label" %>
+          <br/>
+          <%= f.password_field :password_confirmation, :class => "profile_input", :maxlength => 32 %></div>
+        <div style="margin-left:271px;">
+          <p id="NewConfirmPasswordError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+        </div>
+        <hr class="profile_hr"></hr>
+        <div class="save_profile_btn clear">
+          <div><%= f.submit "Change password", :id => "changedpw", :class => "btn btn-info profile_link_btn" %></div>
+        </div>
+    <% end %>
+  </div>
+</div>

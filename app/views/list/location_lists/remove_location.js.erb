@@ -1,0 +1,15 @@
+<% if @status == 1 %>
+  <% if @new_list.original_share_id.present? %>
+    window.location = "<%= j list_location_lists_url(:location_list_id => @new_list.id) %>";
+  <% else %>
+    jQuery('#locationlist_<%= @new_list.id %>').
+                                             find('div.jQueryUpdateLocList').
+                                             html('<%= j(render :partial => 'location',
+                                             :collection => @new_list.locations,
+                                             :as => :location,
+                                             :locals => {:location_list => @new_list} ) %>');
+  <% end %>
+<% elsif @status == 2 %>
+  window.location = "<%= j list_location_lists_url %>";
+<% end %>
+

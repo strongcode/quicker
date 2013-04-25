@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row-fluid">
+    <div style="border:1px solid; padding:15px;min-height:100px;">
+      <div class="span2">
+        <%= get_image(@reviewer.user_profile) %>
+      </div>
+      <div class="span5">
+        <div class=""> Reviewer of the day</div>
+        <div class=""><%= @reviewer.full_name %></div>
+        <div class=""><%= pluralize(@reviews.count, "Trusted Review") %></div>
+        <div><%= "Last Review #{@reviews.last.created_at.strftime("%m/%d/%Y")}" %></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- All Reviews -->
+
+<div style="margin-bottom: 30px;" class="container">
+<% @reviews.in_groups_of(3).each do |review_group| %>
+    <div class="row-fluid">
+      <% review_group.each do |review| %>
+        <%= render :partial => 'review' , :locals => {:review => review} if review.present? %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+
+

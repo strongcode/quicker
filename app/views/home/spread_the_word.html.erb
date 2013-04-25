@@ -1,0 +1,38 @@
+<% content_for :facebook_initialize do %>
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script type="text/javascript">
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '<%= configatron.omniAuth.facebook.api_key %>', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+    }
+  </script>
+
+<% end %>
+
+<div id="sg_post_link_facebook" style="height:350px;">
+  <fieldset style="padding:18px;height:340px;" class="fieldset-border">
+    <legend>
+      <h2 class="sg-legend-margin">
+        Spread The Word About SnapGadget!
+      </h2>
+    </legend>
+    <div class="facebook-welcome-desc">Please click the 'like' or 'send' icon to help SnapGadget build our community of 'trusted friends and family'.</div>
+    <div class="fb-like" data-href="<%= configatron.snapgadget_live %>" data-send="true" data-width="450" data-show-faces="true"></div>
+  </fieldset>
+</div>

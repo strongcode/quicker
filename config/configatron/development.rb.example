@@ -1,0 +1,17 @@
+configatron.site_address = 'localhost:3000'
+
+configatron.site_address_full = 'http://sg.dev'
+
+configatron.omniAuth.facebook.api_key = "244253332318221"
+configatron.omniAuth.facebook.secret_key = "07338b5c23690611c214fe702cacf834"
+
+configatron.omniAuth.twitter.api_key = 'lgzv4DB5KzaoG8MovZ6Wg'
+configatron.omniAuth.twitter.secret_key = '1a9d4NDDN5NLZQkhGPDuLAcXpkob2LjmB5GKOPK1U8'
+
+configatron.omniAuth.linkedin.api_key = 'xnatbxg89t42'
+configatron.omniAuth.linkedin.secret_key = 'wkAtwmjMbqSvtAc1'
+
+configatron.omniAuth.google.api_key = '544668878265.apps.googleusercontent.com'
+configatron.omniAuth.google.secret_key = 't5NP-RfFaID7fGTAaoagBjFA'
+
+configatron.developers.email = "kbcpart2@gmail.com"

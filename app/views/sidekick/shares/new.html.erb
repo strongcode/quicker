@@ -1,0 +1,53 @@
+<div class="popup-container black-on-gray" style="margin-top:15px;">
+  <%= form_for [:sidekick, @location_list, @share] do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= hidden_field_tag 'referer', request.referer %>
+    <fieldset class="fieldset-border" style="padding:18px 45px 25px 45px;">
+      <legend>
+        <h2 class="sg-legend-margin">
+          <%= t 'share.location_list.share_your_location_list_of'%>&nbsp;<%= @location_list.name %>
+        </h2>
+      </legend>
+      <div class="row-fluid">
+        <div class="span3 bold-font">Comment</div>
+        <div class="span9">
+          <%= f.text_field :comment, :class => "span12", :placeholder => 'Add a comment..' %>
+          <%= custom_error_message_no_margin(@share, :comment) %>
+        </div>
+      </div>
+      <br />
+
+      <div class="row-fluid">
+        <div class="span3 bold-font"><%= t 'share.location_list.location_list_created'%></div>
+        <div class="span9"><%= l @location_list.created_at.to_date %></div>
+      </div>
+      <br />
+
+      <div class="row-fluid">
+        <div class="span3 bold-font"><%= t 'share.location_list.location_to_be_shared'%></div>
+        <div class="span9"><%=  @location_list.locations.count %></div>
+      </div>
+      <br/>
+
+      <div class="row-fluid">
+        <div class="span3 bold-font">Tell A Friend</div>
+        <div class="span9">
+          <%= f.select :trackers, @friends.map { |user| [user.full_name, user.id] }, {:prompt => false}, {:multiple => true, :class => "span4"} %>
+          <%= custom_error_message_no_margin_no_field_name(@share, :trackers) %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="float_r category-btn-margin" style="">
+          <%= list_share_cancel_link %>
+        </div>
+
+        <div class="float_r">
+          <button class="btn btn-info savebtn"><%= t 'share.share'%></button>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+

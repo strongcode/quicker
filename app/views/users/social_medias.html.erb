@@ -1,0 +1,7 @@
+<%= form_tag link_social_media_url, :remote => true do %>
+    <% @social_medias.each do |sm| %>
+        <%= check_box_tag 'social_media_id[]', sm.social_media_id, @profile_user.social_medias.include?(sm), :id => "social_media_id_#{sm.id}" %>&nbsp;&nbsp;
+        <label for="social_media_id_<%= sm.id %>"><%= sm.name %></label> <br/>
+    <% end %>
+    <%= submit_tag 'link' %>
+<% end %>

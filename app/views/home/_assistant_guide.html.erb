@@ -1,0 +1,26 @@
+<div id="jQueryAssistantGuide" class="popup-container" style="display: none;">
+  <%= form_tag save_guide_setting_path, :id => 'jQueryGuideForm', :remote => true do %>
+    <fieldset class="fieldset-border" style="padding:18px 45px 25px 45px;">
+      <legend>
+        <h2 class="sg-legend-margin">Meet Your Assistant!</h2>
+      </legend>
+      <div class="row-fluid" style="text-align:justify;">
+        <p>Everybody needs a little help keeping things organized now and then, so let us introduce you to the virtual assistant who will help you to monitor, manage, and achieve your goals.</p>
+        <p>Assistant helps manage your goals by utilizing an innovative tool-set of calendar/goal status meter and more.  You can create and monitor goals that are important to you, your friends or family such as raising money for charity, losing those last few pounds or working your way through those final college credits.</p>
+        <p>Assistant also provides 'Expert Advice' according to the type of goal that you want to achieve increasing your chance of success. You can even share your goals with trusted friends and other like-minded individuals who might just give you that extra little nudge to make your goals a success!</p>
+      </div>
+      <div class="span5">
+        <div class="row-fluid">
+          <div class="span1">
+            <%= check_box_tag 'user_profile[show_assistant_guide]', "false" %>
+          </div>
+          <div class="span6">
+            <label for="user_profile_show_assistant_guide" style="line-height: 25px;">Don't Show Again</label>
+          </div>
+        </div>
+        <%= hidden_field_tag 'guide_page', 'assistant' %>
+      </div>
+
+    </fieldset>
+  <% end %>
+</div>

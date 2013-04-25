@@ -1,0 +1,30 @@
+<div class="popup-container box">
+  <div class="row-fluid ">
+    <% if @all_reviews.present? %>
+      <% (0..@all_reviews.length-1).each do |index| %>
+        <div class="span6" style="border-right:1px solid;">
+          <div class="sidekick_drill_div" style="<%= index == @all_reviews.length-1 ? ("border:none") : () %>">
+            <div class="insider_title sidekick_drill_div_title"><%= Review::Reviewers[index] %></div>
+            <hr />
+            <%= render :partial => 'review', :collection => @all_reviews[index], :as => :review, :locals => {:index => index} %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <% (0..1).each do |index| %>
+        <div class="span6" style="border-right:1px solid;">
+          <div class="sidekick_drill_div" style="">
+            <div class="insider_title sidekick_drill_div_title"><%= Review::Reviewers[index] %></div>
+            <hr />
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+

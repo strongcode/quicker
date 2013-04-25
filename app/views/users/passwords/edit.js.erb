@@ -1,0 +1,7 @@
+<% if resource.errors.size > 0 %>
+  jQuery('.sgPasswordErr').html('<%= j (render :partial => 'error', :handler => [:erb]) %>');
+<% else %>
+  jQuery('#EmailError').html('Successfully sent email to <%= j resource.email %>');
+  jQuery('#EmailError').show();
+  window.location = "<%= new_user_session_url %>"
+<% end %>

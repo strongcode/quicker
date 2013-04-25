@@ -1,0 +1,60 @@
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- side menu bar -->
+    <%#= render :partial => 'sidebar' %> <!-- side menu bar end-->
+
+    <!-- title starts -->
+    <div class="span9 act_title_margin">
+      <div class="status_head row-fluid">
+        <div class="span9 insider_title db_head_margin">
+          Your New Passionate
+        </div>
+      </div>
+    </div> <!-- title ends -->
+
+    <!-- Passionate form -->
+    <div class="span9">
+      <div class="row-fluid profile_outer">
+        <div class="span1 visible-desktop"></div>
+        <div class="span8 well well-large">
+          <div class="row-fluid">
+            <div class="span2"><p>My Location</p></div>
+            <div class="span10"><input class="span8" type="text" placeholder="My Location"></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span2"><p>Passionate Because</p></div>
+            <div class="span10">
+              <div class=""><textarea class="span8" rows="5"></textarea></div>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span2"><p>Web-Link</p></div>
+            <div class="span10"><input class="span8" type="text" placeholder="WWW"></div>
+          </div>
+          <div class="row-fluid">
+            <div class="span2"><p>Upload Image</p></div>
+            <div class="span10">
+              <form class="form-search">
+                <input type="text" class="span8">
+                <button type="submit" class="btn btn-small">Browse</button>
+              </form>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span10">
+              <div class="form-actions pull-right">
+                <button type="submit" class="btn btn-info savebtn " ><%=  t(:save)%></button>
+                <button type="button" class="btn btn-info savebtn ">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span1 visible-desktop"></div>
+      </div>
+    </div> <!-- Friends list end -->
+  </div>
+</div> <!-- container fluid ends here -->
+
+

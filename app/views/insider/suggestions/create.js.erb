@@ -1,0 +1,5 @@
+<% if @suggestion.errors.any? %>
+  jQuery('.jQuerySuggestionForm').html('<%= j render :partial => 'form' %>');
+<% else %>
+  fancy_box_close();
+<% end %>

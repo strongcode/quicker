@@ -1,0 +1,31 @@
+<div class="black-on-gray well well-small prference_well_large text_align_center">
+  <div class="black-on-gray"><%= t(:offers_i_want) %></div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@offer_category_1, 1) %>
+  </div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@offer_category_2, 2) %>
+  </div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@offer_category_3, 3) %>
+  </div>
+</div>
+<div class=" well well-small prference_well_large text_align_center">
+  <div class="black-on-gray"><%= t(:activities_i_like) %></div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@suggestion_category_1, 1) %>
+  </div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@suggestion_category_2, 2) %>
+  </div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@suggestion_category_3, 3) %>
+  </div>
+</div>
+<div class="well well-small prference_well_small text_align_center">
+  <div class="black-on-gray"><%= t(:i_deserve_this) %></div>
+  <div class="basic_preference_icon">
+    <%= preference_image(@you_deserve_it, 1) %>
+  </div>
+</div>
+<a href="<%= sg_category_url %>" class="fancybox_iframe_category fancybox.iframe btn btn-info prfer_change_btn"><%= @user_profile.add_or_change %></a>

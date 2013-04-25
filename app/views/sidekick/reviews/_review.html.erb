@@ -1,0 +1,9 @@
+<% if review.present? && review.review_details.present? %>
+  <div style="">
+    <b class="bold_text"><%= review.user.full_name %></b>
+  </div>
+  <div>
+    <%= truncate review.review_details, :length => 35 %>
+    <%= link_to image_tag('/assets/plus_icon.png'), sidekick_location_review_url(@location, :review_id => review.id), :class => "fancybox fancybox.ajax" if review.review_details.present? && review.review_details.length > 35 %>
+  </div>
+<% end %>

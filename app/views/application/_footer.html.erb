@@ -1,0 +1,30 @@
+<% if params[:controller].match(/registration/i) %>
+  <% session[:footer_link] = "true" %>
+<% end %>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span6">
+        <p>&COPY; Copyright 2012-2013 SnapGadget.com</p>
+      </div>
+      <div class="span6">
+        <% if controller.action_name == 'welcome' %>
+          <ul class="channels pull-right">
+            <li class="facebook"><a title="Join our Facebook page!" href="http://www.facebook.com/MySnapGadget">Facebook</a></li>
+            <li class="twitter"><a title="Follow us on Twitter!" href="http://twitter.com/mysnapgadget">Twitter</a></li>
+          </ul>
+        <% else %>
+          
+            <% if session[:footer_link] == 'true' && (params[:controller] == 'registrations' || params[:action]== 'privacy' || params[:action] == 'terms_of_use' || params[:action] == 'about_us') %>
+              <ul class="footer-links pull-right"><%= render :partial => 'footer_except_faq' %></ul>
+            <% else %>
+              <ul class="footer-links pull-right"><%= render :partial => 'normal_footer_links' %></ul>
+            <% end %>
+          
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</footer>

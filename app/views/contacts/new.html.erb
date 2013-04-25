@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="normal-form" style="width:850px;margin:auto;">
+    <%= form_for(:contact, :url => {:action => 'create'}) do |f|  %>
+      <fieldset class="fieldset-border"  style="color:#999999; padding:18px 45px 25px 45px;">
+        <legend>
+          <h2 class="sg-legend-margin">Contact Us</h2>
+        </legend>
+        <div class="row-fluid">
+          <div class="span2"><p>First Name</p></div>
+          <div class="span10">
+            <%= f.text_field :first_name, :class => 'span12', :size => '0' %>
+            <p id="FnameError" class="sg_acc_info_error error" >&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span2"><p>Last Name</p></div>
+          <div class="span10">
+            <%= f.text_field :last_name, :class => 'span12', :size => '0' %>
+            <p id="LnameError" class="sg_acc_info_error error" >&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="row-fluid" >
+          <div class="span2"><p>Email</p></div>
+          <div class="span10">
+            <%= f.email_field :email, :class => "span12" ,:size =>0 %>
+            <p id="EmailError" class="sg_acc_info_error error" >&nbsp;</p>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span2"><p>Message</p></div>
+          <div class="span10">
+            <%= f.text_area :message, :rows => '5',:class => 'span12',:placeholder => "Message" %>
+            <p id="MessageError" class="sg_acc_info_error error" >&nbsp;</p>
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="float_right">
+            <%= f.submit 'Send',:id => 'contact_send', :class => "btn btn-info addfriend_btn_margin savebtn" %></div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<% @friends_suggestions.each do |suggestion| %>
+  <% location = suggestion.location %>
+  <% suggestion_picture = suggestion.photos.present? && suggestion.photos.first.image.present? ? (suggestion.photos.first.image_url(:suggestion_image)) :(location.default_image(current_user, Suggestion.to_s)) %>
+
+  <div class="container insider_container_margin">
+    <div class="row-fluid">
+      <div class="insider_row">
+        <div class="span3">
+          <div class="insider_offer_image_div">
+            <%= image_tag suggestion_picture.present? ? (suggestion_picture) : ('default_images/LocationBlank.png'), :id => "location-#{location.id}", :class => 'jQuery-Location-List' %>
+          </div>
+        </div>
+        <div class="span4 sg-insider-details">
+          <div class="insider_sug_title bold-font black-on-gray margin-top18"><%= get_suggestion_title(suggestion) %></div>
+          <div class="insider_sug_title normal-font black-on-gray margin-top10">
+            <%= suggestion.present? ? (suggestion.comments) : ('') %>
+          </div>
+          <div class="insider_sug_title bold-font black-on-gray margin-top18"><%= suggestion.when.strftime("%m/%d/%Y") %></div>
+        </div>
+
+        <div class="span3">
+          <% if suggestion.url.present? %>
+            <div class="insider_btn text_align_center">
+              <%= link_to suggestion.customized_url, :class => 'btn1 snap_it_btn btn-info bold', :target => '_blank' do %>
+                <%= "Learn More" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="span2 insider-share">
+          <div class="insider_share_btn text_align_center">
+            <%= custom_share_link(suggestion, new_insider_suggestion_suggestion_share_url(suggestion),
+                                 'fancybox_iframe_large fancybox.iframe') %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% if suggestion_picture.blank? %>
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        Google_Map.street_view_service(<%= location.latitude %>, <%= location.longitude %>, <%= location.id %>);
+      });
+    </script>
+  <% end %>
+<% end %>
+
+
+

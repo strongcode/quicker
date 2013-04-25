@@ -1,0 +1,170 @@
+<div class="containerfluid">
+  <div class="rowfluid">
+    <div class="span9">
+      <div class="container contaimer_profile_page jQueryadvPreference" style="display:none;">
+        <div class="container">
+          <div class="five_qq_img">
+            <img alt="5_qq image" src="/assets/5_qq.png"/>
+          </div>
+          <div style="" class="adv_prefer_title"><%= t(:To_help_insider_give_you_even_better_offers!) %></div>
+        </div>
+
+        <div class="container adv_prefer_row">
+          <div class="circle">1</div>
+          <div class="adv_prefer_text"><%= t(:rate_the_relative_importance_of_your_preferences) %></div>
+          <div class="jQueryCategoryImages">
+            <%= render :partial => 'user_preferences/category_preferences' %>
+          </div>
+        </div>
+
+        <div class="container adv_prefer_row">
+          <div class="circle">2</div>
+          <div class="adv_prefer_text"><%=  t(:When_do_offers_make_sense_of_you)%></div>
+          <div class="rank_title"><%=  t(:ranking_board)%></div>
+          <div class="rank_board">
+            <div class="img_bord">
+              <div style="textalign: center;">1</div>
+              <div style="textalign: center;">
+                <img alt="grove image" src="/assets/grove.png"/>
+              </div>
+              <div id="div1" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= get_rank_options(@order_values, 0) %>
+              </div>
+            </div>
+            <div class="prefer_vertical_small_div">
+              <div class="prefer_dividervertical_small"></div>
+            </div>
+            <div class="img_bord">
+              <div style="textalign: center;">2</div>
+              <div style="textalign: center;">
+                <img alt="grove image" src="/assets/grove.png"/>
+              </div>
+              <div id="div2" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= get_rank_options(@order_values, 1) %>
+              </div>
+            </div>
+            <div class="prefer_vertical_small_div">
+              <div class="prefer_dividervertical_small"></div>
+            </div>
+            <div class="img_bord">
+              <div style="textalign: center;">3</div>
+              <div style="textalign: center;">
+                <img alt="grove image" src="/assets/grove.png"/>
+              </div>
+              <div id="div3" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= get_rank_options(@order_values, 2) %>
+              </div>
+            </div>
+          </div>
+          <hr class="rank_board_hr" style="width:200px;"/>
+          <div class="rank_board_img_container" style="width:320px;">
+            <div class="img_bord">
+              <div id="div4" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= check_for_question_image(@user_preference, "daily") %>
+              </div>
+            </div>
+            <div class="img_bord">
+              <div id="div5" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= check_for_question_image(@user_preference, "weekly") %>
+              </div>
+            </div>
+            <div class="img_bord">
+              <div id="div6" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                <%= check_for_question_image(@user_preference, "monthly") %>
+              </div>
+            </div>
+          </div>
+          <div class="drag_drop_option"><%= t(:drag_and_drop_your_selection)%></div>
+        </div>
+
+
+        <div class="container adv_prefer_row">
+          <div class="circle">3</div>
+          <div class="adv_prefer_text"><%=  t(:How_much_value_do_you_place_your_friends_recommendation?)%></div>
+          <div class="row-fluid ap_slider_margin">
+            <div class="span2">
+              <div id="slider4"></div>
+            </div>
+            <div class="span8"></div>
+          </div>
+        </div>
+
+        <div class="container adv_prefer_row">
+          <div class="circle">4</div>
+          <div class="adv_prefer_text"><%=  t(:If_your_friends_have_snapped_a_deal_how_much_should_insider_raise_its_importance?)%></div>
+          <div class="row-fluid ap_slider_margin">
+            <div class="span2">
+              <div id="slider5"></div>
+            </div>
+            <div class="span8"> </div>
+          </div>
+        </div>
+
+        <div class="container adv_prefer_row">
+          <div class="circle">5</div>
+          <div class="adv_prefer_text"><%=  t(:How_important_is_deal_proximity_to_you?)%></div>
+          <div class="row-fluid ap_slider_margin">
+            <div class="span2">
+              <div id="slider6"></div>
+            </div>
+            <div class="span8"> </div>
+          </div>
+
+        </div>
+
+        <div class="row-fluid">
+      <div class="span3">
+        <div class="row-fluid">
+          <div class="span9">
+            <div class="prefer-label" for="inputEmail"><%= t(:repeat_experiences) %></div></div>
+          <div class="span3 preference_help_btn">
+            <div class="btn_help btn-info" title="<%= t(:Would_You_Like_Offers_from_Locations_you_have_reviewed) %>"><a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="span7">
+        <div class="span">
+          <%= check_box_tag 'user_preference[repeat_experiences]', '', :class => "prefer_chkbox",:style=> "margin-top:45px;" %>
+        </div>
+      </div>
+      <div class="span2"> </div>
+    </div>
+
+    <hr/>
+
+        <div class="row-fluid">
+          <div class="span4" style="float:right;">
+            <a class="btn btn-info prefer_save_btn cancelbtn" href="/sidekick"><%= t(:cancel)%> </a>
+            <button type="submit" class="btn btn-info prefer_save_btn savebtn" id="jQueryAdvPreSave"><%= t(:save)%></button>
+          </div>
+        </div>
+
+      </div>
+    </div><div class="span3"></div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  
+  jQuery(document).ready(function ($) {
+    $("#slider1").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 1) %>");
+    $("#slider1").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 1)%>");
+
+    $("#slider2").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 2) %>");
+    $("#slider2").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 2)%>");
+
+    $("#slider3").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 3) %>");
+    $("#slider3").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 3)%>");
+
+    $("#slider4").find("div.ui-slider-range-min").css("width", '<%= "#{@user_preference.question_3}%" %>');
+    $("#slider4").find("a.ui-corner-all").css("left", '<%= "#{@user_preference.question_3}%" %>' );
+
+    $("#slider5").find("div.ui-slider-range-min").css("width", '<%= "#{@user_preference.question_4}%" %>');
+    $("#slider5").find("a.ui-corner-all").css("left", '<%= "#{@user_preference.question_4}%" %>');
+
+    $("#slider6").find("div.ui-slider-range-min").css("width", '<%= "#{@user_preference.question_5}%" %>');
+    $("#slider6").find("a.ui-corner-all").css("left", '<%= "#{@user_preference.question_5}%" %>');
+    
+  });
+</script>

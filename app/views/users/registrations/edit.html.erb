@@ -1,0 +1,57 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(@user, :url => user_registration_url, :html => {:multipart => true, :method => :put}) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div><%= f.label :email %>
+      <%= f.email_field :email %></div>
+
+    <div><%= f.label 'Password' %>
+      <%= link_to 'Change Password', edit_password_user_url(@user) %></div>
+
+    <div><%= f.label 'Language' %>
+      <%= select_tag 'language_id', options_for_select(Language.all.collect { |lang| [lang.name, lang.id] }, :selected => @profile_user.user_language) %>
+    </div>
+
+    <div><%= f.label 'First Name' %>
+      <%= f.text_field :first_name, :maxlength => 10 %>
+    </div>
+    <div style="margin-left:271px;">
+      <p id="FnameError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+    </div>
+    <div><%= f.label 'Last Name' %>
+      <%= f.text_field :last_name, :maxlength => 10 %>
+    </div>
+    <div style="margin-left:271px;">
+      <p id="LnameError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+    </div>
+    <div>
+      <%= f.fields_for :photo do |p| %>
+          <div style="float:left">
+            <%= get_image(@photo, @user_profile) %>
+          </div>
+          <div style="float: left;">
+            <label for="profileImage">Upload an Image</label>
+          </div>
+          <div style="position:absolute;left:-2000px;">
+            <%= p.file_field :image, :style => 'width:250px;', :id => 'profileImage' %>
+          </div>
+          <div class="clear" style="clear:both"></div>
+          </div>
+          <div class="clear"></div>
+          <label>Linked With</label>
+          <%= link_to 'Link', link_social_media_url, :rel => "facebox[.fcontainer]" %>
+
+          <div>
+            <%= f.submit "Save Profile", :id => 'saveprofile' %></div>
+      <% end %>
+
+      <script type="text/javascript">
+          if ($.browser.mozilla) {
+              $(document).on('click', 'label', function (e) {
+                  if (e.currentTarget === this && e.target.nodeName !== 'INPUT') {
+                      $(this.control).click();
+                  }
+              });
+          }
+      </script>

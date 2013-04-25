@@ -1,0 +1,78 @@
+<% index = 1 %>
+<h2><%=  t(:Insider_I_really_deserve_category)%></h2>
+<%= form_tag u_deserve_it_save_url do %>
+  <div id="sgCategoryFirst" class="sgDropper" ondrop="drop_swap(event)" ondragover="allowDrop(event)">
+    <%= preference_image(@you_deserve_it, 1) %>
+  </div>
+
+  <div id="sgCategoryFourth" class="sgDropper" style="margin-left: 150px;" ondrop="recycle_bin(event)" ondragover="allowDrop(event)">
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="container-fluid">
+    <div class="sgApply" style="margin-left:-20px;">
+      <button class="sgImageApply1 btn btn-info savebtn" style=""><%= t(:save) %></button>
+      <%= link_to t(:cancel), '#', :class => 'jQueryFancyboxClose btn btn-info cancelbtn', :style => 'height:21px;' %>
+    </div>
+  </div>
+  <%= hidden_field_tag 'user_preference[you_deserve_it_category]', @user_preference.you_deserve_it_category, :id => 'jquery-u-deserve-it'  %>
+<% end %>
+
+<div class="sgCategoryImages" style="border:1px solid red;overflow:auto; height:385px; margin-top:12px;">
+  <h3 style="margin-top:8px;"><%= t(:business_and_services).capitalize %></h3><br/>
+
+  <% @business_categories.each do |category| %>
+    <div style="float: left;width:100px;height: 85px;border:1px solid lightgrey;" id="category-<%= category.id %>">
+      <%= image_tag "/assets/CategoryImages/#{category.photo}", :id => "#{category.id}", :alt => '', :title => get_category_description(category.description),  :ondragstart => "drag(event)", :draggable => "true", :style => "max-width: 85px; max-height: 85px;" %>
+      <% index = index + 1 %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+
+  <h3 style="margin-top:8px;"><%= t(:food_and_beverage).capitalize %></h3><br/>
+  <% @food_categories.each do |category| %>
+    <div style="float: left;width:100px;height: 85px; sborder:1px solid lightgrey;" id="category-<%= category.id %>">
+      <%= image_tag "/assets/CategoryImages/#{category.photo}", :id => "#{category.id}", :alt => '', :title => get_category_description(category.description),  :ondragstart => "drag(event)", :draggable => "true", :style => "max-width: 85px; max-height: 85px;" %>
+      <% index = index + 1 %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+
+  <h3 style="margin-top:8px;"><%= t(:lifestyle).capitalize %></h3><br/>
+  <% @lifestyle_categories.each do |category| %>
+    <div style="float: left;width:100px;height: 85px;border:1px solid lightgrey;" id="category-<%= category.id %>">
+      <%= image_tag "/assets/CategoryImages/#{category.photo}", :id => "#{category.id}", :alt => '', :title => get_category_description(category.description), :ondragstart => "drag(event)", :draggable => "true", :style => "max-width: 85px; max-height: 85px;" %>
+      <% index = index + 1 %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+
+  <h3 style="margin-top:8px;"><%= t(:shopping).capitalize %></h3><br/>
+  <% @shopping_categories.each do |category| %>
+    <div style="float: left;width:100px;height: 85px;border:1px solid lightgrey;" id="category-<%= category.id %>">
+      <%= image_tag "/assets/CategoryImages/#{category.photo}", :id => "#{category.id}", :alt => '', :title => get_category_description(category.description), :ondragstart => "drag(event)", :draggable => "true", :style => "max-width: 85px; max-height: 85px;" %>
+      <% index = index + 1 %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+
+  <h3 style="margin-top:8px;"><%= t(:travel).capitalize %></h3><br/>
+  <% @travel_categories.each do |category| %>
+    <div style="float: left;width:100px;height: 85px;border:1px solid lightgrey;" id="category-<%= category.id %>">
+      <%= image_tag "/assets/CategoryImages/#{category.photo}", :id => "#{category.id}", :alt => '', :title => get_category_description(category.description), :ondragstart => "drag(event)", :draggable => "true", :style => "max-width: 85px; max-height: 85px;" %>
+      <% index = index + 1 %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.sgImageApply1').click(function(e){
+      $('#jquery-u-deserve-it').val($('#sgCategoryFirst').find('img').attr('id'));
+      return;
+    });
+  });
+</script>

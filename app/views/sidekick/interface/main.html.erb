@@ -1,0 +1,141 @@
+<% content_for :google_map do %>
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/jquery.geocomplete' %>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%= javascript_include_tag 'google_map/control' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+
+<% end %>
+
+<div class="container">
+  <div class="row-fluid" style="background-color: #eaeaea; border: 1px solid;">
+    <div class="span2">
+      <div class="sk_title_text text_align_center" style="">
+        <%= t(:location_lists) %>
+      </div>
+      <div class="text_align_center">
+        <%= link_to "Create / Manage", list_location_lists_url, :class => 'fancybox_iframe fancybox.iframe sk_list_text btn btn-info ch_pwd_btn' %>
+      </div>
+
+    </div>
+    <div class="span3 left-margin-override-1">
+      <div class="sk_title_text text_align_center">Show A List</div>
+      <div class="sk_showmy_text">
+        <%= form_tag show_my_sidekick_locations_path, :id => 'show_my_list_form', :remote => true do %>
+          <%= select_tag 'location_list_id',
+            options_for_select([["---Blank List---", nil]] +
+              @all_location_lists.uniq.
+              collect { |loc_list| ["#{loc_list.user.full_name} - #{loc_list.name}", loc_list.id] }),
+            :style => '', :class => 'jQueryShowMy span12',
+            "data-placement" => "top", "rel" => "tooltip", "data-original-title" => '',
+            "data-animation" => "true" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="span5 left-margin-override-1">
+      <div class="map_row_text"><%= "Add A Location To A List" %></div>
+      <div class="add_map_inputarea">
+        <input type="text" placeholder="<%= t('sidekick.enter_a_location') %>"
+               class="personalize_input" id="geocode_autocomplete" name="location[name]" />
+      </div>
+      <div class="sk_atm_btn">
+        <button class="btn btn-info jQuery-sg-sidekick-check-for-loc" type="submit">
+          <a><img src="/assets/pin.png" alt="SnapGadget" /></a>&nbsp;<%= "Add" %>
+        </button>
+        <%= link_to 'new_location', '#',
+          :class => 'jQuerydBAddLoc fancybox_iframe_large fancybox.iframe',
+          :style => 'display:none;' %>
+      </div>
+
+    </div>
+    <div class="span3 left-margin-override-1" style="width:20.6%;border-left: 1px solid;">
+      <div class="sk_curious_text sk_curious_text1"><%= t('sidekick.reviewer_of_the_day') %></div>
+      <div class="row-fluid">
+        <div class="span4 text_align_center">
+          <div class="reviewer_img">
+            <%= get_reviewer_image(@reviewer_of_the_day) %>
+          </div>
+        </div>
+        <div class="span8">
+          <div class="reviewer_name">
+            <%= get_reviewer_name(@reviewer_of_the_day) %>
+          </div>
+          <%= get_reviews_count(@reviewer_of_the_day) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div style="background: #f4f4f4;" class="span4 sk_sidebar_border jQuery-Category-Loc">
+      <%= render :partial => 'sidekick/locations/category_sidebar' %>
+    </div>
+    <div style="margin-left:0px;height:482px;width:68%;"  id="map-container">
+    </div>
+  </div>
+
+</div>
+
+<a href="#" class="fancybox_iframe_large fancybox.iframe" id="anchor_location_add_form" style="display:none;"></a>
+
+<% Location::Categories::All.sort.each do |category| %>
+  <%= check_box_tag category, '', false, :style => 'display:none;', :class => 'jQuerySgCategories' %>
+<% end %>
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    top.location !== self.location && (top.location = self.location + "?iframe=1");
+
+    var lat, lng ;
+    var address = "<%= user_default_location(@location, @passionate_location) %>";
+
+    var curious_latitude = $('form#jQueryCuriousForm').find("input[name='location[latitude]']");
+    var curious_longitude = $('form#jQueryCuriousForm').find("input[name='location[longitude]']");
+
+    $('.jQuerySelectFriends').find('select').live('change',function(){
+      if($('#friends').is(':checked')) {
+        jQuery.ajax({
+          url: '/sidekick/locations/my_or_friends',
+          data: 'users_id[]='+$(this).val(),
+          type: 'GET'
+        });
+        Category_Toggles.update_locations_status();
+      }
+
+    });
+    geocoder.geocode({'address':address},
+    function(results, status)
+    {
+      if(status == google.maps.GeocoderStatus.OK) {
+        lat = results[0].geometry.location.lat();
+        lng = results[0].geometry.location.lng();
+        Google_Map.init(lat, lng);
+        Google_Map.set_map_center(lat, lng);
+        Google_Map.location_autocomplete('geocode_autocomplete', "", "");
+        Google_Map.location_autocomplete('curious_autocomplete', curious_latitude, curious_longitude);
+        Google_Map.create_custom_button("<%= j(link_to 'Share', 'javascript:void(0)',
+          :class => 'fancybox_iframe_large fancybox.iframe btn btn-info jQueryShare',
+          :style => 'margin-left:8px;display:none;') %>");
+        Category_Toggles.set_custom_buttons_visibility("index");
+        Google_Map.marker_click_event();
+
+        <% if @location_list.present? %>
+          $('select.jQueryShowMy').val("<%= @location_list.id %>");
+          Category_Toggles.update_categroy_icon_class();
+          Google_Map.fit_bounds_status = "false";
+          $('#show_my_list_form').submit();
+        <% end %>
+      }
+
+    });
+
+  });
+</script>
+
+
+

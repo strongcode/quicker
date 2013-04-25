@@ -1,0 +1,16 @@
+<div class="prefer_img jQueryBox<%= index %>">
+  <%= perference_image_adv(category, index) %>
+  <div class="progress adv_prefer_prog_height progress-success" style="margin-top:15px;<%= slider ? ('display:block;') : ('display:none;') %>">
+    <div class="body1" id="slider<%= index %>"></div>
+  </div>
+</div>
+<div class="prefer_vertical_div hidden-phone">
+  <div class="prefer_divider-vertical"></div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#slider<%= index %>").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, index) %>");
+        $("#slider<%= index %>").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, index)%>");
+    });
+</script>

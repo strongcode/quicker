@@ -1,0 +1,40 @@
+<% content_for :dashboard_css do %>
+  <%= stylesheet_link_tag "db_forms", :media => "all" %>
+<% end %>
+<% content_for :javascript do %>
+  <%= javascript_include_tag "mustache" %>
+<% end %>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12 cal_continer">
+      <div class="row-fluid db_active_container" style="">
+        <div class="span1 db_active_head hidden-phone hidden-tablet"><%= t('dashboard.type') %></div>
+        <div class="span2 db_active_head"><%= t('dashboard.date') %></div>
+        <div class="span2 db_active_head"><%= t('dashboard.action') %></div>
+        <div class="span5 db_active_head"><%= t('dashboard.description') %></div>
+        <div class="span2 db_active_head"><%= t('dashboard.kudos_points') %></div>
+      </div>
+      <div id="activities" data-json-url="<%= db_activities_url(:format => :json) %>">
+        <% @activities.each do |activity| %>
+          <%= raw Mustache.render(render('activity'), activity_for_mustache(activity)) %>
+        <% end %>
+      </div>
+      <script type="text/html" id="activity_template">
+        <%= render "activity" %>
+      </script>
+    </div>
+    <!-- activities ends -->
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.jQuery-db-select').click(function(){
+      $('#db-activity-form').submit();
+    });
+  });
+</script>
+
+
+

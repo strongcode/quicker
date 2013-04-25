@@ -1,0 +1,23 @@
+<div class="span2">
+  <div class="row-fluid">
+    <div style="margin-top:34px;" class="span12 prefer-label">
+      <%= t 'profile.snapgadget_team' %>
+    </div>
+  </div>
+</div>
+<div class="span10">
+  <ul class="nav" style="margin-bottom:auto !important;">
+    <li>
+      <ul class="nav nav-pills">
+        <li class="advisor-icon"><img src='<%= "/assets/advisor_icons/sidekick/#{@user_profile.sidekick_icon_img}.png" %>' class=""/><br/>Sidekick</li>
+        <li class="advisor-icon"><img src='<%= "/assets/advisor_icons/insider/#{@user_profile.insider_icon_img}.png" %>' class=""/><br/>Insider</li>
+        <li class="advisor-icon"><img src='<%= "/assets/advisor_icons/assistant/#{@user_profile.assistant_icon_img}.png" %>' alt="" class=""/><br/>Assistant</li>
+        <li>
+          <div style="margin-left:30%;margin-top:40px;" class="span4">
+            <a href="#jQuery-Personalize" class="fancybox btn btn-info"><%= t(:change)%></a></div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>

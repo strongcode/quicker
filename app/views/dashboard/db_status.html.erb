@@ -1,0 +1,126 @@
+<% content_for :dashboard_css do  %>
+  <%= stylesheet_link_tag "db_forms", :media => "all" %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- side menu bar -->
+    <%#= render :partial => 'sidebar' %>
+
+    <!-- title starts -->
+    <div class="span9 status_title_border" >
+      <div class="status_head row-fluid ">
+        <div class="span3">
+          <div class="status_title_text_border" >
+            <div class="status_title"><%= t('dashboard.membership') %></div>
+            <div class="status_title_text"><%= @profile_user.membership_type %></div>
+          </div>
+        </div>
+        <div class="span3">
+          <div class="status_title_text_border">
+            <div class="status_title"><%= t('dashboard.abc') %></div>
+            <div class="status_title_text"><%= @profile_user.ambasador_status %></div>
+          </div>
+        </div>
+        <div class="span4 ">
+          <div class="status_title_text_border">
+            <div class="status_title"><%= t('dashboard.reviews') %> </div>
+            <div class="status_title_text"><%= pluralize(@profile_user.reviews.count, t(:trusted_review))  %></div>
+            <div class="status_title_text"><%= last_review(@profile_user.reviews.last) if @profile_user.reviews.present? %></div>
+          </div>
+        </div>
+        <div class="span2 ">
+          <div class="status_title_text_border">
+            <div class="status_title"><%= t('dashboard.kudos') %></div>
+            <div class="status_title_text"><%= pluralize(@profile_user.kudos_points, t(:kudos_points) ) %></div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- title ends -->
+
+    <!-- status starts -->
+    <div class="span9 status_bg">
+      <div class="row-fluid">
+        <div class="span1"> </div>
+
+        <!-- activities square -->
+        <div class="span4 status_square" style="min-height: 240px;">
+          <div class="db_circle_title"><%= link_to t('dashboard.activities'), db_activities_url %></div>
+          <div class="row-fluid db_margin">
+            <div class="span6" style="text-align: center;">
+              <img src="assets/sidekick45.png" alt="sidekick45 image" />
+            </div>
+
+            <div class="span6 activities_score">
+              <%= @profile_user.locations.count + @profile_user.reviews.count %>
+            </div>
+          </div>
+          <hr />
+          <div class="row-fluid db_margin">
+            <div class="span6" style="text-align: center;">
+              <img src="assets/insider45.png" alt="insider45 image" />
+            </div>
+            <div class="span6 activities_score">0</div>
+          </div>
+          <hr />
+
+          <div class="row-fluid db_margin">
+            <div class="span6" style="text-align: center;">
+              <img src="assets/assistant_45.png" alt="assistant_45 image">
+            </div>
+            <div class="span6 activities_score"><%= @profile_user.goals.count %></div>
+          </div>
+
+        </div>
+        <div class="span2"> </div>
+
+        <!-- Friends square -->
+        <div class="span4 status_square" style="min-height: 240px;">
+          <div class="db_circle_title"><%= t(:friends) %></div>
+          <div class="db_status_frd"><img src="assets/default_man2.png" alt="default_man2 image" /></div>
+          <div class="db_status_frd_score"><%= @profile_user.friends.count %></div>
+        </div>
+        <div class="span1"> </div>
+      </div>
+
+      <!-- profiler row -->
+      <div class="db_me_text hidden-phone hidden-tablet"><%= t('dashboard.me') %></div>
+      <div class="row-fluid" style="min-height: 120px;">
+        <div class="span2"> </div>
+        <div class="span3">
+        </div>
+        <div class="span2 db_picWrap">
+          <%= get_image(@user_profile) %>
+          <div></div>
+        </div>
+        <div class="span2">
+        </div>
+
+      </div>
+
+      <div class="row-fluid status_margin_bt">
+        <div class="span1"> </div>
+
+        <!-- Location square  -->
+        <div class="span4 status_square" style="min-height: 240px;">
+          <div class="db_circle_title"><%= t('dashboard.location_lists') %></div>
+          <div class="db_pinboard">
+            <div class="db_location_score"><%= @profile_user.location_lists.count %> </div>
+          </div>
+        </div>
+        <div class="span2"> </div>
+
+        <!-- Passionates square -->
+        <div class="span4 status_square status_sq_height" style="min-height: 240px;">
+          <div class="db_circle_title"><%= t('dashboard.passionates') %></div>
+          <div class="db_sg_heart">
+            <div class="db_location_score db_sgheart_score"><%= @profile_user.passionates.count %></div>
+          </div>
+        </div>
+        <div class="span1"> </div>
+      </div>
+    </div>  <!-- status ends -->
+  </div>
+</div>
+
+

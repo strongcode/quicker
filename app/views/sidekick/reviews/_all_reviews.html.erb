@@ -1,0 +1,34 @@
+<div class="popup-container drilldown-border-bottom">
+  <div class="row-fluid">
+    <div class="span5" style="border-right:1px solid; width: 44.6%; padding:10px 8px 10px 11px;">
+      <div class="row-fluid">
+        <div class="span9 bold-font no-height">My Review</div>
+        <div class="span2 bold-font no-height">
+          <button class="btn btn-info button-my-review-submit">Update</button>
+        </div>
+      </div>
+      <hr />
+      <div class="jQueryLocationReview">
+        <%= render :partial => 'form' %>
+      </div>
+    </div>
+
+    <% (0..@all_reviews.length-1).each do |index| %>
+      <div class="span3 drilldown-review-container" style="<%= @all_reviews.length-1 == index ? ("border-right:none;") : ('') %>">
+        <div class="row-fluid">
+          <div class="span bold-font" style="height: 34px;"><%= Review::Reviewers[index] %></div>
+        </div>
+        <hr />
+        <%= render :partial => 'review', :collection => @all_reviews[index],
+          :as => :review, :locals => {:index => index} %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
+
+
+
+

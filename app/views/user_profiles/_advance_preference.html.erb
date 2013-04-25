@@ -1,0 +1,189 @@
+<div class="popup-container jQueryAdvPreference">
+
+  <%= form_tag update_questions_user_profile_url, :remote => true do %>
+
+    <%= hidden_field_tag 'user_profile[question_3]', @user_profile.question_3.presence || '' %>
+    <%= hidden_field_tag 'user_profile[question_4]', @user_profile.question_4.presence || '' %>
+    <%= hidden_field_tag 'user_profile[question_5]', @user_profile.question_5.presence || '' %>
+
+    <%= hidden_field_tag 'slider_1', @slider_values.present? ? (@slider_values[0]) : (''), :id => 'user_slider_1' %>
+    <%= hidden_field_tag 'slider_2', @slider_values.present? ? (@slider_values[1]) : (''), :id => 'user_slider_2' %>
+    <%= hidden_field_tag 'slider_3', @slider_values.present? ? (@slider_values[2]) : (''), :id => 'user_slider_3' %>
+
+    <%= hidden_field_tag 'offer_order_1', @order_values.present? ? (@order_values[0]) : (''), :id => 'offer_order_1' %>
+    <%= hidden_field_tag 'offer_order_2', @order_values.present? ? (@order_values[1]) : (''), :id => 'offer_order_2' %>
+    <%= hidden_field_tag 'offer_order_3', @order_values.present? ? (@order_values[2]) : (''), :id => 'offer_order_3' %>
+    <%= hidden_field_tag 'adv_pref_save' %>
+    <%= hidden_field_tag 'category_flag' %>
+
+    <fieldset class="fieldset-border sg-fieldset-surround" style="padding-top:0px; padding-right: 0px;">
+      <legend>
+        <h2 class="sg-legend-margin">6 Quick Questions</h2>
+      </legend>
+
+                <!-- <div style="" class="adv_prefer_title"><%#= t(:To_help_insider_give_you_even_better_offers!) %></div> -->
+
+      <div class="adv-preference-row-margin" style="">
+        <div class="circle">1</div>
+        <div class="adv_prefer_text"><%= t(:rate_the_relative_importance_of_your_preferences) %></div>
+        <div class="row-fluid">
+          <div class="jQueryCategoryImages sg-category-margins" style="">
+            <%= render :partial => 'category_preferences' %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="adv-preference-row-margin">
+        <div class="circle">2</div>
+        <div class="adv_prefer_text"><%= t(:When_do_offers_make_sense_of_you)%></div>
+        <div class="row-fluid">
+          <div class="span1"> </div>
+          <div class="span11">
+            <div class="row-fluid" style="margin-top:-25px;">
+              <div class="span6">
+                <div class="rank_title"><%= t(:ranking_board)%></div>
+                <div style="" class="row-fluid rank-board-margin">
+                  <div style="margin-left: 0px;" class="span4 border">
+                    <div>1</div>
+                    <div> <img alt="grove image" src="/assets/grove.png" /> </div>
+                    <div id="div1" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                      <%= get_rank_options(@order_values, 0) %>
+                    </div>
+                  </div>
+                  <div style="margin-left: 0px;" class="span4 border">
+                    <div>2</div>
+                    <div> <img alt="grove image" src="/assets/grove.png" /> </div>
+                    <div id="div2" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                      <%= get_rank_options(@order_values, 1) %>
+                    </div>
+                  </div>
+                  <div style="margin-left: 0px;" class="span4 border">
+                    <div>3</div>
+                    <div> <img alt="grove image" src="/assets/grove.png" /> </div>
+                    <div id="div3" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                      <%= get_rank_options(@order_values, 2) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="span1">
+                <hr class="rank_board_hr" />
+              </div>
+              <div class="span5" id="jQueryAdvPreferenceBoards">
+                <div class="drag_drop_option"><%= t(:drag_and_drop_your_selection)%></div>
+                <div class="img_bord">
+                  <div id="div4" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                    <%= check_for_question_image(@user_profile, "daily") %>
+                  </div>
+                </div>
+                <div class="img_bord">
+                  <div id="div5" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                    <%= check_for_question_image(@user_profile, "weekly") %>
+                  </div>
+                </div>
+                <div class="img_bord">
+                  <div id="div6" ondrop="drop_calender(event)" ondragover="allowDrop(event)">
+                    <%= check_for_question_image(@user_profile, "monthly") %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="adv-preference-row-margin" style="">
+        <div class="circle">3</div>
+        <div class="adv_prefer_text"><%=  t(:How_much_value_do_you_place_your_friends_recommendation?)%></div>
+        <div class="row-fluid ap_slider_margin">
+          <div class="span3 adv-preference-slider-margin">
+            <div id="slider4"></div>
+          </div>
+          <div class="span8"></div>
+        </div>
+      </div>
+
+      <div class="adv-preference-row-margin" style="">
+        <div class="circle">4</div>
+        <div class="adv_prefer_text"><%=  t(:If_your_friends_have_snapped_a_deal_how_much_should_insider_raise_its_importance?)%></div>
+        <div class="row-fluid ap_slider_margin">
+          <div class="span3 adv-preference-slider-margin">
+            <div id="slider5"></div>
+          </div>
+          <div class="span8"> </div>
+        </div>
+      </div>
+
+      <div class="adv-preference-row-margin" style="">
+        <div class="circle">5</div>
+        <div class="adv_prefer_text"><%=  t(:How_important_is_deal_proximity_to_you?)%></div>
+        <div class="row-fluid ap_slider_margin">
+          <div class="span3 adv-preference-slider-margin">
+            <div id="slider6"></div>
+          </div>
+          <div class="span8"> </div>
+        </div>
+
+      </div>
+
+      <div class="row-fluid">
+        <div class="circle float_l">6</div>
+        <div class="span5 adv-preference-radio-margin">
+          <div style="float: left;width: 20px;" class="">
+            <%= radio_button_tag 'user_profile[repeat_experiences]', "yes", @user_profile.repeat_experiences.present? %>
+          </div>
+          <div class="span8 adv-preference-radio-text-height-margin">
+            <label for="user_profile_repeat_experiences_yes">Okay To Duplicate Offers</label>
+
+          </div>
+        </div>
+
+        <div class="span5">
+          <div class="float_l" style="width: 20px;">
+            <%= radio_button_tag 'user_profile[repeat_experiences]', '', @user_profile.repeat_experiences.blank? %>
+          </div>
+          <div class="span8 adv-preference-radio-text-height-margin">
+            <label for="user_profile_repeat_experiences_">Not Okay To Duplicate Offers</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row-fluid">
+        <div class="float_r category-btn-margin" style="margin-right:55px;">
+          <button class="btn btn-info savebtn jQueryAdvPrefCancel"><%= t(:cancel)%> </button>
+        </div>
+        <div class="float_r">
+          <button class="btn btn-info savebtn" id="jQueryAdvPreSave"><%= t(:save)%></button>
+        </div>
+
+      </div>
+
+    </fieldset>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function ($) {
+    $("#slider1").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 1) %>");
+    $("#slider1").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 1)%>");
+
+    $("#slider2").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 2) %>");
+    $("#slider2").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 2)%>");
+
+    $("#slider3").find("div.ui-slider-range-min").css("width", "<%= slider_values(@slider_values, 3) %>");
+    $("#slider3").find("a.ui-corner-all").css("left", "<%= slider_values(@slider_values, 3)%>");
+
+    $("#slider4").find("div.ui-slider-range-min").css("width", '<%= "#{@user_profile.question_3}%" %>');
+    $("#slider4").find("a.ui-corner-all").css("left", '<%= "#{@user_profile.question_3}%" %>' );
+
+    $("#slider5").find("div.ui-slider-range-min").css("width", '<%= "#{@user_profile.question_4}%" %>');
+    $("#slider5").find("a.ui-corner-all").css("left", '<%= "#{@user_profile.question_4}%" %>');
+
+    $("#slider6").find("div.ui-slider-range-min").css("width", '<%= "#{@user_profile.question_5}%" %>');
+    $("#slider6").find("a.ui-corner-all").css("left", '<%= "#{@user_profile.question_5}%" %>');
+
+  });
+</script>

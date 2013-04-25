@@ -1,0 +1,62 @@
+<% trackers = location_list.trackers.my_tracker(current_user) if location_list.trackers.present?  %>
+<div id="button_list_toggle_<%= location_list.id %>">
+  <button data-target="#locationlist_<%= location_list.id %>" class="btn_collapse btn-danger " id="jQueryLocList-<%= location_list.id %>" type="button">
+    <span><%= location_list.custom_title(trackers) %></span>
+    <img class="collapse_minus_img" alt="" src="/assets/plus_icon.png"/>
+  </button>
+</div>
+<div class="collapse1" id="locationlist_<%= location_list.id %>" style="display:none;">
+  <% if controller.action_name != 'friends' %>
+    <div class="row-fluid ">
+      <div class="span2">
+        <%= custom_share_link(location_list, new_sidekick_location_list_share_path(location_list)) %>
+      </div>
+      <div class="span9">
+        <label style="line-height:20px; text-align: justify;">
+          <%= location_list.original_share_comment %></label>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="span2"><label class="label-list-name">List Name</label></div>
+    <div class="span8" id="div_location_list_name_section_<%= location_list.id %>">
+      <%= render :partial => 'list_name_change', :locals => {:location_list => location_list} %>
+    </div>
+  </div>
+
+  <div class="row-fluid location_row_margin jQueryUpdateLocList">
+    <%= render :partial => 'location', :collection => location_list.locations,
+                                       :as => :location, :locals => {:location_list => location_list} %>
+  </div>
+  <% unless params[:action].match(/friend/i) %>
+    <div class="row-fluid jquery-row-fluid ll-margin-top">
+      <div class="span2" style="line-height:26px;"><%= t('dashboard.add_locations')%></div>
+      <div class="span8">
+        <input type="text" placeholder="Locations" class="span12 location-autocomplete"
+               id="location-autocomplete-<%= location_list.id %>" />
+      </div>
+      <div class="span2">
+        <button class="btn btn-small jQuery-Location-Add"><%= t(:add) %></button>
+      </div>
+    </div>
+  <% end %>
+  <div class="row-fluid">
+    <div class="float_r category-btn-margin">
+      <% if current_user.location_lists.include?(location_list) %>
+        <%= link_to 'Delete', list_location_list_path(location_list), 
+                              :class => "btn btn-info cancelbtn jQueryLLDestroy", :method => :delete,
+                              :data => {:confirm => "Are you Sure?"} %>
+      <% else %>
+        <%= link_to 'Stop Sharing', ignore_list_location_list_path(location_list), 
+                                    :class=> "btn btn-info button-auto-width",
+                                    :method => :delete, :data => {:confirm => "Are you Sure?"} %>
+      <% end %>
+    </div>
+    <div class="float_r">
+      <button class="btn btn-info savebtn button-list-update" id="<%= location_list.id %>">Save</button>
+    </div>
+  </div>
+</div>
+<!-- location - first item ens -->
+<%= javascript_include_tag 'image_delete' %>

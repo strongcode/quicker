@@ -1,0 +1,12 @@
+<% @profile_user.social_medias.each do |sm| %>
+    <%= link_to '', '#', :class => "profile_#{sm.name.sub('+', '')}_btn" %>
+<% end %>
+<div>
+<div class="divde_vertical_div" style="margin-top:-20px;">
+  <div class="profile_divider-vertical"></div>
+</div>
+
+<% @remaining_social_medias.each do |sm| %>
+    <%= link_to '', '#', :class => "profile_#{sm.name.sub('+', '')}_btn" ,:disabled => "disabled" %>
+<% end %>
+</div>

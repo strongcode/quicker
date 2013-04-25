@@ -1,0 +1,47 @@
+<% if @snapgadget_users.present? %>
+  <%= form_tag invite_friends_requests_path do %>
+    <div class="row-fluid">
+      <div class="span">
+        <span class="bold-font">Select these Facebook friends we found on SnapGaget to make a friend request</span>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span8 div-sg-users-list">
+        <% @snapgadget_users.each do |user| %>
+          <div class="row-fluid">
+            <div class="span1" style="width: 10%"><%= image_tag user.mini_avatar_image, :class => 'image-mini-version' %></div>
+            <div class="span6" style="width:50.5%"><label for="<%= user.id %>"><%= user.full_name %></label></div>
+            <div class="span1"><%= check_box_tag 'sg_user_ids[]', user.id, false, :id => user.id %></div>
+          </div>
+        <% end %>
+      </div>
+      <div class="span4">
+        <%= submit_tag 'Send', :class => 'btn btn-info savebtn' %>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>
+
+
+<% if @facebook_friends.present? %>
+  <div class="row-fluid">
+    <div class="span">
+      <span class="bold-font">Select your Facebook Friends to be a part of the SnapGadget Community!</span>
+    </div>
+  </div>
+  <% @facebook_friends.each do |user| %>
+    <div class="row-fluid">
+      <div class="span1"><%= image_tag user[:picture][:data][:url] %></div>
+      <div class="span4"><label for="<%= user[:id] %>"><%= user[:name] %></label></div>
+      <div class="span1">
+        <button class="button-facebook-friend-invite" id="<%= user[:id] %>">Invite</button>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
+
+
+

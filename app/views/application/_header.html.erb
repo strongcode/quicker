@@ -1,0 +1,55 @@
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row-fluid">
+        <a class="brand visible-desktop" data-placement="right" rel="tooltip"  href="<%= root_url %>" data-original-title="SnapGadet - Social On Your Side" data-animation="true"><%= logo_image %></a>
+        <!-- <a class="brand hidden-desktop" data-placement="right" rel="tooltip"  href="<%#= root_url %>" data-original-title="SnapGadet - Social On Your Side" data-animation="true"><%#= logo_image %></a> -->
+        <% unless user_signed_in? %>
+          <% unless params[:controller].match(/sessions/i) %>
+            <%= link_to get_button, new_user_session_url, :class=> "login_btn pull-right"%>
+          <% end %>
+        <% else %>
+
+          <!--  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+
+
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li class="jQueryHeaderAdvisorSection">
+                <%= render :partial => 'header_advisor_section' %>
+              </li>
+
+              <li class="" style="margin-top:15px;">
+                <a class="dropdown-toggle " data-toggle="dropdown" href="#"><b style="<%= 'color:#B8312C' if !(params[:controller].match(/sidekick/) || params[:controller].match(/insider/) || params[:controller].match(/assistant/))  %>">
+                    <%= user_full_name(@profile_user) %></b><b class="caret"></b></a>
+                <ul class="dropdown-menu" style="margin-top:-10px;">
+                  <li><%= link_to t(:my_dashboard), my_dashboard_url %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to t('dashboard.profile'), new_user_profile_url %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Help Center', help_url %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to 'Spread The Word', spread_the_word_path, :class => 'sg_post_link_facebook fancybox.iframe' %></li>
+                  <li class="divider"></li>
+                  <li><%= link_to t('dashboard.sign_out'), destroy_user_session_path, :method => :delete %></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  $(document).ready(function () {
+    if ($("[rel=tooltip]").length) {
+      $("[rel=tooltip]").tooltip();
+    }
+  });
+</script>

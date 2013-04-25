@@ -1,0 +1,25 @@
+<% if location.present? %>
+  <% friends_reviews = Review.location_reviews(location).my_and_friends_reviews(current_user).with_comment %>
+  <% snapgadget_reviews = Review.location_reviews(location).snapgadget_reviews(current_user).with_comment %>
+<% else %>
+  <% friends_reviews = [] %>
+  <% snapgadget_reviews = [] %>
+<% end %>
+
+<div class="span5">
+  <div class="progress sk_progress_height" style="margin-top:8px;">
+    <div style="width: <%= "#{get_review_percentage(friends_reviews.count, (friends_reviews.count + snapgadget_reviews.count))}%" %>;" class="bar bar-success">
+      <div class="sk_profress_bar_text"><%= friends_reviews.count %></div>
+    </div>
+    <div style="width:<%= "#{get_review_percentage(snapgadget_reviews.count, (friends_reviews.count + snapgadget_reviews.count))}%" %>;" class="bar progress-info">
+      <div class="sk_profress_bar_text"><%= snapgadget_reviews.count %></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

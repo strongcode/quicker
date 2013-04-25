@@ -1,0 +1,218 @@
+<% content_for :google_map do %>
+  <script type="text/javascript"
+           src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/jquery.geocomplete' %>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+  
+<% end %>
+
+<%= form_for @user_profile, :url => user_profile_path,
+             :html => {:multipart => true, :id => @user_profile.user.slug,
+             :class => "sg_user_profile_form"}  do |f| %>
+
+  <div class="container jQueryBasicPreference">
+    <div class="row-fluid">
+      <div class="span12 contaimer_profile_page">
+        <div class="row-fluid">
+          <div class="span2 control-label"><%= t(:email) %></div>
+          <div class="span6">
+            <%= text_field_tag 'user[email]', @user.email, :placeholder => "",
+                               :class => "input-xlarge profile_input_margin" %>
+            <%= custom_error_message(@user, :email) %>
+            <p id="EmailError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+          </div>
+          <div class="span4"></div>
+        </div>
+        <hr />
+
+        <div class="row-fluid">
+          <div class="span2 control-label"> <%= t(:password) %>
+          </div>
+          <div class="span6">
+            <%= link_to t(:change_password), edit_password_user_url(@user),
+                        :class => "btn btn-info ch_pwd_btn" %>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+          <div class="span2 control-label"><%= t(:language) %>
+          </div>
+          <div class="span6 profile_input_margin">
+            <%= select_tag 'user_profile[language_id]',
+                           options_for_select(Language.all.collect { |lang| [get_language_locale(lang), lang.id] },
+                           :selected => @user_profile.language_id), {:class => "span5 "} %>
+          </div>
+          <div class="span4"> </div>
+        </div>
+
+        <hr/>
+
+        <div class="row-fluid">
+          <div class="span2 control-label"><%= t(:first_name) %>
+          </div>
+          <div class="span6 profile_input_margin">
+            <%= f.text_field :first_name, :value => @user.first_name, :placeholder => "",
+                             :class => "input-xlarge"%>
+            <%= custom_error_message(@user, :first_name) %>
+            <p id="FnameError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <hr></hr>
+
+        <div class="row-fluid">
+          <div class="span2 control-label"><%= t(:last_name) %>
+          </div>
+          <div class="span6 profile_input_margin">
+            <%= f.text_field :last_name, :value => @user.last_name, :class => "input-xlarge"%>
+            <%= custom_error_message(@user, :last_name) %>
+            <p id="LnameError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <hr></hr>
+
+        <div class="row-fluid">
+          <div class="span2 control-label"><%= t(:zip_code) %>
+          </div>
+          <div class="span6 profile_input_margin">
+            <%= f.text_field :location_name, :class => "input-xlarge",
+                             :placeholder => t(:enter_a_location), :id => 'jQueryCityAutocomplete' %>
+            <%= custom_error_message(@user, :location_name) %>
+            <p id="locationError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+          </div>
+          <div class="span4"> </div>
+        </div>
+        <hr />
+
+        <div class="row-fluid">
+          <div class="span2 control-label control-label1"><%= t(:profile_image) %></div>
+          <div class="span2">
+            <%= f.fields_for :photo do |p| %>
+              <div class="user_profile_img">
+                <%= get_image(@user_profile) %>
+              </div>
+            </div>
+            <div class="span2 profile_input_margin">
+              <label for="profileImage" style="">
+                <div class="btn btn-info" style="margin-top:12px;">
+                  <%= t(:upload_image) %>
+                </div>
+              </label>
+              <div style="position:absolute;left:-999px;">
+                <%= p.file_field :image, :style => 'width:250px;', :id => 'profileImage',
+                                 :onChange => 'readURL(this, "jQuery-Profile-Img")' %>
+                <%= p.hidden_field :image_cache %>
+              </div>
+            </div>
+          <% end %>
+          <%= hidden_field_tag :photo_save, '', :id => 'jquery-photo-save' %>
+        </div>
+
+        <hr></hr>
+
+        <div class="row-fluid jQueryCustomizeAvatar" style="padding-top:10px;" >
+          <%= render :partial => 'avatar_section' %>
+        </div>
+        <hr />
+
+        <div class="row-fluid">
+          <div class="span2">
+            <div class="row-fluid">
+              <div class="span12 prefer-label" >
+                <%= t(:insider_preferences) %>
+              </div>
+            </div>
+          </div>
+          <div class="span10">
+            <div class="row-fluid">
+              <div class="span jQueryCategoryUpdate">
+                <%= render :partial => 'cat_update' %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="row-fluid">
+          <% unless current_user.user_profile.new_record?  %>
+            <div class="float_r category-btn-margin" style="margin-right:32px;">
+              <a class="btn btn-info cancelbtn"
+                 href="<%= current_user.default_landing_page %>"> <%= t(:cancel) %></a>
+            </div>
+          <% end %>
+          <div class="float_r">
+            <%= f.submit t(:save),:id => 'saveprofile', :class => "btn btn-info savebtn" %>
+          </div>
+        </div>
+        
+      </div>
+      <%= hidden_field_tag 'user_profile[landing_page_id]', @user_profile.landing_page_id %>
+      <%= hidden_field_tag 'user_profile[lifestyle_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[shopping_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[food_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[business_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[friends_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[travel_on_sidekick]' %>
+      <%= hidden_field_tag 'user_profile[location_street]',
+                           @user_profile.location_street.presence || '' %>
+      <%= hidden_field_tag 'user_profile[location_city]',
+                            @user_profile.location_city.presence || '' %>
+      <%= hidden_field_tag 'user_profile[location_state]',
+                            @user_profile.location_state.presence || '' %>
+      <%= hidden_field_tag 'user_profile[location_zipcode]',
+                           @user_profile.location_zipcode.presence || '' %>
+      <%= hidden_field_tag 'user_profile[woe_id]', @user_profile.woe_id.presence || '' %>
+      <%= hidden_field_tag 'adv_pref_save' %>
+      <%= hidden_field_tag 'category_flag' %>
+
+    </div>
+  </div>
+<% end %>
+<div id="map-container" style="width:50px; height: 50px; display: none !important;"></div>
+<div id="jQuery-Personalize" class="popup-container" style="display: none;">
+  <%= render :partial => 'personalize_advisors' %>
+</div>
+
+<script type="text/javascript">
+  if ($.browser.mozilla) {
+    $(document).on('click', 'label', function (e) {
+      if (e.currentTarget === this && e.target.nodeName !== 'INPUT') {
+        $(this.control).click();
+      }
+    });
+  }
+
+  jQuery(document).ready(function($){
+
+    Google_Map.init(39.9332968,-105.1332093);
+    Google_Map.location_autocomplete("jQueryCityAutocomplete", '', '', '', '', '' );
+
+    $('.jQueryCategorySubmit').click(function () {
+      $('form#sgBasicUserPref').submit();
+    });
+
+    $(".ui-state-default").css({
+      'background': 'url(../assets/drag_handler_active.png)  scroll 50% 50% #F6F6F6',
+      'background-repeat': 'no-repeat',
+      'border': '1px solid #CCCCCC'
+    });
+    
+    if(top.location !== self.location) {
+      fancy_box_close();
+      var element = top.document.getElementsByClassName('jQueryPassionateSection')[0];
+      $(element).html('<%= j(render :partial => 'passionate_section') %>');
+
+    }
+    //jquery-photo-save
+  });
+
+</script>
+
+
+
+

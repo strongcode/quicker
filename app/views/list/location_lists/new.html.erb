@@ -1,0 +1,76 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/jquery.geocomplete' %>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+<% end %>
+
+<div class="popup-container" style="margin-top:25px;">
+  <%= form_for @location_list, :url => list_location_lists_url, :html => {:id => 'jQueryPopulateLL' }  do |f|  %>
+    <fieldset class="fieldset-border sg-fieldset-surround">
+      <legend>
+        <h2 class="sg-legend-margin"><%= t('dashboard.new_location_list') %></h2>
+      </legend>
+
+      <div class="row-fluid">
+        <div class="span3"><%= t('dashboard.list_name')%></div>
+        <div class="span6">
+          <%= f.text_field :name,:id =>'location_list_name', :class => 'span12',:size => '0', :placeholder => t(:list_name) %>
+          <%= custom_error_message_no_margin_no_field_name(@location_list, :name) %>
+        </div>
+      </div> <br />
+
+      <div class="row-fluid">
+        <div class="span3"><%= t('dashboard.add_locations')%></div>
+        <div class="span6 jQuery-sg-loc-section">
+          <%= text_field_tag 'geocode_autocomplete', '', :class => 'input-large span12', :placeholder => t(:enter_a_location) %>
+          <%= custom_error_message_no_margin_no_field_name(@location_list, :locations) %>
+          <p id="LocationnameError" class="sg_acc_info_error error" style="display:none;">&nbsp;</p>
+        </div>
+        <div class="span2">
+          <button class="btn btn-small jQuery-sg-check-for-loc" data-loc-ref="1"><%= t(:add) %></button>
+        </div>
+        <a href="#jQueryOtherLocFields_1" class="fancybox btn btn-small jQuerydBAddLoc" style="display:none;" id="test-me-pls"><%= t(:add) %></a>
+      </div>
+      <br />
+
+      <div class="row-fluid">
+        <div class="span3"><%= t('dashboard.locations')%></div>
+        <div class="span8 jQueryAppendLocations">
+        </div>
+      </div><br/>
+
+      <div class="row-fluid">
+        <div class="float_r" style="width:150px; text-align: right;"><%= link_to t(:cancel), list_location_lists_url , :class => "btn btn-info cancelbtn" %> </div>
+        <div class="float_r" style="width:150px; text-align: right;"><%= f.submit t(:save), :id => "", :class => "btn btn-info savebtn" %>
+        </div>
+      </div>
+    </fieldset>
+
+  <% end %>
+
+</div>
+
+
+<div id="map-container" style="width:50px; height: 50px; display: none !important;"></div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    var lat, lng;
+    var address = '<%= current_user.user_profile.location_name %>';
+    geocoder.geocode({'address': address},
+    function(results, status)
+    {
+      if(status == google.maps.GeocoderStatus.OK) {
+        lat = results[0].geometry.location.lat();
+        lng = results[0].geometry.location.lng();
+        Google_Map.init(lat, lng);
+        Google_Map.location_autocomplete("geocode_autocomplete", '', '');
+      }
+
+    });
+
+  });
+</script>

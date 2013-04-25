@@ -1,0 +1,129 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+<% end %>
+
+<div class="popup-container jQuerySuggestionForm">
+  <%= form_for [:insider, @suggestion], :html => {} do |f| %>
+    <fieldset class="fieldset-border sg-fieldset-surround-3">
+      <legend>
+        <h2 class="sg-legend-margin">Your Suggestion</h2>
+      </legend>
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">Name</div>
+        <div class="span10">
+          <%= f.text_field :name, :class => 'span12' %>
+          <%= custom_error_message(@suggestion, :name) %>
+        </div>
+      </div>
+
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">When</div>
+        <div class="span10">
+          <%= f.text_field :when, :id => 'datepicker', :class => 'span12' %>
+          <%= custom_error_message(@suggestion, :when) %>
+        </div>
+      </div>
+
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">Where</div>
+        <div class="span10">
+          <%= f.hidden_field :location_id %>
+
+          <div class="location-add">
+            <% if params[:action].match(/edit/i) %>
+              <%= text_field_tag 'geocode_autocomplete', @suggestion.location.present? ? (@suggestion.location.full_address) : (''), :class => 'input-large span12', :placeholder => t(:enter_a_location), :disabled => true %>
+            <% else %>
+              <%= text_field_tag 'geocode_autocomplete', @suggestion.location.present? ? (@suggestion.location.full_address) : (''), :class => 'input-large span12', :placeholder => t(:enter_a_location) %>
+            <% end %>
+            <a href="#jQueryOtherLocFields" class="fancybox btn btn-small jQuerydBAddLoc" style="display:none;"><%= t(:add) %></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">What</div>
+        <div class="span10">
+          <%= select_tag 'sg_major_category', options_for_select(get_categories, :selected => get_selected_option(@category)), :id => "jQuerySelectMajorCategorySuggestion", :style => 'width:225px;' %>
+          <%= select_tag 'suggestion[snapgadget_category_id]', options_for_select(get_suggestion_categories(@suggestion, @categories), @suggestion.snapgadget_category_id ), :id => "jQueryMinorCategoryListSuggestion", :style => 'width:225px;' %>
+        </div>
+      </div>
+
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">Why</div>
+        <div class="span10">
+          <%= f.text_area :comments, :rows => 5, :class => 'span12' %>
+        </div>
+      </div>
+
+      <div class="row-fluid  black-on-gray">
+        <div class="span2">Web Link</div>
+        <div class="span10">
+          <%= f.text_field :url, :class => 'span12' %>
+        </div>
+      </div>
+
+      <%= f.fields_for :photos do |photo| %>
+        <%= render 'photo_fields', :f => photo %>
+      <% end %>
+
+      <div class="row-fluid">
+        <div class="span2">&nbsp</div>
+        <%= link_to_add_fields 'add another', f, :photos, 'jQueryImgUp btn btn-small' %>
+      </div>
+
+      <div class="row-fluid">
+        <% if @suggestion.present? && !@suggestion.new_record? %>
+          <div class="float_r" style="margin-left:35px;">
+            <%= link_to t(:delete), insider_suggestion_path(@suggestion), :method => :delete, :remote => true, :data => {:confirm => 'Are You Sure' }, :class => 'btn btn-info cancelbtn' %>
+          </div>
+        <% end %>
+        <div class="float_r" style="margin-left:35px;">
+          <%= link_to t(:cancel), '#', :class => 'btn btn-info cancel-btn-no-margin jQueryFancyboxIframeClose' %>
+        </div>
+
+        <div class="float_r">
+          <%= f.submit t(:save), :class => @suggestion.present? && @suggestion.new_record? ? ('btn btn-info save-btn-no-margin jQuery-Suggestion-Loc-Add') : ('btn btn-info savebtn')  %>
+        </div>
+
+      </div>
+
+    </fieldset>
+  <% end %>
+
+</div>
+
+<div id="map-container" style="width:50px; height: 50px; display: none !important;"></div>
+
+<!-- POPUP -->
+<div id="jQueryOtherLocFields" style="display:none;">
+  <%= render :partial => 'sg_major_category_list' %>
+</div>
+<script type="text/javascript">
+  if ($.browser.mozilla) {
+    $(document).on('click', 'label', function (e) {
+      if (e.currentTarget === this && e.target.nodeName !== 'INPUT') {
+        $(this.control).click();
+      }
+    });
+  }
+
+  jQuery(document).ready(function(){
+    var lat, lng;
+    var address = '<%= current_user.user_profile.location_name %>';
+    geocoder.geocode({'address': address},
+    function(results, status)
+    {
+      if(status == google.maps.GeocoderStatus.OK) {
+        lat = results[0].geometry.location.lat();
+        lng = results[0].geometry.location.lng();
+        Google_Map.init(lat, lng);
+        Google_Map.location_autocomplete("geocode_autocomplete", '', '');
+      }
+    });
+    $('label.upload_image').text('Browse');
+  });
+</script>

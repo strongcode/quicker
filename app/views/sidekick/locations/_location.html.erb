@@ -1,0 +1,14 @@
+<div class="row-fluid" id="jQueryLocation-<%= location.id  %>">
+  <div class="span1"><label for='<%= "loc-#{location.id}"%>'>
+      <%= image_tag 'sidekick/checked.png', :id => "img-#{location.id}", :class => 'jQuery-sidebar-category-img' %>
+    </label>
+    <%= check_box_tag "loc-#{location.id}", '', true, :style => 'display:none;', :class => 'jQueryLocToggle' %>
+  </div>
+  <div class="span6 progress_bar_collapse_text">
+    <%= location_link(@suggestion_locations, location, @location_list) %>
+  </div>
+  <%= render :partial => 'category_html', :locals => {:location => location} %>
+
+</div>
+
+

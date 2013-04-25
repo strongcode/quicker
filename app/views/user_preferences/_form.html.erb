@@ -1,0 +1,431 @@
+  <%= form_for @user_preference, :url => user_preference_path, :html => {:multipart => true, :id => 'sgBasicUserPref'} do |f| %>
+    <div class="contaimer_profile_page jQuerybasicPreference">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <label class="prefer-label" for="inputEmail"><%= t(:first_show_me) %></label>
+            </div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:Pick_Your_Default_Page) %>"> <a class="" href="#">
+                  <img src="/assets/icon_question.png" alt="icon_question image"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="row-fluid">
+            <div class="span3">
+              <a class="preferences_icon <%= @user_preference.sidekick_icon %>" id="sgSidekick" data-sgPage="sidekick" data-pid="<%= get_page_id("sidekick") %>" href="#" title="Sidekick"></a>
+            </div>
+            <div class="span3">
+              <a class="preferences_icon <%= @user_preference.insider_icon %>" id="sgInsider" data-sgPage="insider" data-pid="<%= get_page_id("insider") %>" href="#" title="Insider"></a>
+            </div>
+            <div class="span3">
+              <a class="preferences_icon <%= @user_preference.assistant_icon %>" id="sgAssistant" data-sgPage="assistant" data-pid="<%= get_page_id("assistant") %>" href="#" title="Assistant"></a>
+            </div>
+            <div class="span3"></div>
+          </div>
+        </div>
+        <div class="span2"> </div>
+      </div>
+      <hr/>
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <div class="prefer-label"><%= t(:show_me_offers) %></div>
+            </div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:insider_category_help) %>">
+                <a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="row-fluid jQuerysgCategoryPref">
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgCategoryBox1">
+                <%= preference_image(@offer_category_1, 1) %>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgCategoryBox2">
+                <%= preference_image(@offer_category_2, 2) %>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgCategoryBox3">
+                <%= preference_image(@offer_category_3, 3) %>
+              </div>
+            </div>
+            <div class="span3"></div>
+          </div>
+        </div>
+        <div class="span2">
+          <a href="<%= sg_category_url %>" data-remote="true" data-fancybox-type="ajax" class="fancybox btn btn-info prfer_change_btn jQueryChange" data-type="category" style="width:62px;">
+            <%= change_or_add_offers %></a>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <div class="prefer-label"><%= t(:suggest_to_me) %></div></div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:insider_suggestion_help) %>">
+                <a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="row-fluid">
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgSuggestionBox1">
+                <%= preference_image(@suggestion_category_1, 1) %>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgSuggestionBox2">
+                <%= preference_image(@suggestion_category_2, 2) %>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgSuggestionBox3">
+                <%= preference_image(@suggestion_category_3, 3) %>
+              </div>
+            </div>
+            <div class="span3"></div>
+          </div>
+        </div>
+        <div class="span2">
+          <a href="<%= sg_suggestion_url %>" data-fancybox-type="ajax" class="fancybox btn btn-info prfer_change_btn jQueryChange" data-type="suggestion" style="width:62px;"><%= change_or_add_suggestions %></a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <div class="prefer-label"><%= t(:i_deserve) %></div>
+            </div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:insider_deserve_it_help) %>"><a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="row-fluid">
+            <div class="span3">
+              <div class="basic_preference_icon" id="jQuerysgUDeserveItBox1">
+                <%= preference_image(@you_deserve_it, 1) %>
+              </div>
+            </div>
+            <div class="span3"></div>
+            <div class="span3"></div>
+            <div class="span3"></div>
+          </div>
+        </div>
+        <div class="span2">
+          <a href="<%= sg_deserve_it_url %>" data-fancybox-type="ajax" class="fancybox btn btn-info prfer_change_btn jQueryChange" data-type="deserve_it" style="width:62px;"><%= change_or_add_deserve_it %></a>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <div class="prefer-label" for="inputEmail"><%= t(:repeat_experiences) %></div></div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:Would_You_Like_Offers_from_Locations_you_have_reviewed) %>"><a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="span7">
+          <div class="span">
+            <%= f.check_box :repeat_experiences, {:class => "prefer_chkbox",:style=> "margin-top:45px;"} %>
+          </div>
+        </div>
+        <div class="span2"> </div>
+      </div>
+
+      <hr/>
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="row-fluid">
+            <div class="span9">
+              <div class="prefer-label prefer_suggest_margin"><%= t(:show_me_on_my_map) %></div>
+            </div>
+            <div class="span3 preference_help_btn">
+              <div class="btn_help btn-info" title="<%= t(:map_help) %>"><a class="" href="#"><img src="/assets/icon_question.png" alt="icon_question image"/></a></div>
+            </div>
+          </div>
+        </div>
+<<<<<<< HEAD
+        <div class="span7">
+          <% Location::Categories::All.sort.each do |category| %>
+            <div class="prefer_icons <%= @user_preference.get_class(category) %>" id="<%= category %>" data-type="<%= @user_preference.get_class(category) %>" title="<%= get_category_title(category) %>"></div>
+          <% end %>
+          <div class="divde_vertical_div">
+            <div class="profile_divider-vertical"></div>
+          </div>
+          <div class="prefer_icons hidden-phone <%= @user_preference.get_class("friends") %>" id="friends" data-type="<%= @user_preference.get_class("friends") %>" title="<%= t(:friends).capitalize %>"></div>
+=======
+        <div class="float_l" style="margin: 15px 0 0 185px;">
+          <a href="#" class="btn btn-info jQueryVisitAdd"><%= @user_preference.visit_or_revisit %></a>
+>>>>>>> adv preference page html is integrated
+        </div>
+        <div class="span2"> </div>
+      </div>
+      <hr />
+
+      <div class="row-fluid">
+        <div></div>
+        <div class="row-fluid">
+          <div class="span3">
+            <label class="control-label"><%= t(:five_quick_questions) %></label>
+          </div>
+          <div class="span7" style="margin-top: 20px;">
+            <div class="progress prefer_prog_height progress-danger">
+              <div class="bar progress_bar_width" style="width:<%= "#{@perf_completeness}%" %>">
+                <div class="profress_bar_text"><%= "#{@perf_completeness}% " %><%= t(:complete)%></div>
+
+              </div>
+            </div>
+          </div>
+          <div class="span2" style="margin-top: 15px;">
+            <a href="#" class="btn btn-info prefer_revist_btn jQueryVisitAdd"><%= @user_preference.visit_or_revisit %></a>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="row-fluid">
+          <div class="span3">
+          </div>
+          <div class="span5">
+          </div>
+
+          <div class="span4">
+            <%= link_to t(:cancel), @profile_user.default_landing_page , :class => "btn btn-info prefer_save_btn cancelbtn" unless @profile_user.user_preference.new_record? %>
+            <%= f.submit t(:save), :id => "saveprofile", :class => "btn btn-info prefer_save_btn savebtn" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<<<<<<< HEAD
+  
+
+  <!-- Advanced preference -->
+  <%= render :partial => 'advance_preference' %>
+  <!-- Ends -->
+
+  <%= hidden_field_tag 'user_preference[landing_page_id]', @user_preference.landing_page_id %>
+  <%= hidden_field_tag 'user_preference[offer_category_1]', @offer_category_1.present? ? (@offer_category_1.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[offer_category_2]', @offer_category_2.present? ? (@offer_category_2.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[offer_category_3]', @offer_category_3.present? ? (@offer_category_3.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_1]', @suggestion_category_1.present? ? (@suggestion_category_1.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_2]', @suggestion_category_2.present? ? (@suggestion_category_2.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_3]', @suggestion_category_3.present? ? (@suggestion_category_3.id) : ('') %>
+  <%= hidden_field_tag 'user_preference[you_deserve_it_category]', @you_deserve_it.present? ? (@you_deserve_it.id) : ('') %>
+  <%= f.hidden_field :lifestyle_on_sidekick %>
+  <%= f.hidden_field :shopping_on_sidekick %>
+  <%= f.hidden_field :food_on_sidekick %>
+  <%= f.hidden_field :business_on_sidekick %>
+  <%= f.hidden_field :friends_on_sidekick %>
+  <%= f.hidden_field :travel_on_sidekick %>
+
+  <%= f.hidden_field :question_3 %>
+  <%= f.hidden_field :question_4 %>
+  <%= f.hidden_field :question_5 %>
+
+  <%= hidden_field_tag 'slider_1', @slider_values.present? ? (@slider_values[0]) : (''), :id => 'user_slider_1' %>
+  <%= hidden_field_tag 'slider_2', @slider_values.present? ? (@slider_values[1]) : (''), :id => 'user_slider_2' %>
+  <%= hidden_field_tag 'slider_3', @slider_values.present? ? (@slider_values[2]) : (''), :id => 'user_slider_3' %>
+
+  <%= hidden_field_tag 'offer_order_1', @order_values.present? ? (@order_values[0]) : (''), :id => 'offer_order_1' %>
+  <%= hidden_field_tag 'offer_order_2', @order_values.present? ? (@order_values[1]) : (''), :id => 'offer_order_2' %>
+  <%= hidden_field_tag 'offer_order_3', @order_values.present? ? (@order_values[2]) : (''), :id => 'offer_order_3' %>
+  <%= hidden_field_tag 'adv_pref_save' %>
+
+<% end %>
+=======
+  </div>
+
+  <!-- Advanced preference -->
+
+  <div class="container contaimer_profile_page jQueryadvPreference" style="display:none;">
+    <div class="container">
+
+      <div class="five_qq_img">
+        <img alt="5_qq image" src="/assets/5_qq.png" />
+      </div>
+      <div style="" class="adv_prefer_title"> To help insider give you even better offers!</div>
+    </div>
+
+    <div class="container adv_prefer_row">
+      <div class="circle">1</div>
+      <div class="adv_prefer_text">Rate the relative importance of your preferences </div>
+
+      <div class="prefer_img">
+        <img style="" alt="sports_1 image" src="/assets/sports_1.png" />
+        <div class="progress adv_prefer_prog_height progress-success">
+          <div class="body1 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider">
+            <div class="ui-slider-range ui-widget-header"></div>
+            <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 0%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a></div>
+        </div>
+      </div>
+
+      <div class="prefer_vertical_div hidden-phone"><div class="prefer_divider-vertical"></div></div>
+      <div class="prefer_img">
+        <img style="" alt="running_1 image" src="/assets/running_1.png" />
+        <div class="progress adv_prefer_prog_height progress-success">
+          <div class="body1 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider2">
+            <div class="ui-slider-range ui-widget-header"></div>
+            <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 0%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a></div>
+        </div>
+      </div>
+      <div class="prefer_vertical_div hidden-phone"><div class="prefer_divider-vertical"></div></div>
+      <div class="prefer_img">
+        <img style="" alt="museum_1 image" src="/assets/museum_1.png" />
+        <div class="progress adv_prefer_prog_height progress-success">
+          <div class="body1 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="slider3">
+            <div class="ui-slider-range ui-widget-header"></div>
+            <div class="ui-slider-range ui-widget-header" style="left: 0%; width: 0%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a></div>
+        </div>
+      </div>
+      <div class="prefer_vertical_div hidden-phone"><div class="prefer_divider-vertical"></div></div>
+    </div>
+    <div class="container adv_prefer_row">
+      <div class="circle">2</div>
+      <div class="adv_prefer_text">When do offers make sense of you</div>
+      <div class="rank_title">Ranking Board </div>
+      <div class="rank_board">
+        <div class="img_bord">
+          <div style="text-align: center;">1</div>
+          <div style="text-align: center;"> <img alt="grove image" src="/assets/grove.png" /> </div>
+          <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="prefer_vertical_small_div">
+          <div class="prefer_divider-vertical_small"></div>
+        </div>
+        <div class="img_bord">
+          <div style="text-align: center;">2</div>
+          <div style="text-align: center;"> <img alt="grove image" src="/assets/grove.png" /> </div>
+          <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="prefer_vertical_small_div">
+          <div class="prefer_divider-vertical_small"></div>
+        </div>
+        <div class="img_bord">
+          <div style="text-align: center;">3</div>
+          <div style="text-align: center;"> <img alt="grove image" src="/assets/grove.png" /> </div>
+          <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+      </div>
+      <hr class="rank_board_hr" />
+      <div class="rank_board_img_container">
+        <div class="img_bord">
+          <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img alt="daily_disable image" src="/assets/daily_disable.png" draggable="true" ondragstart="drag(event)" id="drag1" />
+          </div>
+        </div>
+        <div class="img_bord">
+          <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img alt="weekly_disable image" src="/assets/weekly_disable.png" draggable="true" ondragstart="drag(event)" id="drag2" />
+          </div>
+        </div>
+        <div class="img_bord">
+          <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img alt="month_disable image" src="/assets/month_disable.png" draggable="true" ondragstart="drag(event)" id="drag3" />
+          </div>
+        </div>
+      </div>
+      <div class="drag_drop_option">Drag and drop your option </div>
+    </div>
+    <a class="btn btn-info avd_prefer_btn">Update</a>
+  </div>
+  <!-- Ends -->
+
+  <%= hidden_field_tag 'user_preference[landing_page_id]', @user_preference.landing_page_id %>
+  <%= hidden_field_tag 'user_preference[offer_category_1]', @offer_category_1.present? ? (@offer_category_1.id): ('') %>
+  <%= hidden_field_tag 'user_preference[offer_category_2]', @offer_category_2.present? ? (@offer_category_2.id): ('')%>
+  <%= hidden_field_tag 'user_preference[offer_category_3]', @offer_category_3.present? ? (@offer_category_3.id): ('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_1]', @suggestion_category_1.present? ? (@suggestion_category_1.id) :('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_2]', @suggestion_category_2.present? ? (@suggestion_category_2.id) :('') %>
+  <%= hidden_field_tag 'user_preference[suggestion_category_3]', @suggestion_category_3.present? ? (@suggestion_category_3.id) :('') %>
+  <%= hidden_field_tag 'user_preference[you_deserve_it_category]',@you_deserve_it.present? ? (@you_deserve_it.id):('')  %>
+  <%= f.hidden_field :lifestyle_on_sidekick %>
+  <%= f.hidden_field :shopping_on_sidekick %>
+  <%= f.hidden_field :food_on_sidekick %>
+  <%= f.hidden_field :service_on_sidekick %>
+  <%= f.hidden_field :friends_on_sidekick %>
+
+<% end %>
+
+
+<div id="sgCategoryDAD" style="display:none;">
+  <%= render :partial => 'categories' %>
+</div>
+<div id="sgSuggestionDAD" style="display:none;">
+  <%= render :partial => 'suggestions' %>
+</div>
+
+<div id="sgUDeserveItDAD" style="display:none;">
+  <%= render :partial => 'you_deserve_it' %>
+</div>
+>>>>>>> adv preference page html is integrated
+
+
+
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+    $('.jQueryVisitAdd').click(function () {
+      $('.jQuerybasicPreference').hide();
+      $('.jQueryadvPreference').show();
+      if ($('.edit_profile_title').length > 0) {
+        $('.edit_profile_title').hide();
+      }
+      if ($('.signup_step1_text').length > 0) {
+        $('.signup_step1_text').hide();
+      }
+    });
+
+    $('.jQueryAdvQstCnl').click(function () {
+      $('.jQuerybasicPreference').show();
+      $('.jQueryadvPreference').hide();
+      if ($('.edit_profile_title').length > 0) {
+        $('.edit_profile_title').show();
+      }
+      if ($('.signup_step1_text').length > 0) {
+        $('.signup_step1_text').show();
+      }
+    });
+
+    $('.jQueryCategorySubmit').click(function () {
+      $('form#sgBasicUserPref').submit();
+    });
+
+    $(".ui-state-default").css({
+      'background': 'url(../assets/drag_handler_active.png)  scroll 50% 50% #F6F6F6',
+      'background-repeat': 'no-repeat',
+      'border': '1px solid #CCCCCC'
+    });
+
+    $('#jQueryAdvPreSave').click(function(){
+      $('#adv_pref_save').val(1);
+      return;
+    });
+
+</script>

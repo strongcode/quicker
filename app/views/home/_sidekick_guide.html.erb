@@ -1,0 +1,26 @@
+<div id="jQuerySidekickGuide" class="popup-container" style="display: none;">
+  <%= form_tag save_guide_setting_path, :id => 'jQueryGuideForm', :remote => true do %>
+    <fieldset class="fieldset-border" style="padding:18px 45px 25px 45px;">
+      <legend>
+        <h2 class="sg-legend-margin">Meet Your Sidekick!</h2>
+      </legend>
+      <div class="row-fluid" style="text-align:justify;">
+        <p>Often times it’s not what you know, but who you know. In the case of Sidekick, it’s BOTH! Your Sidekick helps you to create your personalized community by allowing you to create lists and maps of all your favorite places and share them with friends!</p>
+        <p>Share your favorite restaurants, places to shop, or places to play with your friends while gathering lists and maps of their favorite places too.  Review each location and provide your friends with a ‘trusted review’ – not the advice of strangers.</p>
+        <p>You can also use Sidekick as a trip planner or as a weekly planner to organize outings and get-togethers. Use your imagination and share!</p>
+      </div>
+      <div class="span5">
+        <div class="row-fluid">
+          <div class="span1">
+            <%= check_box_tag 'user_profile[show_sidekick_guide]', "false" %>
+          </div>
+          <div class="span6">
+            <label for="user_profile_show_sidekick_guide" style="line-height: 25px;">Don't Show Again</label>
+          </div>
+        </div>
+      </div>
+
+      <%= hidden_field_tag 'guide_page', 'sidekick' %>
+    </fieldset>
+  <% end %>
+</div>

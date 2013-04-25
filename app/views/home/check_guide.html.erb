@@ -1,0 +1,22 @@
+<%= link_to "", '#jQueryGuide', :style => 'display:none;', :class => 'jQueryGuideTrigger fancybox_sidekick_guide fancybox' %>
+
+<div style="display: none; width:500px; height: auto;" id ="jQueryGuide">
+  <%= form_tag save_guide_setting_path, :id => 'jQueryGuideForm' do %>
+    <fieldset class="fieldset-border" style="padding:18px 45px 25px 45px;">
+      <legend>
+        <h2 class="sg-legend-margin">
+          <%= params[:guide_page].capitalize %>&nbsp;Guide
+        </h2>
+      </legend>
+      <div class="row-fluid">
+        <%= render :partial => "#{params[:guide_page]}_guide" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.jQueryGuideTrigger').trigger('click');
+  });
+</script>

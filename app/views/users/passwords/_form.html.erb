@@ -1,0 +1,28 @@
+<div class="signup_with_text" style="margin-bottom: 59px;"> Forgot Password?</div>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :remote => true}) do |f| %>
+  <%#= render :partial => 'error' %>
+  <div class="row-fluid">
+    <div class="span4 sign_up_label">
+      <label>Email </label>
+    </div>
+    <div class="span8">
+      <%= f.email_field :email, :class => "signup_input width-250" %>
+      <%= custom_error_message(resource, :email) %>
+      <p id="EmailError" class="sg_acc_info_error error" >&nbsp;</p>
+    </div>
+  </div><br/><br/><br/>
+
+  <div class="row-fluid">
+    <div class="float_r" style="margin-left:25px;">
+      <%= link_to 'Cancel', new_user_session_url, :class => 'btn btn-info cancelbtn' %>
+    </div>
+
+    <div class="float_r">
+      <%= f.submit "Reset", :id => 'reset', :class => "btn btn-info savebtn" %>
+    </div>
+  </div>
+
+<% end %>
+
+
+

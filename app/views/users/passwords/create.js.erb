@@ -1,0 +1,8 @@
+<% if resource.errors.size > 0 %>
+  jQuery('#EmailError').show();
+  jQuery('#EmailError').html('<%= j (custom_error_message_modified(resource, :email)) %>');
+<% else %>
+  jQuery('#EmailError').show();
+  jQuery('#EmailError').html('Successfully sent email to <%= j resource.email %>');
+  window.location = "<%= new_user_session_url %>"
+<% end %>

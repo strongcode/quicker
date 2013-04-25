@@ -1,0 +1,427 @@
+en:
+  custom_errors:
+      please_select_at_least_one_option: "Please select at least one option and continue"
+  edit: 'Edit'
+  delete: 'Delete'
+
+  step_1_of_2: "Step 1 of 2"
+  step_2_of_2: "Step 2 of 2"
+  edit_profile: "Edit Profile"
+  edit_preference: "Edit Preferences"
+  email: "Email"
+  password: "Password"
+  language: "Language"
+  first_name: "First Name"
+  last_name: "Last Name"
+  default_location: "Default Location"
+  profile_image: "Profile Image"
+  linked_with: "Linked With"
+  change_password: "Change Password"
+  upload_image: "Upload Image"
+  link: "Link"
+  save_profile: "Save Profile"
+  save : "Save"
+  privacy: "Privacy"
+  terms_of_use: "Terms of Use"
+  faq: "FAQ"
+  about_us: "About Us"
+  contact_us: "Contact"
+  first_show_me: "First Show Me"
+  show_me_offers: "Show Me Offers"
+  suggest_to_me: "Suggest to Me"
+  i_deserve: "I Deserve"
+  repeat_experiences: "Repeat Experiences"
+  show_me_on_my_map: "Show me on my map"
+  six_quick_questions: "6 quick questions"
+  change: "Change"
+  visit: "Visit"
+  revisit: "Revisit"
+  map_help: "What do you want to see on your sidekick map"
+  insider_deserve_it_help: "Insider I really deserve category"
+  insider_suggestion_help: "Insider top suggestion categories"
+  insider_category_help: "Insider top 3 deal categories"
+  show_my: "Show My"
+  Pick_Your_Default_Page: "Pick Your Default Page"
+  Insider_top_3_deal_categories: "Insider top 3 deal categories"
+  Insider_top_suggestion_categories: "Insider top suggestion categories"
+  Insider_I_really_deserve_category: "Insider I really deserve category"
+  Would_You_Like_Offers_from_Locations_you_have_reviewed: "Would You Like Offers from Locations you have reviewed"
+  old: "Old"
+  new: "New"
+  new_again: "New, again"
+  cancel: "Cancel"
+  reviews_help: "Number Of Friends Reviews Number Of SnapGadget Reviews"
+  english: "English"
+  spanish: "Spanish"
+  food_and_beverage: "Food & Beverages"
+  lifestyle: "Lifestyle"
+  shopping: "Shopping"
+  business_and_services: "Business & Services"
+  travel: "Travel"
+  friends: "Friends"
+  zip: "Zip Code"
+  near: "Near"
+  find: 'Find'
+  Curious_about_a_new_location: "Curious About A New Location?"
+  Reviewer_of_the_Day: "Reviewer Of The Day"
+  rate_the_relative_importance_of_your_preferences: "Rate The Relative Importance Of Your Preferences"
+  When_do_offers_make_sense_of_you: "When Do Offers Make Sense Of You"
+  ranking_board: "Ranking Board"
+  drag_and_drop_your_selection: "Drag and Drop your selection"
+  trusted_reviews: "Trusted Reviews"
+  kudos_points: "Points"
+  add_to_map: "Add To Map"
+  search: "Search"
+  upload: 'upload'
+  elapsed: 'elapsed'
+  day: 'day'
+  days: 'days'
+  about: 'about'
+  hour: 'hour'
+  hours: 'hours'
+  left: 'left'
+  To_help_insider_give_you_even_better_offers!: "To Help Insider Give You Even Better Offers!"
+  How_much_value_do_you_place_your_friends_recommendation?: "How Much Value Do You Place On Your Friends Recommendation"
+  If_your_friends_have_snapped_a_deal_how_much_should_insider_raise_its_importance?: "If Your Friends Have Snapped A Deal, How Much Should Insider Raise  Its Importance"
+  How_important_is_deal_proximity_to_you?: "How Important Is Deal Proximity To You"
+  complete: "Complete"
+  add_friend: "Add Friend"
+  add_new_friends: "Add New Friends"
+  friend_request: "Friend Request"
+  name: "Name"
+  message: "Message"
+  invite: "Invite"
+  Your_Friends_are: "Your Friends Are"
+  enter_a_location: "Enter A Location"
+  add: "Add"
+  major_category: "Major Category"
+  minor_category: "Minor Category"
+  location_name: "Location Name"
+  location_address: "Address"
+  phone: "Phone Number"
+  location_phone: "Phone Number"
+  snapgadget: "SnapGadget"
+  career: "Career Development"
+  charity: "Charity"
+  educational: "Educational"
+  social: "Family And Relationship (Including Social)"
+  financial: "Financial"
+  fitness: "Fitness/Health"
+  personal: "Self/Personal/Intellectual Development"
+  spirituality: "Spirituality"
+  reviews: "Reviews"
+  new_phone: "Phone"
+  address: "Address"
+  trusted_review: "Trusted Review"
+  kudos_points: "Kudos Points"
+  number_of_friends_reviews: "Number Of Friends Reviews"
+  number_of_snapGadget_reviews: "Number Of SnapGadget Reviews"
+  submit: "Submit"
+  my_location: "My Location"
+  passionate_name: "Passionate Name"
+  list_name: "List Name"
+  enter_a_location: "Enter A Location"
+  linked_goal_data_coming_soon: 'Linked Goal Data - Coming Soon'
+  today: 'Today'
+  insider_preferences: "Insider Preferences"
+  activities_i_like: "Activities I Like"
+  i_deserve_this: "I Deserve This"
+  offers_i_want: "Offers I Want"
+  quick_questions: "6 Quick Questions"
+  my_dashboard: "My Dashboard"
+  location_lists: "Location Lists"
+  show_friends: "Show Friends"
+  you_may_like: "You May like"
+  trending_deals: "Trending Deals"
+  something_else: "Something Else?"
+  search_for_a_deal: "Search For A Deal"
+  snap_it_up: "Snap It Up"
+  time_period: "Time Period"
+  major_category: "Major Category"
+  minor_category: "Minor Category"
+  local: "Local"
+  learn_more: "Learn More"
+  amu_restaurant: "Amu Restaurant"
+  sushi_zanmai: "Sushi Zanmai"
+  couldnt_find_anything!: "Couldn't Find Anything!"
+  your: "Your"
+  of_the_day: "Of The Day"
+  no_offers_found: "No Offers Found."
+  special_offer: "Special Offer"
+  suggestion: "Suggestion"
+  deserve: "Deserve"
+  preferred_deals: "Preferred Deals"
+  added: "Added"
+  reviewed: "Reviewed"
+  completed: "Completed"
+
+
+  sidekick:
+    only_zip: "Zip"
+    enter_a_location: "Enter A Location"
+    choose_list: "Choose List"
+    friends_reviews: "Friends Reviews"
+    snapgadget_reviews: "SnapGadget Reviews"
+    reset_location_list: "Reset"
+    personalize_your_locations: "Personalize Your Locations"
+    reviewer_of_the_day_is_on_the_way: "Reviewer Of The Day Is On The Way!"
+    reviewwer_of_the_day: "Reviewer Of The Day"
+    write_reviews_that_people_trust: "Write Reviews That People Trust, This Could be You!"
+    my_friends_location_lists_are: "My Friends Location Lists are"
+    save_current_map_locations: "Add Location To List"
+    save_list: "Save List"
+    review: "Review"
+
+  profile:
+    snapgadget_team: "SnapGadget Team"
+
+  suggestion:
+    suggestion_of_the_day: "Suggestion Of The Day"
+    friends_suggestion_of_the_day: "Friends Suggestion Of The Day"
+
+    
+  category:
+    category: "Category"
+    automotive: "Automotive"
+    basketball: "Basketball"
+    dry_cleaning: "Dry Cleaning"
+    education: "Education"
+    financial_services: "Finincial Services"
+    fitness_training: "Fitness/Training"
+    general_home_maintenance_and_repair: "General Home Maintenance And Repair"
+    govt_services: "Gov't Services"
+    home_services: "Home Services"
+    landscaping: "Landscaping"
+    legal_services: "Legal Services"
+    photography: "Photography"
+    professional_services: "Professional Services"
+    public_services: "Public Services"
+    real_estate: "Real Estate"
+    business_and_services: "Business And Services"
+    religious_organizations: "Religious Organizations"
+    american_restaurants: "American Restaurants"
+    bakeries: "Bakeries"
+    bars: "Bars"
+    fast_food: "Fast Food"
+    food_and_beverage: "Food And Beverage"
+    italian_restaurants: "Italian Restaurants"
+    japanese_restaurants: "Japanese Restaurants"
+    mexican_restaurants: "Mexican Restaurants"
+    restaurants_general: "Restaurants - General"
+    adventure: "Adventure"
+    arts: "Arts"
+    dance: "Dance"
+    facials: "Facials"
+    fitness_and_beauty: "Fitness And Beauty"
+    gyms: "Gyms"
+    kids_activities: "Kids Activities"
+    life_skills: "Life Skills"
+    massages: "Massages"
+    movies: "movies"
+    music: "Music"
+    nightlife_ultra_lounges: "Nightlife (Ultra Lounges)"
+    shows: "Shows"
+    spas: "Spas"
+    tanning: "Tanning"
+    tattoos_and_piercings: "Tattoos And Piercings"
+    theater: "theater"
+    tours: "Tours"
+    yoga: "Yoga"
+    camping: "Camping"
+    fishing_hunting: "Fishing & Hunting"
+    lifestyle: "Lifestyle"
+    pilates: "Pilates"
+    baby_stores: "Baby Stores"
+    electronics: "Electronics"
+    groceries: "Groceries"
+    kids_stores: "Kids Stores"
+    mens_clothing: "Men's Clothing"
+    pet_stores: "Pet Stores"
+    shoes: "Shoes"
+    specialty_stores: "Specialty Stores"
+    womens_clothing: "Women's Clothing"
+    accessories_and_or_handbags: "Accessories And/Or Handbags"
+    pharmacies: "Pharmacies"
+    shopping: "Shopping"
+    sporting_goods: "Sporting Goods"
+    car_rentals: "Car Rentals"
+    cruises: "Cruises"
+    flights: "Flights"
+    hotel: "Hotel"
+    travel: "Travel"
+    vacation_packages: "Vacation Packages"
+    vacation_rentals: "Vacation Rentals"
+    arts_and_crafts: "Arts And Crafts"
+    classes_workshops: "Classes/Workshops"
+    personal_assistance: "Personal Assistance"
+    trade_shows_and_expo_maybe_??: "Trade Shows And Expo'S (Maybe ??)"
+    baseball: "Baseball"
+    football: "Football"
+    hockey: "Hockey"
+    soccer: "Soccer"
+    tennis: "Tennis"
+    bowling: "Bowling"
+    mma: "Mma"
+    golf: "Golf"
+    trusted_review: "Trusted review"
+    kudos_points: "Kudos Points"
+    search: "Search"
+    submit: "Submit"
+    founder: "Founder"
+    standard: "Standard"
+    premium: "Premium"
+    list_name: "List Name"
+    
+   
+  dashboard:
+    status: "Status"
+    activities: "Activities"
+    location_lists: "Location Lists"
+    passionates: "Passionates"
+    me: "Me"
+    membership: "Membership"
+    influence_meter: "Influence Meter"
+    reviews: "Reviews"
+    kudos: "Kudos"
+    all_your_activities_on_the_site: "All Your Activities On The Site"
+    list_view: "List View"
+    calendar_view: "Calendar View"
+    filter: "Filter"
+    show_me_all: "Show Me All"
+    date: "Date"
+    description: "Description"
+    kudos_points: "Kudos Points"
+    your_location_lists_are: "Your Location Lists Are"
+    new_list: "New List"
+    new_location_list: "New Location List"
+    locations: "Locations"
+    add_locations: "Add Locations"
+    list_name: "List Name"
+    your_passionates_are: "Your New Passionate"
+    new_passionate: "New Passionate"
+    passionate_name: "Passionate Name"
+    passionate_type: "Passionate Type"
+    my_location: "My Location"
+    passionate_because: "Passionate Because"
+    web_link: "Web-Link"
+    upload_image: "Upload Image"
+    browse: "Browse"
+    profile: "Profile"
+    preferences: 'Preferences'
+    sign_out: 'Sign Out'
+    your_new_passionate: "Your New Passionate"
+    locations_are: "Locations Are"
+    accept: "Accept"
+    decline: "Decline"
+      
+  location_list:
+       name: "Location List Name"
+       locations: "My Location List"
+       my_friends: "My Friend's Location List"
+       manage_my_location_lists: "Manage My Location Lists"
+       view_my_friends_location_lists: "View My Friends Location Lists"
+       refresh_map: "Refresh Map"
+       new_list_name: "New List Name"
+       existing_list_name: "Existing List Name"
+      
+  share:
+    select_names: "Select Names"
+    share: "Share"
+    comment: "Comment"
+    location_list:
+      share_your_location_list_of: "Share Your Location List Of"
+      share_your_location_of: "Share Your Location Of"
+      share_your_suggestion_of: "Share Your Suggestion Of"
+      location_list_created: "Location List Created"
+      location_to_be_shared: "Location To Be Shared"
+    passionate_share:
+      share_your_passionate_of: "Share Your Passionate Of"
+      passionate_list_created: "Passionate List Created"
+      passionate_location: "Passionate Location"
+    location:
+      location_created: "Location Created"
+
+  assistant:
+    goal:
+      title:
+        index: "%{name}, Your Assistant Is Tracking"
+        new: "%{name}, Ready For Your New Goal"
+        my_friends_goals: "My Friends Goals"
+        edit: "%{name}, Edit Your Goal"
+      expert_advice: "Expert Advice"
+      tracking_this: "Tracking This"
+      read: "Read"
+      start: "Start"
+      new: "New Goal"
+      add_a_description: "Add a description ..."
+  insider:
+    offer:
+      tracking_this: "Tracking This"
+      insider_do_better: "Insider Do Better"
+      glad_you_are_back: "Glad You Are Back"
+      insider_recommends: "Insider Recommends"
+      you_deserve_it: "You Deserve It"
+      preferred_deals: "Preferred Deals"
+  jquery_validation:
+    required: "This field is required."
+
+
+  #Active Record Related
+
+  activerecord:
+    errors:
+      models:
+        share:
+          attributes:
+            comment: 
+              blank: 'is required'
+
+        location_list:
+          attributes:
+            name:
+              blank: 'List Name is required'
+              taken: 'List Name is alreay taken'
+            locations:
+              blank: 'Please enter at least one location and continue'
+            location_linked_loc_lists:
+              invalid: "Location List alreay contains this location."
+
+    models:
+      goal: goal
+      offer: offer
+      pluralize_goal:
+        one: %{count} goal
+        other: %{count} goals
+      friend: friend
+      pluralize_friend:
+        one: %{count} friend
+        other: %{count} friends
+    attributes:
+      goal:
+        description: "Goal Description"
+        end_date: "End goal by"
+        started_date: "Start goal on"
+        goal_type: "Goal Type"
+        status_percentage: "Goal Percentage"
+        feeds: "Goal Feeds"
+        status: "Goal Status"
+        show:
+          description: "Goal Description"
+          end_date: "Goal End Date"
+          started_date: "Goal Started"
+          status_percentage: "Goal Percentage"
+          goal_type: "Goal Type"
+          feeds: "Goal Feeds"
+          status: "Goal Status"
+      offer:
+        show:
+          deal_header: "Offer"
+          start_date: "Start Date"
+          end_date: "End Date"
+          discount_percent: "Discount Percentage"
+          amount_text: "Amount"
+
+      share:
+        comment: "Comment"
+
+    

@@ -1,0 +1,5 @@
+<% if @goal.errors.messages[:ended_date].present? %>
+  alert("<%= "Goal Ended Date #{@goal.errors.messages[:ended_date][0]}" %>");
+<% else %>
+  window.location = '<%= "#{assistant_goals_path}?page=#{params[:page]}" %>';
+<% end %>

@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row-fluid">
+    <!-- Video Column -->
+    <div class="span8">
+      <h1 class="video_heading black-on-gray">Explore Social On Your Side</h1>
+      <div class="span12">
+        <div id="video" class="flex-video widescreen" style="background: url(&quot;assets/video_thumbnail.png&quot;) no-repeat scroll center center transparent; position: relative;"><div style="background: url(&quot;assets/play.png&quot;) no-repeat scroll 50% 40% transparent; cursor: pointer; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0.7;" class="play"></div></div>
+      </div>
+    </div>
+    <!-- 3-Advisors -->
+    <div class="span4">
+      <h1 class="black-on-gray">Meet Your Advisors!</h1>
+      <div class="row icon_bg_outer">
+        <div class="icon_bg">
+          <img class="img icon_inner" alt="Sidekick" src="/assets/icon_sidekick.png" />
+        </div>
+        <div class="icon_txt clear-fix">
+          <h2>Your Sidekick</h2>
+          <p>Helps To Personalize Your Community</p>
+        </div>
+      </div>
+      <div class="row icon_bg_outer">
+        <div class="icon_bg">
+          <img class="img icon_inner" alt="Insider" src="/assets/icon_insider.png" />
+        </div>
+        <div class="icon_txt">
+          <h2>Your Insider</h2>
+          <p>Brings You Offers, Suggestions And Activities</p>
+        </div>
+      </div>
+      <div class="row icon_bg_outer">
+        <div class="icon_bg">
+          <img class="img icon_inner" alt="Assistant" src="/assets/icon_assistant.png" />
+        </div>
+        <div class="icon_txt">
+          <h2>Your Assistant</h2>
+          <p>Helps To Monitor And Achieve Your Goals</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call of action for Desktop -->
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12 snaptoit_bgcolor">
+      <div class="snaptoit_inner visible-desktop">
+        <p>Join <img class="img" alt="SnapGadget" src="assets/sg_logo.png"/> Today For Free<a href="/members/sign_up"><button type="button" class="btn1 btn-primary-nds"><span>
+                <img alt="snap_icon image" src="assets/snap_icon.png" /></span> Snap To It</button></a></p>
+      </div>
+      <!--<div class="snaptoit_inner hidden-desktop">
+        <h1>Join <img class="img" alt="SnapGadget" src="assets/sg_logo.png"/> Today For Free<a href="/members/sign_up"><button class="btn1 btn-primary1" type="button"><span><img alt="snap_icon image" src="assets/snap_icon.png" /></span> Snap To It</button></a></h1>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+
+    $('#video')
+    .css({
+      background: 'url("/assets/launching_page/video_thumbnail.png") no-repeat scroll center center transparent',
+      position: 'relative'
+    })
+    .append(
+    $('<div class="play" style="background:url(/assets/launching_page/play.png) no-repeat scroll 50% 40%; cursor:pointer; position:absolute; top:0;left:0;right:0;bottom:0" />')
+    .css('opacity', 0.7)
+    .on('mouseover', function() {
+      $(this).stop().animate({ 'opacity': 0.9 });
+    })
+    .on('mouseout', function() {
+      $(this).stop().animate({ 'opacity': 0.7 });
+    })
+    .on('click', function(e) {
+      $(this).parent().html('<iframe src="http://player.vimeo.com/video/52892973?autoplay=1&amp;api=1&amp;player_id=vimeo-52892973" frameborder="0" allowfullscreen=""></iframe>');
+    })
+  );
+  });
+</script>
+

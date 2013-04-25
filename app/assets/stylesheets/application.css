@@ -1,0 +1,415 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require header
+ *= require snapgadget
+ *= require snapgadget_2
+ *= require jquery.ui.all
+ *= require jquery.gritter
+ *= require bootstrap_customized
+ *= require facebox
+ *= require fancybox/jquery.fancybox
+ *= require fancybox/jquery.fancybox-buttons
+ *= require fancybox/jquery.fancybox-thumbs
+ *= require slider_vertical
+ *= require bxslider
+ *= require error
+ *= require style
+ *= require_self
+*/
+
+/* JOSHI CSS */
+.lifestyle_active {
+  background-image: url(/assets/social_images/lifestyle_active.png);
+}
+
+.lifestyle_disable {
+  background-image: url(/assets/social_images/lifestyle_disable.png);
+}
+
+.food_active {
+  background-image: url(/assets/social_images/food_active.png);
+}
+
+.food_disable {
+  background-image: url(/assets/social_images/food_disable.png);
+}
+
+.shopping_active {
+  background-image: url(/assets/social_images/shopping_active.png);
+}
+
+.shopping_disable {
+  background-image: url(/assets/social_images/shopping_disable.png);
+}
+
+.business_active {
+  background-image: url(/assets/social_images/business_active.png);
+}
+
+.business_disable {
+  background-image: url(/assets/social_images/business_disable.png);
+}
+
+.friends_active {
+  background-image: url(/assets/social_images/friends_active.png);
+}
+
+.friends_disable {
+  background-image: url(/assets/social_images/friends_disable.png);
+}
+
+.travel_active {
+  background-image: url(/assets/social_images/travel_active.png);
+}
+
+.travel_disable {
+  background-image: url(/assets/social_images/travel_disable.png);
+}
+
+.clear {
+  clear: both;
+}
+
+.wFull {
+  width: 100%;
+}
+
+.fNone {
+  float: none !important;
+}
+
+.mAuto {
+  margin: auto;
+}
+
+.sgClose {
+  float: right;
+  margin-top: -10px;
+  margin-right: -28px;
+}
+
+.fcontainer {
+  width: 500px !important;
+  height: 60px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sg-header-tabs {
+  color: white;
+}
+
+.btn_navbar:hover a.sg-header-tabs:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+}
+
+.sgDropper {
+  float: left;
+  height: 88px;
+  width: 109px;
+  border: 1px solid black;
+}
+.sg_acc_info_error{
+  display:none;
+  text-align:left;
+  padding-left:20px;
+}
+
+.error {
+  color: #ff0000 !important;
+  font-size: 11.5px;
+}
+
+.float_l {
+  float: left;
+}
+
+.float_r {
+  float: right;
+}
+
+.sidekick_normal {
+  background: url(/assets/landing_page_icons/sidekick_icon.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.sidekick_disabled {
+  background: url(/assets/landing_page_icons/sidekick_disable.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.assistant_normal {
+  background: url(/assets/landing_page_icons/assistant_icon.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.assistant_disabled {
+  background: url(/assets/landing_page_icons/assistant_disable.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.insider_normal {
+  background: url(/assets/landing_page_icons/insider_icon.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.insider_disabled {
+  background: url(/assets/landing_page_icons/insider_disable.png) center top no-repeat;
+  border: 1px solid #ffffff;
+  -moz-box-shadow: 2px 3px 2px #888;
+  -webkit-box-shadow: 2px 3px 2px #888;
+  box-shadow: 2px 3px 2px #888;
+}
+
+.insider_disabled:hover {
+  background: url(/assets/landing_page_icons/insider_icon.png) center top no-repeat;
+}
+
+.assistant_disabled:hover {
+  background: url(/assets/landing_page_icons/assistant_icon.png) center top no-repeat;
+}
+
+.sidekick_disabled:hover {
+  background: url(/assets/landing_page_icons/sidekick_icon.png) center top no-repeat;
+}
+
+/* div css */
+#MessageError,#EmailError, #PasswordError, #FnameError,#chkError, #LnameError, #LoginEmailError,#share_commentError ,#LoginPasswordError,#friends_searchError, #OldPasswordError, #ChangePasswordError, #ChangePasswordConfirmError, #locationError, #NewPasswordError, #NewConfirmPasswordError,#LocationError,#LocationnameError,#passionate_nameError {
+  display: none;
+}
+.signin_error{
+  color: red !important;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom:10px;
+}
+.signin_error1{
+  text-align:right;
+  padding-right:50px;
+}
+/* end */
+
+/*Gritter*/
+#gritter-notice-wrapper {
+  top: 110px;
+}
+
+.sk_icons_set_1 {
+  float: left;
+  height: 45px;
+  width: 45px;
+}
+
+.sidebar_images_right_1 {
+  /* border-left: 1px solid #929090; */
+  margin-left: 3px;
+}
+
+.sk-category-margin {
+  padding:3px 0px 0px 4px;
+}
+
+.hide_me {
+  display: none;
+}
+
+.show_me {
+  display: block;
+}
+
+.ll-margin-top {
+  margin-top: 30px;
+}
+
+.collapse_sidebar_1 {
+  background: none repeat scroll 0 0 #F4F4F4;
+  height: 480px;
+  overflow: auto;
+}
+
+.server_side_error {
+  color: #FF0000 !important;
+  font-size: 12px;
+  margin-left: 4%; 
+  text-align: left;
+  font-weight: bold;
+}
+
+.server_side_error_1 {
+  color: #FF0000 !important;
+  font-size: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.suggestion-text {
+  line-height: 16px;
+}
+
+.nav-pills > li.advisor-icon {
+  background-color: #999999 !important;
+  background-image: url("../assets/stripe.png");
+  background-repeat: repeat;
+  border-left: 1px solid #676767;
+  border-right: 1px solid #FFFFFF;
+  color: #FFFFFF !important;
+  font-size: 20px;
+  font-weight: bold;
+  height: auto;
+  line-height: 24px !important;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: bottom;
+  width: 120px;
+}
+
+.add-photo-border {
+  border: 3px solid red;
+  padding: 2px;
+}
+.friend-info {
+  width:100px;font-size: 13px;text-align: center;
+  line-height: 17px;
+}
+
+.jQueryImgUp {
+  margin-left:8px;
+}
+
+.bx-wrapper .bx-viewport {
+  background-color: #D9D9D9 !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-top:8px;
+  margin-bottom:8px;
+}
+
+.sg-fieldset-surround {
+  padding:18px 10px 10px 25px;
+}
+
+.sg-fieldset-surround-1 {
+  padding: 21px 30px;
+}
+
+.sg-fieldset-surround-2 {
+  padding: 25px;
+}
+
+.sd-images-1 {
+  border: 1px solid;
+  float: left;
+  height: 90px;
+  margin: 10px 1px 1px;
+  width: 90px;
+}
+
+.sd-images-1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.jQueryImgUp1 {
+  margin-left: 6px;
+}
+
+.adv_prefer_img {
+  max-height: 161px;
+  max-width: 135px;
+}
+
+.btn-primary-nds {
+  color: #ffffff;
+  padding: 14px 20px 15px 20px;
+  margin: 5px 24px 5px 20px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: hsl(0, 69%, 22%) !important; background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b42121", endColorstr="#5e1111"); background-image: -khtml-gradient(linear, left top, left bottom, from(#b42121), to(#5e1111)); background-image: -moz-linear-gradient(top, #b42121, #5e1111); background-image: -ms-linear-gradient(top, #b42121, #5e1111); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b42121), color-stop(100%, #5e1111)); background-image: -webkit-linear-gradient(top, #b42121, #5e1111); background-image: -o-linear-gradient(top, #b42121, #5e1111); background-image: linear-gradient(#b42121, #5e1111); border-color: #5e1111 #5e1111 hsl(0, 69%, 17%); color: #fff !important; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33); -webkit-font-smoothing: antialiased;
+  /*-webkit-box-shadow:  0px 46px 9px -25px #909090; */
+  line-height: 24px;
+  font-size: 30px;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  /*    background-image: url(../assets/btn_shadow.png);
+  background-repeat: no-repeat;
+  background-position: 65% 125%;
+  background-attachment: inherit;
+  */
+}
+
+.heading-font-bold {
+  font-weight: bold;
+}
+
+.category-heading h1 {
+  font-size: 18px!important;
+  font-weight: bold!important;
+  color:#1a1a1a;
+}
+
+.category-heading h2 {
+  font-size: 14px!important;
+  font-weight: bold!important;
+  color:#1a1a1a;
+}
+
+.category-heading h3 {
+  font-size: 14px!important;
+  font-weight: normal!important;
+  color:#1a1a1a;
+}
+
+.insider_sug_title_bold {
+  color: #999999;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  margin-top: 30px;
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.normal-font {
+  font-weight: normal;
+}
+
+.red-color {
+  color: #b12d29;
+}
+
+.zero-top-margin {
+  margin-top:0px !important;
+}
+
+.border-none {
+  border: none;
+}

@@ -1,0 +1,89 @@
+<% if @status.present? %>
+  Google_Map.clear_fit_bounds_map();
+  jQuery('.jQuerySelectFriends').find('select').val('<%= @location_list.user_id %>');
+
+  <% @lifestyle_locations.each do |location| %>
+    <% if location.friend_passionate(current_user) %>
+      Google_Map.passionate_mark(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.custom_name(current_user)) %>',  <%= location.id %>, '<%= j(location.full_address) %>', '<%= j location.phone %>', '<%= @location_list.id %>');
+    <% else %>
+      Google_Map.location_marker(<%= location.latitude %>,<%= location.longitude %>, '<%= j(location.name) %>', '<%= j(location.sg_major_category) %>', <%= location.id %>, '<%= j(location.full_address) %>', "true", '<%= location.phone %>', '<%= 1 %>', '<%= j location.owner_or_not(current_user) %>', <%= location.user_id %>, '<%= j (@passionate_location.present? ? (@passionate_location.id == location.id) : ("false") ).to_s %>', <%= location.get_suggestion(@suggestion_locations) %>, '<%= @location_list.id %>');
+    <% end %>
+  <% end %>
+
+  <% @shopping_locations.each do |location| %>
+    <% if location.friend_passionate(current_user) %>
+      Google_Map.passionate_mark(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.custom_name(current_user)) %>',  <%= location.id %>, '<%= j(location.full_address) %>', '<%= j location.phone %>', '<%= @location_list.id %>');
+    <% else %>
+      Google_Map.location_marker(<%= location.latitude %>,<%= location.longitude %>, '<%= j(location.name) %>', '<%= j(location.sg_major_category) %>', <%= location.id %>, '<%= j(location.full_address) %>', "true", '<%= location.phone %>', '<%= 1 %>', '<%= j location.owner_or_not(current_user) %>', 0, '<%= j (@passionate_location.present? ? (@passionate_location.id == location.id) : ("false") ).to_s %>', <%= location.get_suggestion(@suggestion_locations) %>, '<%= @location_list.id %>');
+    <% end %>
+  <% end %>
+
+  <% @food_locations.each do |location| %>
+    <% if location.friend_passionate(current_user) %>
+      Google_Map.passionate_mark(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.custom_name(current_user)) %>',  <%= location.id %>, '<%= j(location.full_address) %>', '<%= j location.phone %>', '<%= @location_list.id %>');
+    <% else %>
+      Google_Map.location_marker(<%= location.latitude %>,<%= location.longitude %>, '<%= j(location.name) %>', '<%= j(location.sg_major_category) %>', <%= location.id %>, '<%= j(location.full_address) %>', "true", '<%= location.phone %>', '<%= 1 %>', '<%= j location.owner_or_not(current_user) %>', <%= location.user_id %>, '<%= j (@passionate_location.present? ? (@passionate_location.id == location.id) : ("false") ).to_s %>', <%= location.get_suggestion(@suggestion_locations) %>, '<%= @location_list.id %>');
+    <% end %>
+  <% end %>
+
+  <% @business_locations.each do |location| %>
+    <% if location.friend_passionate(current_user) %>
+      Google_Map.passionate_mark(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.custom_name(current_user)) %>',  <%= location.id %>, '<%= j(location.full_address) %>', '<%= j location.phone %>', '<%= @location_list.id %>');
+    <% else %>
+      Google_Map.location_marker(<%= location.latitude %>,<%= location.longitude %>, '<%= j(location.name) %>', '<%= j(location.sg_major_category) %>', <%= location.id %>, '<%= j(location.full_address) %>', "true", '<%= location.phone %>', '<%= 1 %>', '<%= j location.owner_or_not(current_user) %>', 0, '<%= j (@passionate_location.present? ? (@passionate_location.id == location.id) : ("false") ).to_s %>', <%= location.get_suggestion(@suggestion_locations) %>, '<%= @location_list.id %>');
+    <% end %>
+  <% end %>
+
+  <% @travel_locations.each do |location| %>
+    <% if location.friend_passionate(current_user) %>
+      Google_Map.passionate_mark(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.custom_name(current_user)) %>',  <%= location.id %>, '<%= j(location.full_address) %>', '<%= j location.phone %>', '<%= @location_list.id %>');
+    <% else %>
+      Google_Map.location_marker(<%= location.latitude %>, <%= location.longitude %>, '<%= j(location.name) %>', '<%= j(location.sg_major_category) %>', <%= location.id %>, '<%= j(location.full_address) %>', "true", '<%= location.phone %>', '<%= 1 %>', '<%= j location.owner_or_not(current_user) %>', <%= location.user_id %>, '<%= j (@passionate_location.present? ? (@passionate_location.id == location.id) : ("false") ).to_s %>', <%= location.get_suggestion(@suggestion_locations) %>, '<%= @location_list.id %>');
+    <% end %>
+  <% end %>
+
+  $('.jQuery-Category-Loc').html('<%= j( render :partial => "category_sidebar") %>');
+
+  if ($("[rel=tooltip]").length) {
+  $("[rel=tooltip]").tooltip();
+  }
+
+  <% if @friends.present? %>
+    jQuery('.jQueryShare').attr('href','<%= j new_sidekick_location_list_share_path(@location_list) %>');
+    jQuery('.jQueryShare').addClass('fancybox_iframe_large fancybox.iframe');
+    jQuery('.jQueryShare').removeAttr('disabled').removeAttr('title');
+  <% else %>
+    <% if current_user.friends.blank? %>
+      jQuery('.jQueryShare').attr('title', "To Share, Add Friends");
+    <% else %>
+      jQuery('.jQueryShare').attr('title', "Already shared with all Friends");
+    <% end %>
+
+  <% end %>
+  <% if current_user.friends.blank? || @friends.blank? %>
+    jQuery('.jQueryShare').attr('href','javascript:void(0)');
+    jQuery('.jQueryShare').removeClass('fancybox_iframe_large fancybox.iframe');
+    jQuery('.jQueryShare').attr('disabled','disabled');
+  <% end %>
+    
+  jQuery('.jQueryShowMy').attr('data-original-title','<%= j (@share.comment) if @location_list.user != current_user %>');
+
+  jQuery('#location_list_name').val('');
+  jQuery('.select-new-or-existing-ll').html('<%= j select_tag 'location_list_id',
+    options_for_select([["-- #{t('sidekick.choose_list')} --", nil]] + current_user.location_lists.
+      map{|location_list| [location_list.name, location_list.id]}) %>');
+
+  Google_Map.marker_click_event();
+  Google_Map.update_location_status();
+  Google_Map.passionate_marker_click_event();
+
+  Google_Map.fit_bounds();
+
+  Category_Toggles.init();
+  Category_Toggles.set_custom_buttons_visibility("location_list");
+<% else %>
+  window.location = '<%= j sidekick_url %>';
+<% end %>
+
+
+

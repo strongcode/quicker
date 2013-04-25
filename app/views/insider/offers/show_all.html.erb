@@ -1,0 +1,55 @@
+<!-- search result rows -->
+<div class="container-fluid insider_container_margin">
+  <button class="btn btn-info" data-href="<%= insider_offers_url %>" data-type="anchor"><i class="icon-search icon-white"></i>Search Again</button>
+  <% if @offers.present? %>
+    <% @offers.each do|offer| %>
+      <div class="row-fluid isr_row_border">
+        <div class="insider_row effect2">
+          <div class="span3 isr_img_padding">
+            <div class="isr_image_div" >
+              <img src="<%= offer.large_image_url %>" alt="" />
+            </div>
+          </div>
+          <div class="span6">
+            <div class="insider_sug_title"><%= formatted_offer_title(offer) %></div>
+            <div class="insider_trip-advicer"><%= offer.deal_header %></div>
+            <div class="insider_sug_price">
+              <%= offer.offer_options.order('price_amount ASC').first.price_amount if offer.present? %>
+              <%= "YOU SAVE #{offer.offer_options.order('price_amount ASC').first.discount_amount} (#{offer.offer_options.order('price_amount ASC').first.discount_percent}%)" if offer.present? %>
+            </div>
+            <div class="insider_btn">
+              <%= link_to "<button class='btn1 snap_it_btn btn-info'><img src='/assets/snap_icon.png' alt='snap_it_icon image'>#{t(:snap_it_up)}</button>".html_safe, track_snapped_insider_offer_path(offer), :target => "blank" %>
+            </div>
+          </div>
+          <div class="span3 insider-share">
+            <div class="insider_share_btn">
+              <%= custom_share_link(offer, new_insider_offer_share_url(offer),
+                                   'fancybox_iframe_large fancybox.iframe') %>
+            </div>
+            <% if offer.trackers.present?  %>
+              <div class="span8 ast_frd_trak">
+                <%= (t('activerecord.models.pluralize_friend', :count => offer.trackers.count) + " " + t('insider.offer.tracking_this')).titleize %>
+              </div>
+            <% end %>
+            <!-- <div class="insider_frd_review">12 Friends snapped this offer </div> -->
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="row-fluid isr_row_border">
+      <div class="insider_row effect2">
+        <div class="span3 isr_img_padding">
+          <div class="isr_image_div" >
+            <img src="/assets/no-image.png" alt="" />
+          </div>
+        </div>
+        <div class="span6">
+          <div class="insider_sug_title"><%=  t(:no_offers_found)%></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+<button class="btn btn-info" data-href="<%= insider_offers_url %>" data-type="anchor"><i class="icon-search icon-white"></i>Search Again</button>
+</div>  <!-- search result rows ends-->

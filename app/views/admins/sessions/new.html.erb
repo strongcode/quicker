@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="admin-mini-container" style="">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <fieldset style="color:#999999; padding:18px 45px 25px 45px;" class="fieldset-border">
+        <legend>
+          <h2 class="sg-legend-margin black-on-gray">Sign in</h2>
+        </legend>
+        <div class="row-fluid">
+          <div class="span" style="text-align:center;color:red;">
+            <%= flash[:alert] %>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span3"><%= f.label :email, :class => 'black-on-gray' %></div>
+          <div class="span5"><%= f.email_field :email, :autofocus => true,
+              :class => 'signup_input' %></div>
+        </div><br />
+
+        <div class="row-fluid">
+          <div class="span3"><%= f.label :password, :class => 'black-on-gray' %></div>
+          <div class="span5"><%= f.password_field :password, :class => 'signup_input' %></div>
+        </div><br />
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="row-fluid">
+            <div class="span3"><%= f.label :remember_me, :class => 'black-on-gray' %></div>
+            <div class="span1">
+              <%= f.check_box :remember_me %>
+            </div>
+          </div>
+        <% end -%><br />
+
+        <div class="row-fluid">
+          <div class="span12">
+            <%= f.submit "Sign in", :class => 'btn btn-info savebtn pull-right' %>
+          </div>
+        </div>
+
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<%= form_tag sidekick_locations_url, :remote => true, :id => 'jQueryLocationForm' do %>
+
+  <%= hidden_field_tag 'location[latitude]', '' %>
+  <%= hidden_field_tag 'location[longitude]', '' %>
+  <%= hidden_field_tag 'location_create', 'yes' %>
+  <%= hidden_field_tag 'location[WOEID]', '' %>
+  <%= hidden_field_tag 'location[street_address]', '' %>
+  <%= hidden_field_tag 'location[city]', '' %>
+  <%= hidden_field_tag 'location[location_state]', '' %>
+  <%= hidden_field_tag 'category_id', '' %>
+
+  <div style="width: 600px">
+
+    <div class="row-fluid">
+      <div class="span3"><p><%= t(:location_name) %></p></div>
+      <div class="span9">
+        <%= text_field_tag 'location[name]', @location && @location.name ? (@location.name) : (''), :style => 'width:400px' %>
+      </div>
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="span3"><p><%= t(:location_address) %></p></div>
+      <div class="span9">
+        <%= text_field_tag 'location[full_address]', @location && @location.full_address ? (@location.full_address) : (''), :style => 'width:400px' %>
+      </div>
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="span3"><p><%= t(:location_phone) %></p></div>
+      <div class="span9">
+        <%= text_field_tag 'location[phone]', @location && @location.phone ? (@location.phone) : (''), :style => 'width:400px' %>
+      </div>
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="span3"><p><%= t(:major_category) %></p></div>
+      <div class="span9">
+        <%= select_tag 'location[sg_major_category]', options_for_select(get_categories), :id => "jQuerySelectMajorCategory" %>
+      </div>
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="span3"><p><%= t(:minor_category) %></p></div>
+      <div class="span9">
+        <%= select_tag 'location[sg_minor_category]', options_for_select([[Category.get_lifestyle_category.description, Category.get_lifestyle_category.description.downcase]]+ @categories.collect {|category| [category.description, category.description.downcase] }), :id => "jQueryMinorCategoryList" %>
+      </div><br />
+    </div>
+
+
+    <!--<label>Minor Category</label>&nbsp;<%#= text_field_tag 'location[sg_minor_category]', '' %> -->
+    <div class="row-fluid">
+      <div class="span">
+        <a class="jQueryFancyboxClose btn btn-info prefer_save_btn cancelbtn" href="#"><%= t(:cancel) %></a>
+        <%= submit_tag t(:save), :class => "loc-popup-form btn btn-info prefer_save_btn savebtn jQueryFancyboxClose" %>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>

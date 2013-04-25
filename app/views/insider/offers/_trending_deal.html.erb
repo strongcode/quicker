@@ -1,0 +1,28 @@
+<div class="span6 insider_dobetter_border">
+  <div class="span6">
+    <div class="insider_offer_title"> <%= t(:trending_deals) %></div>
+    <div class="insider_offer_image_div">
+      <img src='<%= offer_image_path(offer) %>' alt="" class="insider_offer_image" />
+    </div>
+  </div>
+  <div class="span6">
+    <div class="insider_sug_title">
+      <%= formatted_offer_title(offer) %>
+      <%= custom_share_link(offer, new_insider_offer_share_url(offer),
+              'fancybox_iframe_large fancybox.iframe') if offer.present? %>
+    </div>
+    <div class="insider_sug_price">
+      <%= truncate(offer.deal_header, :length => 30) if offer.present? %>
+    </div>
+    <div class="insider_sug_price">
+      <%= offer.offer_options.order('price_amount ASC').first.price_amount if offer.present? %>
+      <%= "YOU SAVE #{offer.offer_options.order('price_amount ASC').first.discount_amount} (#{offer.offer_options.order('price_amount ASC').first.discount_percent}%)" if offer.present? %>
+    </div>
+    <% if offer.present?  %>
+      <div class="insider_btn">
+        <%= link_to "Snap It Up", track_snapped_insider_offer_path(offer), :class => 'btn1 snap_it_btn btn-info bold',  :target => "blank" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

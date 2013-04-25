@@ -1,0 +1,11 @@
+<ul class="nav nav-pills">
+  <li class="<%= 'active' if params[:controller].match(/sidekick/i)%>">
+    <a href="<%= sidekick_url %>">
+      <%= get_advisor_icon("sidekick") %><br/>Sidekick</a></li>
+  <li class="<%= 'active' if params[:controller].match(/insider/i)%>"><a href="<%= insider_offers_url %>">
+      <%= get_advisor_icon("insider") %><br/>Insider</a></li>
+  <li class="<%= 'active' if params[:controller].match(/assistant/i)%>">
+    <a href="<%= assistant_goals_path %>">
+      <%= get_advisor_icon("assistant") %>
+      <br/>Assistant</a></li>
+</ul>

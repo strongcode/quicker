@@ -1,0 +1,137 @@
+#errorExplanation {
+    width: 500px;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    border: 1px solid #256188;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    padding: 8px 5px 8px 15px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #49AFCD;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: none;
+}
+
+#errorExplanation p {
+    font-size: 14px;
+}
+
+#errorExplanation ul li {
+    margin: 0px 0px 2px 0px;
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.fieldWithErrors {
+}
+
+#errorExplanation ul {
+    padding: 5px 0px 5px 25px;
+    margin: 0px
+}
+
+label.error {
+    color: #BD1A00;
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    font-weight: bold;
+    padding: 2px 0 0 5px;;
+    font-size: 11px !important;
+    vertical-align: top;
+    display: none;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+
+input[type = text].error, input[type = password].error, textarea.error {
+    border: 1px solid #BD1A00 !important;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px
+}
+
+
+
+#ajax-indicator {
+  display: none;
+  width: 150px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  font: normal 16px Tahoma, Geneva, sans-serif;
+  border: 1px solid #666;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 2;
+  overflow: auto;
+  font-size: 23px;
+  border: 1px solid #000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  z-index: 99999;
+  background: #000;
+  color:#fff;
+  opacity: 0.2;
+}
+
+#error_explanation {
+    width: 500px;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #256188;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+#error_explanation h2 {
+    text-align: left;
+    padding: 8px 5px 8px 15px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #49AFCD;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: none;
+}
+
+#error_explanation p {
+    font-size: 14px;
+}
+
+#error_explanation ul li {
+    margin: 0px 0px 2px 0px;
+    font-size: 13px;
+    line-height: 14px;
+    list-style: decimal;
+}
+
+.fieldWithErrors {
+}
+
+#error_explanation ul {
+    padding: 5px 0px 5px 25px;
+    margin: 0px
+}

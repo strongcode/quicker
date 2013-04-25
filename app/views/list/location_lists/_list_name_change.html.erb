@@ -1,0 +1,4 @@
+<%= form_for location_list, :url => list_location_list_path(location_list), :method => 'PUT', :remote => true, :html => {:id => "list_form_#{location_list.id}" }  do |f| %>
+  <%= f.text_field :name, :class => 'span12', :id => "text_field_list_name_#{location_list.id}" %>
+  <%= custom_error_message_no_margin_no_field_name(location_list, :name) %>
+<% end %>

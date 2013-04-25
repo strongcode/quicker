@@ -1,0 +1,63 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/obj' %>
+<% end %>
+
+<div class="container-fluid sidekick_drill_head" >
+  <div class="row-fluid">
+    <div class="span6">
+      <div class="row-fluid">
+        <div class="span6 reviwer_head_border">
+          <div class="row-fluid">
+            <div class="span6">
+              <div class="sd_images">
+                <%= get_location_image(@location) %>
+              </div>
+            </div>
+            <div class="span6">
+              <div>
+                <%= get_static_map(@location, nil, 169, 143) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="span6 reviwer_head_border" style="margin: 0px; height: 148px; overflow: auto; line-height: 28px;">
+          <div class="reviwer_head"><%= @location.name %></div>
+          <div class="reviwer_title2"><%= @location.full_address %></div>
+        </div>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="row-fluid">
+        <div class="span4 reviwer_head_border" style=" min-height: 148px;">
+          <div class="reviwer_head">Reviewed on </div>
+          <div class="reviwer_title2"><%= review_created_on(@review) %></div>
+          <div class="reviwer_title2"><%= review_updated_on(@review) %></div>
+        </div>
+        <div class="span8 reviwer_head_border" style=" min-height: 148px;">
+          <div class="row-fluid">
+            <div class="span6">
+              <div style="height: 145px;">
+                <%= get_image(@user_profile) %>
+              </div>
+            </div>
+            <div class="span6">
+              <div class="reviwer_head">Reviews </div>
+              <div class="reviwer_title2"><%= pluralize(@location.reviews.count, 'Trusted Review') %></div>
+              <div class="reviwer_title2"><%= last_review(@location.reviews.last) %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- header section ends -->
+
+<% unless @location.location_default_image_present? %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      Google_Map.street_view_service(<%= @location.latitude %>, <%= @location.longitude %>, <%= @location.id %>);
+    });
+  </script>
+<% end %>

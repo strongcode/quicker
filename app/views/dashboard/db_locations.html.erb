@@ -1,0 +1,127 @@
+<% content_for :dashboard_css do  %>
+  <%= stylesheet_link_tag "db_forms", :media => "all" %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- side menu bar -->
+    <%#= render :partial => 'sidebar' %>
+    <div class="span9 act_title_margin">
+      <div class="status_head row-fluid">
+        <div class="span9 insider_title db_head_margin">
+          <%= @profile_user.first_name %>,
+        </div>
+        <div class="span3">
+          <div class="db_frd_head_btn">
+            <button class="btn btn-info" data-href="<%= new_location_list_url %>">New List</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- title ends -->
+
+    <!-- location list starts -->
+    <div class="span9">
+      <div  class="profile_outer" >
+        <!-- location - first item starts -->
+        <div>
+          <button data-target="#demo" class="btn_collapse btn-danger " type="button">
+            Top 50 Places In Denever <img class="collapse_minus_img" alt="minus_icon image" src="assets/plus_icon.png">
+          </button>
+        </div>
+        <div class="collapse1" id="location1">
+          <div class="row-fluid location_row_margin">
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/me_elbert.png" alt="me_elbert image" >
+              </div>
+              <div class="location_images_text">Me Albert </div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/garden_of_gods.png" alt="garden_of_gods image" >
+              </div>
+              <div class="location_images_text"> garden_of_gods</div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/estes_park.png" alt="estes_park image" >
+              </div>
+              <div class="location_images_text">Estes Park </div>
+            </div>
+            <div class="span3 text_align_right">
+              <img src="assets/share_btn_big.png" alt="share_btn_big image" >
+            </div>
+          </div>
+          <hr>
+        </div>  <!-- location - first item ens -->
+
+        <!-- location - second item starts -->
+        <div>
+          <button data-target="#demo2" class="btn_collapse btn-danger " type="button">
+            Best Places For Kids To Swim<img class="collapse_minus_img" alt="minus_icon image" src="assets/plus_icon.png">
+          </button>
+        </div>
+        <div class="collapse1 in" id="location2">
+          <div class="row-fluid location_row_margin">
+            <div class="span3 ">
+              <div class="location_images">
+                <img src="assets/club_colarado.png" alt="club_colarado image" >
+              </div>
+              <div class="location_images_text">Club Colarado </div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/olympic_plaza.png" alt="olympic_plaza image" >
+              </div>
+              <div class="location_images_text">Olympic Plaza</div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/estes_park.png" alt="estes_park image" >
+              </div>
+              <div class="location_images_text">Estes Park </div>
+            </div>
+            <div class="span3 text_align_right">
+              <img src="assets/share_btn_big.png" alt="share_btn_big image" >
+            </div>
+          </div>
+          <hr>
+        </div>  <!-- location - second item end -->
+
+        <!-- location - Third item starts -->
+        <div>
+          <button data-target="#demo2" class="btn_collapse btn-danger " type="button">
+            Best Hiking Places<img class="collapse_minus_img" alt="minus_icon image" src="assets/plus_icon.png">
+          </button>
+        </div>
+        <div class="collapse1 in" id="location3">
+          <div class="row-fluid location_row_margin">
+            <div class="span3 ">
+              <div class="location_images">
+                <img src="assets/club_colarado.png" alt="club_colarado image" >
+              </div>
+              <div class="location_images_text">Club Colarado </div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/olympic_plaza.png" alt="olympic_plaza image" >
+              </div>
+              <div class="location_images_text">Olympic Plaza</div>
+            </div>
+            <div class="span3">
+              <div class="location_images">
+                <img src="assets/estes_park.png" alt="estes_park image" >
+              </div>
+              <div class="location_images_text">Estes Park </div>
+            </div>
+            <div class="span3 text_align_right">
+              <img src="assets/share_btn_big.png" alt="share_btn_big image" >
+            </div>
+          </div>
+          <hr>
+        </div>  <!-- location -Third item end -->
+      </div>
+    </div><!-- location list ends -->
+  </div>
+</div> <!-- container fluid ends here -->
+

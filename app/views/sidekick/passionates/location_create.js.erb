@@ -1,0 +1,6 @@
+<% if @location.present? %>
+jQuery('#passionate_location_id').val('<%= @location.id %>');
+  jQuery('#passionate_location_id').closest('form').submit();
+<% else %>
+  alert("NOT created");
+<% end %>

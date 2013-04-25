@@ -1,0 +1,159 @@
+<div class="row-fluid">
+  <!-- goal section --->
+  <div class="span6">
+    <div class="row-fluid">
+      <div class="span8 bold-font"><%= truncate(raw(goal.description), :length => 30) %>
+      <%= link_to image_tag('/assets/plus_icon.png'), assistant_goal_path(goal), :class => "fancybox_mini fancybox.ajax" if goal.description.length > 30 %>
+      </div>
+      <div class="span3 pull-right">
+        <%= link_to t(:edit), edit_assistant_goal_path(goal), :class=> 'black-on-gray' %> | <%= link_to 'Delete', [:assistant, goal], :class=> " black-on-gray delete", :method => :delete, :data => {:confirm => "Are you Sure?"}%>
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12 assistant_progress_bg">
+        <div class="ast_progress_day_elapse visible-desktop"><%= "#{goal.time_elapsed}#{goal.time_left}" %>
+        </div>
+
+        <div class="" style="width:90%;">
+          <div class="progress progress-danger_assistant ast_progress ">
+            <div class="bar" style="width: <%= "#{goal.time_elapsed_percentage}%" %>;"></div>
+          </div>
+          <div class="ast_progress_date visible-desktop"> <%= l goal.started_date.to_date %><div class="ast_progress_date_end"> <%= l goal.end_date.to_date %></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-fluid" style="margin-top:12px; border:1px solid lightgray;">
+      <div class="span6">
+        <div class="span">
+          <%= custom_share_link(goal, new_assistant_goal_share_path(goal), 'fancybox_iframe_large fancybox.iframe') %>
+        </div>
+        <div class="span">
+          <%= (t('activerecord.models.pluralize_friend', :count => goal.trackers.count) + " " + t('assistant.goal.tracking_this')).titleize %>
+        </div>
+      </div>
+
+      <div class="span5">
+        <div class="row-fluid">
+          <div class="span7 bold-font">My Pictures</div>
+          <div class="span5 black-on-gray">
+            <%= form_for [:assistant, goal], :remote => true, :method => :put do |f| %>
+              <% goal.photos.new %>
+              <%= f.fields_for :photos do |photo_field| %>
+                <% next unless photo_field.object.new_record? %>
+                <a href="#" class="black-on-gray file_alternate_element" title="<%= t 'upload' %>"><%= t('upload').titleize %></a>
+                <div>
+                  <%= photo_field.file_field :image, :class => 'dNone goal_photos' %>
+                </div>
+              </div>
+              <%= hidden_field_tag :page, params[:page] %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="row-fluid">
+          <% for photo in goal.photos %>
+            <div class="ast_run_img <%= goal.photos.limit(3).map(&:id).include?(photo.id) ? 'dBlock' : 'dNone' %>">
+              <a rel="example_group_<%= goal.id %>" href="<%= photo.image.url %>">
+                <%= image_tag photo.image.small_image.url %>
+              </a>
+            </div>
+            <script type='text/javascript'>
+              jQuery(document).ready(function () {
+                $("a[rel=example_group_<%= goal.id%>]").fancybox({
+                  'transitionIn':'none',
+                  'transitionOut':'none',
+                  'titlePosition':'over'
+                });
+              });
+            </script>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%= form_for [:assistant, goal], :remote => true do |f| %>
+    <div class="span2 goal_status hidden-tablet">
+      <div class="goal_status_title"><%= t 'activerecord.attributes.goal.show.status' %></div>
+      <div class="row-fluid goal_status_bar ">
+        <div class="span7">
+          <div class="progressbar">
+            <div id="slider-vertical" class="vertical_slider" style="" data-goal-id='<%= goal.id %>'></div>
+          </div>
+        </div>
+        <div class="span5">
+          <%= f.text_field :status_percentage, :class => "vertcal_slider_value", :data => {:goal_id => goal.id} %>
+          <label class="percenatage_margin"> %</label>
+          <%= f.submit nil, :class => "dNone submit_goal_#{goal.id}" %>
+          <script type="text/javascript">
+            $(function () {
+              $('div[data-goal-id="<%= goal.id%>"]').slider({
+                orientation:"vertical",
+                range:"min",
+                min:0,
+                max:100,
+                value: <%= goal.status_percentage %>,
+                slide:function (event, ui) {
+                  var goal_id = $(this).attr('data-goal-id')
+                  $('input[data-goal-id="' + goal_id + '"]').val(ui.value);
+                  $('input[data-goal-id="' + goal_id + '"]').attr('value', ui.value);
+                },
+                stop:function (event, ui) {
+                  var goal_id = $(this).attr('data-goal-id')
+                  if(ui.value == 100) {
+                    var conf = confirm("Do you want to complete this goal?");
+                    if(conf == true){
+                      $('.submit_goal_' + goal_id).click();
+                    }
+                    else {
+                      window.location.reload();
+                    }
+                  }
+                  else {
+                    $('.submit_goal_' + goal_id).click();
+                  }
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="row-fluid">
+        <div class="bold-font" style="text-align:center;">Notes</div>
+        <div class="" style="">
+          <%= f.text_area :notes, class: "span12", :style => 'height:104px;' %>
+          </div>
+        </div>
+      </div>
+      <script type='text/javascript'>
+        $('textarea[name="goal[notes]"]').livequery('change', function (event) {
+          $(this).parents('form').submit();
+        });
+      </script>
+    <% end %>
+
+    <!-- Notes section ends--><!-- expert advice section -->
+    <div class="span4">
+      <div class="bold-font" style="margin-top:4px; text-align: center;"><%= t 'assistant.goal.expert_advice' %></div>
+      <div class="row-fluid" style="">
+        <div class="" style="border:1px solid lightgrey;">
+          <ol>
+            <% for goal_advice in goal.expert_advices %>
+              <li>
+                <%= link_to truncate(goal_advice.expert_advice_description, :length => 30), goal_advice.expert_advice_url, :class => 'black-on-gray fancybox_iframe_large fancybox.iframe' %>
+              </li>
+            <% end %>
+          </ol>
+
+        </div>
+      </div>
+    </div>
+    <!-- expert advice section ends-->
+  </div>
+  
+

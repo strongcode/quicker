@@ -1,0 +1,64 @@
+jQuery('.div-friend-request-details').html('<%= j render :partial => 'friend_request_details' %>');
+jQuery('.jQueryFriendsRequestCarousel').html('<%= j render :partial => 'slider', :locals => { :friends => @users, :slider => "slider2" } %>');
+
+$('input:checkbox').removeAttr('checked');
+
+$('.slider1').bxSlider({
+infiniteLoop: false,
+minSlides: 1,
+maxSlides: 3,
+slideWidth: 45,
+slideMargin: 5
+});
+
+$('.slider2').bxSlider({
+infiniteLoop: false,
+minSlides: 1,
+maxSlides: 3,
+slideWidth: 45,
+slideMargin: 5
+});
+
+
+$('.jQueryFriendsSelector').click(function(){
+if($(this).is(':checked')) {
+$(this).siblings('img').addClass('add-photo-border');
+dashboard_fr_section($(this).closest('form'));
+}
+else {
+$(this).siblings('img').removeClass('add-photo-border');
+dashboard_fr_section($(this).closest('form'));
+}
+
+});
+
+$(document).on('click', '.jQueryDeleteFr', function(ev){
+ev.preventDefault();
+var formData = $(this).closest('form').serialize();
+jQuery.ajax({
+type: 'POST',
+url: '/delete-friends',
+data: formData
+});
+});
+
+
+$(document).on('click', '.jQueryAccept', function(ev){
+ev.preventDefault();
+var formData = $(this).closest('form').serialize();
+jQuery.ajax({
+type: 'POST',
+url: '/accept',
+data: formData
+});
+});
+
+$(document).on('click', '.jQueryArchive', function(ev){
+ev.preventDefault();
+var formData = $(this).closest('form').serialize();
+jQuery.ajax({
+type: 'POST',
+url: '/archive',
+data: formData
+});
+});

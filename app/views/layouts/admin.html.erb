@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SnapGadget</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="noarchive">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta property="og:image" content="http://www.snapgadget.com/assets/logo/SG_icon_512x512.png">
+    <%= favicon_link_tag '/favicons/favicon.png', :rel => 'shortcut icon', :type => 'image/png' %>
+    <%= favicon_link_tag '/favicons/apple-touch-icon-32-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag '/favicons/apple-touch-icon-57-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag '/favicons/apple-touch-icon-72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag '/favicons/apple-touch-icon-114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "db_forms", :media => "all" unless (params[:controller].match(/assistant/)|| params[:controller].match(/sessions/)|| params[:controller].match(/registrations/)) %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'jquery.validate.localization/messages_es' if I18n.locale == :es %>
+    <%= javascript_include_tag 'jquery.ui.datepicker-es' if I18n.locale == :es %>
+    <%= yield :javascript %>
+    <%= yield :stylesheet %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'admin/header' %>
+    <%= render :partial => "admin/ajax_indicator" %>
+    <%= yield %>
+    <%= render 'admin/footer' %>
+
+  </body>
+</html>

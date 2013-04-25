@@ -1,0 +1,109 @@
+living_social_category_id,snapgadget_category_id
+Beauty/Health-Day Spa,39
+Beauty/Health-Dentist Office,47
+Beauty/Health-Hair Salon,39
+Beauty/Health-Holistic/Wellness Center,39
+Beauty/Health-Med Spa/Medical Centers,39
+Beauty/Health-Nail Salon,39
+Beauty/Health-Other (Beauty/Health),39
+Beauty/Health-Tanning Salon,40
+Beauty/Health-Visual Correction,47
+Beauty/Health-Weight Loss,47
+Entertainment-Art Studio/Center,27
+Entertainment-Athletic Spectator Sports,38
+Entertainment-Aviation,26
+Entertainment-Beer/Wine/Spirits,47
+Entertainment-Boating,26
+Entertainment-City Attractions,27
+Entertainment-Culinary Classes,21
+Entertainment-Education,3
+Entertainment-Event/Festival/Exhibition,27
+Entertainment-Experiential Dining,21
+Entertainment-Museums,27
+Entertainment-Nightlife,37
+Entertainment-Other (Entertainment),38
+Entertainment-Performing Art Center/Theater,38
+Entertainment-Seasonal,47
+Entertainment-Specialty Sports/Racing,26
+Entertainment-Tours,43
+Fitness/Active-Dance Studio,28
+Fitness/Active-Extreme/Adventure Sports,26
+Fitness/Active-Golf Course,80
+Fitness/Active-Other (Fitness/Active),30
+Fitness/Active-Pilates Studio,48
+Fitness/Active-Race Entry,30
+Fitness/Active-Snow Sports,30
+Fitness/Active-Sports/ Fitness Club,31
+Fitness/Active-Water Sports,30
+Fitness/Active-Yoga Studio,44
+Full-Service Restaurant-African/Middle Eastern,25
+Full-Service Restaurant-Asian,25
+Full-Service Restaurant-Central and South American,25
+Full-Service Restaurant-European,25
+Full-Service Restaurant-North American,17
+Full-Service Restaurant-Other (Restaurant),25
+"Health & Beauty-Classes (ie. Yoga, Pilates, Dance)",48
+Health & Beauty-Dental Procedure (ie. Teeth Whitening/Cleaning),39
+Health & Beauty-Facial,39
+Health & Beauty-Haircut,39
+Health & Beauty-Laser Hair Removal ,39
+Health & Beauty-Manicure/Pedicure,39
+Health & Beauty-Massage,39
+Health & Beauty-Other (Health & Beauty),39
+Health & Beauty-Shave,39
+Health & Beauty-test,39
+Health & Beauty-Waxing,39
+QSR/Fast Casual-Meals,25
+QSR/Fast Casual-Other (QSR/Fast Casual),25
+QSR/Fast Casual-Snacks/Beverages,25
+QSR/Fast Casual-Sweets,25
+Retail-Accessories,58
+Retail-Books/Music/Electronics,50
+Retail-Clothing/Apparel,60
+Retail-Crafts/Hobbies,60
+Retail-Food/Drink,60
+Retail-Health/Beauty,60
+Retail-Home Goods,60
+Retail-Other (Retail),60
+Retail-Photography/Film/Video,60
+Retail-Seasonal,60
+Retail-Specialty Stores,56
+Retail-Sporting Goods,61
+Services-Auto/Personal Transport Repair/Upkeep,1
+Services-Clothing/Apparel,15
+Services-Education,3
+Services-Food,15
+Services-Gift Delivery Service,15
+Services-Indoor Home Care/Repair/Services,6
+Services-Other (Services),15
+Services-Outdoor Home Care/Repair/Maintanance,6
+Services-Personal/Lifestyle,15
+Services-Photography/Film/Video,11
+Services-Professional/Business,12
+Services-Rental,15
+Services-Subscription,15
+Services-Transportation,15
+Travel-Adults-only,66
+Travel-Adventure,66
+Travel-B&B / Inn,65
+Travel-Beach,66
+Travel-Cityscape,66
+Travel-Cruise / Boat,63
+Travel-Culinary,66
+Travel-Family,66
+Travel-Gambling,66
+Travel-Golf,66
+Travel-Hotel - General,65
+Travel-Kid-friendly,66
+Travel-Luxury,66
+Travel-Other (Travel),66
+Travel-Ranch / Lodge / Camping,65
+Travel-Resort,67
+Travel-Romantic,66
+Travel-Rustic,66
+Travel-Ski,66
+Travel-Spa / Wellness,66
+Travel-Tour - Air Exclusive,67
+Travel-Tour - Air Inclusive,67
+Travel-Vacation Rental,68
+Travel-Wine,66

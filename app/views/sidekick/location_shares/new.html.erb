@@ -1,0 +1,78 @@
+<div class="container-fluid sidekick_drill_head insider_head insider_title">
+  <div class="span9 insider_head_margin">
+    <%= get_share_label %>&nbsp;<%= @location.name %>
+  </div>
+</div>
+
+<%= form_for [:sidekick, @location, @share], :url => sidekick_location_location_shares_path(@location, @share), :remote => true do |f| %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <%= error_messages_for :share %>
+      <div class="span9 contaimer_profile_page">
+        <div><%= t('share.comment') %></div>
+        <div class="">
+          <%= f.text_field :comment, :class => "span8", :placeholder => 'Add a comment..' %>
+          <%= custom_error_message_no_margin(@share, :comment) %>
+          <br/><br/>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+        </div>
+        <div class="row-fluid">
+          <div class="span3 ast_share_margin">
+            <div class="ast_goal_img">
+            </div>
+          </div>
+          <div class="span9">
+            <div class="row-fluid">
+              <div class="span5 ast_share_text"><%= t 'share.location.location_created'%></div>
+              <div class="span7 ast_share_text"><%= l @location.created_at.to_date %></div>
+            </div>
+            <div class="row-fluid">
+              <div class="span5 ast_share_text">Tell A Friend</div>
+              <div class="span7 ">
+                <%= f.select :trackers, current_user.get_friends.map { |user| [user.full_name, user.id] }, {:prompt => false}, {:multiple => true, :class => "span4 ast_select_margin"} %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+        <div class="row-fluid hidden-tablet">
+          <div class="span8">
+          </div>
+          <div class = "span4">
+            <div class = "span4"></div>
+            <div class="span4">
+              <%= f.submit t('share.share'),:id => 'location_share_btn', :class => "btn btn-info addfriend_btn_margin savebtn"  %>
+            </div>
+            <div class="span4>
+                 <button class="jQueryLocShareCancel btn btn-info addfriend_btn_margin savebtn" data-href="<%= sidekick_location_reviews_path(@location) %>" data-type='anchor' onclick="return false;"><%= t('cancel')%></button>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid visible-tablet">
+          <div class="span6">
+          </div>
+          <div class="span3">
+            <%= f.submit t('share.share'),:id => 'location_share_btn', :class => "btn btn-info addfriend_btn_margin savebtn"  %>
+          </div>
+          <div class="span>
+               <button class="jQueryLocShareCancel btn btn-info addfriend_btn_margin savebtn" data-href="<%= sidekick_location_reviews_path(@location) %>" data-type='anchor' onclick="return false;"><%= t('cancel')%></button>
+          </div>
+        </div>
+      </div>
+      <div class="span3"></div>
+    </div>
+  </div>
+<% end %>
+<%= stylesheet_link_tag 'db_forms'%>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('.jQueryLocShareCancel').click(function(ev){
+      if(top !== self) {
+        ev.preventDefault();
+        fancy_box_close();
+      }
+    });
+
+  });
+</script>

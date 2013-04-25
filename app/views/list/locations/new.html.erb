@@ -1,0 +1,124 @@
+<div class="container div-new-location-and-list" style="width:688px; height: auto;">
+  <%= form_for @location, :url => list_locations_url, :html => {:multipart => true, :id => 'jQueryLocationForm'} do |f| %>
+    <fieldset class="fieldset-border sg-fieldset-location-surround">
+      <legend>
+        <h2 class="sg-legend-margin">Add Location</h2>
+      </legend>
+      <%= f.hidden_field :latitude, :value => session[:location_latitude] %>
+      <%= f.hidden_field :longitude, :value => session[:location_longitude] %>
+      <%= f.hidden_field :WOEID, :value => session[:location_woeid] %>
+      <%= f.hidden_field :street_address, :value => session[:location_street_address] %>
+      <%= f.hidden_field :city, :value => session[:location_city] %>
+      <%= f.hidden_field :location_state, :value => session[:location_state] %>
+      <%= hidden_field_tag 'location_list_id', params[:location_list_id] %>
+      <%= hidden_field_tag 'location_list_name', session[:location_list_name] %>
+
+
+      <div class="row-fluid">
+        <div class="span3"><p><%= t(:location_name) %></p></div>
+        <div class="span6">
+          <%= f.text_field :name, :value => session[:location_name], :style => 'width:400px' %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span3"><p><%= t(:location_address) %></p></div>
+        <div class="span6">
+          <%= f.text_field :full_address, :value => session[:location_full_address], :style => 'width:400px' %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span3"><p><%= t(:location_phone) %></p></div>
+        <div class="span6">
+          <%= f.text_field :phone, :value => session[:location_phone],  :style => 'width:400px' %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span3"><p><%= t(:major_category) %></p></div>
+        <div class="span6">
+          <%= select_tag 'location[sg_major_category]', options_for_select(get_categories), :id => "jQuerySelectMajorCategory" %>
+        </div>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span3"><p><%= t(:minor_category) %></p></div>
+        <div class="span6">
+          <%= select_tag 'location[sg_minor_category]', options_for_select([[Category.get_lifestyle_category.description, Category.get_lifestyle_category.description.downcase ]] + @categories.collect {|category| [category.description, category.description.downcase] }), :id => "jQueryMinorCategoryList" %>
+        </div>
+      </div>
+
+      <%= f.fields_for :review do |rev| %>
+        <div class="row-fluid">
+          <div class="span3">
+            <p>Review Details</p>
+          </div>
+          <div class="span6">
+            <%= rev.text_area :review_details, :style => 'width:360px; height:100px;' %>
+            <%= custom_error_message(@review, :review_details) %>
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span3">
+            <p>Quick Rating</p>
+          </div>
+          <div class="span6">
+            <div id="star"></div>
+          </div>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span3">
+            <p>Personal Offers</p>
+          </div>
+          <div class="span6">
+            <%= rev.check_box :allow_personal_offers %>
+          </div>
+        </div>
+
+        <%= rev.fields_for :photos do |photo| %>
+          <%= render 'photo_fields', :f => photo %>
+        <% end %>
+
+        <div class="row-fluid">
+          <div class="span3">&nbsp</div>
+          <%= link_to_add_fields 'add another', rev, :photos, 'jQueryImgUp btn btn-small' %>
+        </div>
+
+      <% end %>
+
+      <div class="row-fluid">
+        <div class="span4 pull-right">
+          <a class="btn btn-info prefer_save_btn cancelbtn" href="<%= list_location_lists_url %>"><%= t(:cancel) %></a>
+          <%= submit_tag t(:save), :class => "loc-popup-form btn btn-info prefer_save_btn savebtn jQueryFancyIframeClose" %>
+        </div>
+
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  if ($.browser.mozilla) {
+    $(document).on('click', 'label', function (e) {
+      if (e.currentTarget === this && e.target.nodeName !== 'INPUT') {
+        $(this.control).click();
+      }
+    });
+  }
+
+  jQuery(document).ready(function($){
+    $('#star').raty({
+      half: true,
+      score: '<%= @review.user_quick_star %>',
+      width: 125,
+      scoreName: 'review[user_quick_star]',
+      path: '/assets/star_rating/'
+    });
+
+    $('label.upload_image').text('Browse');
+
+  });
+</script>

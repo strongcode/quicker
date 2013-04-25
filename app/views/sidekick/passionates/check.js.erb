@@ -1,0 +1,9 @@
+//$('#geocode_autocomplete').val('');
+<% if @location.present? %>
+  jQuery('#passionate_location_id').val('<%= @location.id %>');
+  jQuery('#jQuerysgPassionateForm').submit();
+<% else %>
+  $('#jQueryLocationForm').attr('action', '<%= j(location_create_sidekick_passionate_url) %>');
+  $('#jQueryLocationForm').find('#category_id').val($('select#jQueryMinorCategoryListSuggestion option:selected').val());
+  $('#jQueryLocationForm').submit();
+<% end %>

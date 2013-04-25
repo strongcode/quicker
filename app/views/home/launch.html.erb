@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row">
+    <!-- Video Column -->
+    <div class="span8">
+      <h1>Explore Social On Your Side</h1>
+      <div class="container">
+        <div id="video"></div>
+      </div>
+    </div>
+    <!-- 3-Advisors -->
+    <div class="span4">
+      <h1>Meet Your Advisors!</h1>
+     <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="/assets/icon_sidekick.png" alt="Sidekick" class="img icon_inner" />
+            </div>
+            <div class="icon_txt clear-fix">
+              <h2>Your Sidekick</h2>
+              <p>Helps To Personalize Your Community</p>
+            </div>
+          </div>
+          <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="/assets/icon_insider.png" alt="Insider" class="img icon_inner" />
+            </div>
+            <div class="icon_txt">
+              <h2>Your Insider</h2>
+              <p>Brings You Offers, Suggestions And Activities</p>
+            </div>
+          </div>
+          <div class="row icon_bg_outer">
+            <div class="icon_bg">
+              <img src="/assets/icon_assistant.png" alt="Assistant" class="img icon_inner" />
+            </div>
+            <div class="icon_txt">
+              <h2>Your Assistant</h2>
+              <p>Helps To Monitor And Achieve Your Goals</p>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="span12 snaptoit_bgcolor">
+      <form data-remote="true" id="invitationForm" action="/send-invitation-email">
+        <div class="row">
+          <div class="span5 snaptoit_inner"><p>Coming Soon - Request Your Invite</p></div>
+          <div class="span4 snaptoit_inner">
+            <div class="mailbg">
+              <input type="email" value="" size="30" placeholder="Email Address" name="user[email]" id="user_email" class="input-large span" />
+              <input type="hidden" name="user[city]" id="user_city" />
+              <input type="hidden" name="user[region_name]" id="user_region_name" />
+            </div>
+          </div>
+          <div class="span3">
+            <button type="submit" id="jQuerySubmit" class="btn btn-primary"><span><img alt="snap_icon image" src="assets/snap_icon.png" class="img" /></span> Request</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $('#jQuerySubmit').click(function(e){
+      if($('#user_email').val() == '') {
+        e.preventDefault();
+        alert("Please enter email address and click request invite")
+      }
+      else {
+        $('input[name="user[city]"]').val(geoip_city());
+        $('input[name="user[region_name]"]').val(geoip_region_name());
+        return true;
+      }
+    });
+
+    $('#video')
+    .css({
+      background: 'url("/assets/video_thumbnail.png") no-repeat scroll center center transparent',
+      width: 620, height: 349,
+      position: 'relative'
+    })
+    .append(
+    $('<div class="play" style="background:url(/assets/play.png) no-repeat scroll 50% 40%; cursor:pointer; position:absolute; top:0;left:0;right:0;bottom:0" />')
+    .css('opacity', 0.7)
+    .on('mouseover', function() {
+      $(this).stop().animate({ 'opacity': 0.9 });
+    })
+    .on('mouseout', function() {
+      $(this).stop().animate({ 'opacity': 0.7 });
+    })
+    .on('click', function(e) {
+      $(this).parent().html('<iframe src="http://player.vimeo.com/video/52892973?autoplay=1&amp;api=1&amp;player_id=vimeo-52892973" width="620" height="349" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>');
+    })
+  );
+  });
+</script>

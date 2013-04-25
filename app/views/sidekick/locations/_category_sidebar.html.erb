@@ -1,0 +1,21 @@
+<div style="" class="collapse_sidebar_1">
+  <% (Location::Categories::All).each_with_index do |category, index|  %>
+    <label class="jQuery<%= category.capitalize %>" for="<%= category %>">
+      <button class="btn_collapse btn-danger black-on-gray" type="button">
+        <%= get_category(category) %>
+        <img class="collapse_minus_img" alt="" src="/assets/category-icons/<%= category %>_plus.png" />
+      </button>
+    </label>
+
+    <div class="jQuery-<%= category.capitalize %>-locations">
+      <%= render :partial => 'location', :collection => @all_locations[index], :as => :location if @all_locations.present? && @all_locations[index].present? %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+

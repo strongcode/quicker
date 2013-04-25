@@ -1,0 +1,25 @@
+<% unless user_signed_in? %>
+    <%= link_to get_button, new_user_session_url, :class => 'login_btn' %>
+<% else %>
+    <div class="pull-right">
+      <ul class="nav pull-right">
+        <li class="divider-vertical"></li>
+        <li style="margin-top: 20px;">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><%= user_full_name(@profile_user) %></b>
+            <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Profile', profile_path %></li>
+            <li><%= link_to 'Preferences', preference_path %></li>
+            <li><%= link_to 'Dashboard', db_status_url %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right" style="margin-top: 10px;">
+      <button class="btn_navbar btn-primary2 bottom_div4" type="button" style="" data-href="<%= new_sidekick_location_url %>">SIDEKICK</button>
+      <button class="btn_navbar  btn-primary3 bottom_div4" type="button" style="" data-href="<%= insider_url %>">INSIDER</button>
+      <button class="btn_navbar  btn-primary4  bottom_div4" type="button" style="" data-href="<%= assistant_goals_path %>">ASSISTANT</button>
+      </div>
+<% end %>

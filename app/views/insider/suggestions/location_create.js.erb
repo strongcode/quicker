@@ -1,0 +1,6 @@
+<% if @location.present? %>
+jQuery('#suggestion_location_id').val('<%= @location.id %>');
+  jQuery('#suggestion_location_id').closest('form').submit();
+<% else %>
+  alert("NOT created");
+<% end %>

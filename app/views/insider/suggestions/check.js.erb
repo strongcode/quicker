@@ -1,0 +1,9 @@
+//$('#geocode_autocomplete').val('');
+<% if @location.present? %>
+  jQuery('#suggestion_location_id').val('<%= @location.id %>');
+  jQuery('#suggestion_location_id').closest('form').submit();
+<% else %>
+  $('#jQueryLocationForm').attr('action', '<%= j(location_create_insider_suggestions_url) %>');
+  $('#jQueryLocationForm').find('#category_id').val($('select#jQueryMinorCategoryListSuggestion option:selected').val())
+  $('#jQueryLocationForm').submit();
+<% end %>

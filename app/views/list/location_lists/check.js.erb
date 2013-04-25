@@ -1,0 +1,15 @@
+<% if @location.present? && @location_list.present? %>
+  jQuery.ajax({
+  url: '<%= list_location_list_path(@location_list) %>',
+  data: '<%= "location_id=#{@location.id}" %>',
+  type: 'PUT'
+  });
+
+<% elsif @location.present? && @location_list.blank? %>
+  $('.jQueryAppendLocations').append('<%= j(render :partial => "append_locations", :locals => {:location => @location}) %>');
+  $('.jQueryAppendLocations').append('<%= j(hidden_field_tag "location_id[]", @location.id ) %>');
+<% elsif @location.blank? && @location_list.present? %>
+  window.location = "<%= new_list_location_path(:location_list_id => @location_list.id) %>";
+<% elsif @location.blank? && @location_list.blank? %>
+  window.location = "<%= new_list_location_path %>";
+<% end %>

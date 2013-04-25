@@ -1,0 +1,2 @@
+module SuggestionSharesHelper
+end

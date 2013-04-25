@@ -1,0 +1,14 @@
+<div class="add-photos-path row-fluid">
+  <div class="span4 image-label">&nbsp;</div>
+  <div class="span4">
+    <%= image_tag f.object.present? && f.object.image.present? ? (f.object.image_url(:standard_image)) : ('default_images/LocationBlank.png'), :alt => '', :id => "new_photos" %>
+  </div>
+  <div class="span3">
+    <%= f.label :image, :class => 'upload_image btn btn-small'  %>
+    <%= f.file_field :image, :style => 'display:none;', :onChange => 'readURL(this, "new_photos")', :class => 'jQueryBrowseImg' %>
+  </div>
+  <%= f.hidden_field :image_cache %>
+  <div class="span3">
+    <%= link_to_remove_fields "remove", f %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="insider_offer_title" style="text-align:center">My Current Goals</div>
+<div class="row-fluid">
+  <div class="span1 slider_arrow disabled hidden-phone" style="margin-top:100px;">
+    <%= paginate @goals, :theme => 'sg_left' %>
+  </div>
+  <div class="span10">
+    <%= render @goals %>
+  </div>
+  <!-- pagination button -->
+  <div class="span1 slider_arrow hidden-phone" style="margin-top:100px;">
+    <%= paginate @goals, :theme => 'sg_right' %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<% if @new_location.present? %>
+  <% location = @new_location %>
+  <% location_picture = location.default_image(current_user) %>
+<% else %>
+  <% location = @location %>
+  <% location_picture = location.default_image(current_user) %>
+<% end %>
+
+
+
+<div style="float:left; width:95px; height:auto;">
+  <%= image_tag location_picture.present? ? (location_picture) : ('default_images/LocationBlank.png'), :id => "location-#{location.id}", :class => 'jQuery-Location-List' %>
+  <label>
+    <%= @new_location.present? ? (@new_location.name.split(',')[0]) : (@location.name.split(',')[0]) %></label>
+</div>
+
+<% if location_picture.blank? %>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      Google_Map.street_view_service(<%= location.latitude %>, <%= location.longitude %>, <%= location.id %>, "");
+    });
+    
+  </script>
+<% end %>

@@ -1,0 +1,131 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/jquery.geocomplete' %>
+  <%= javascript_include_tag 'google_map/obj' %>
+  <%#= javascript_include_tag 'google_map/control' %>
+  <%= javascript_include_tag 'google_map/locations_add' %>
+  <script type="text/javascript">google.load('search', '1');</script>
+<% end %>
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span9 text_align_center">
+      <div class="container sign_up_container" >
+        <div class="span5 sign_up_content">
+          <div class=" signup_with_text">Login with </div>
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "", omniauth_authorize_path(resource_name, provider), :class => "signup_#{provider.to_s}" %>
+
+            <% end -%>
+          <% end -%>
+        </div>
+        <div class="span1 v_divider hidden-phone">
+          <img src="/assets/or_v_divider.png" alt="or_v_divider image"/>
+        </div>
+        <div class="span6 signup_r_content">
+          <div class="signup_with_text" style="margin-left:0px;">  Sign Up with </div>
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :id => "signup_form"}) do |f| %>
+
+            <%= hidden_field_tag 'user_profile[location_street]', '' %>
+            <%= hidden_field_tag 'user_profile[location_city]', '' %>
+            <%= hidden_field_tag 'user_profile[location_state]', '' %>
+            <%= hidden_field_tag 'user_profile[location_zipcode]', '' %>
+            <%= hidden_field_tag 'user_profile[woe_id]', '' %>
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label>Email</label>
+              </div>
+              <div class="span9 left-align">
+                <%= f.email_field :email, :class => "signup_input width-284" ,:size =>0 %>
+                <%= custom_error_message(resource, :email) %>
+                <p id="EmailError" class="server_side_error_1" style="">&nbsp;</p>
+              </div>
+            </div><br/>
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label >Password</label>
+              </div>
+              <div class="span9 left-align">
+                <%= f.password_field :password, :class => "signup_input width-284 ", :size =>0,:maxlength => 32%>
+                <p id="PasswordError" class="server_side_error_1" style="" >&nbsp;</p>
+              </div>
+            </div>
+            <div class="signup_h_devider hidden-phone ">
+              <img src="/assets/signup_h_divider.png" alt="signup_h_divider image"/>
+            </div>
+
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label >First Name</label>
+              </div>
+              <div class="span9 left-align">
+                <%= f.text_field :first_name, :size => 0, :class => "signup_input width-284" %>
+                <%= custom_error_message(resource, :first_name) %>
+                <p id="FnameError" class="server_side_error_1" style="">&nbsp;</p>
+              </div>
+            </div><br/>
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label>Last Name</label>
+              </div>
+              <div class="span9 left-align">
+                <%= f.text_field :last_name, :size => 0, :class => "signup_input width-284" %>
+                <%= custom_error_message(resource, :last_name) %>
+                <p id="LnameError" class="server_side_error_1" style="">&nbsp;</p>
+              </div>
+            </div><br />
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label><%= t(:zip_code) %></label>
+              </div>
+              <div class="span9 left-align">
+                <%= text_field_tag 'user_profile[location_name]', '', :class => "signup_input width-284", :id => 'jQueryCityAutocomplete', :placeholder => 'Enter A Zip Code' %>
+                <p id="LocationError" class="server_side_error_1" style="">&nbsp;</p>
+              </div>
+            </div><br/>
+
+            <div class="row-fluid">
+              <div class="span3 sign_up_label">
+                <label>Pioneer Code</label>
+              </div>
+              <div class="span9 left-align">
+                <%= f.text_field :pioneer_code, :size => 0, :class => "signup_input width-284", :placeholder => 'Enter Pioneer Code' %>
+                <p id="PioneerCodeError" class="server_side_error_1" style="">&nbsp;</p>
+                <%= custom_error_message_no_margin(resource, :pioneer_code) %>
+              </div>
+            </div><br/>
+
+            <div class="row-fluid">
+              <div class="signup_with_text2 float_r sg-signup-text" style="">
+                By creating an account, I accept SnapGadget's <%= link_to 'Terms of Service', terms_of_use_url, :class => 'fancybox_iframe_large fancybox.iframe black-on-gray bold-font' %> and <%= link_to 'Privacy Policy', privacy_url, :class => 'fancybox_iframe_large fancybox.iframe black-on-gray bold-font' %>
+                &nbsp;&nbsp;<%= f.check_box :terms_of_service, :id => "terms", :class => "terms-chk" %>
+              </div>
+            </div>
+            <div class="create_act_btn" style="margin-top: 20px;"><%= f.submit "Create Account", :id => 'Create', :class => "btn btn-info signup-submit" %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="map-container" style="width:50px; height: 50px; display: none !important;"></div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    Google_Map.init(39.9332968,-105.1332093);
+    Google_Map.location_autocomplete("jQueryCityAutocomplete", '', '');
+  });
+
+</script>
+
+
+
+
+

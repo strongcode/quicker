@@ -1,0 +1,64 @@
+<p class="heading-font-bold"><%= "#{advisor.capitalize} Advisor" %></p>
+
+<div class="advisor" data-advisor="<%= advisor %>">
+  <%= hidden_field_tag "#{advisor}[skin]", advisor_icon.present? ? (advisor_icon.split('_')[3]) : ('ffd8b6') %>
+  <%= hidden_field_tag "#{advisor}[hair]", advisor_icon.present? ? (advisor_icon.split('_')[2]) : ('d6c4c2') %>
+
+  <div class="float_l">
+    <span>Male&nbsp;</span>
+    <%= radio_button_tag "#{advisor}[gender]", 'male', male?(advisor_icon),
+                         :class => 'gender zero-top-margin' %>
+    <span>Female</span>&nbsp;
+    <%= radio_button_tag "#{advisor}[gender]", 'female', female?(advisor_icon),
+                         :class => 'gender zero-top-margin' %>
+    <p>Hair Color</p>
+
+    <div class="span1 hair" id="6a4e42" style="background-color: #6a4e42;">
+      &nbsp;
+    </div>
+    <div class="span1 hair" id="090806" style="background-color: #090806;">
+      &nbsp;
+    </div>
+    <div class="span1 hair" id="a56b46" style="background-color: #a56b46;">
+      &nbsp;
+    </div>
+    <div class="span1 hair" id="d6c4c2" style="background-color: #d6c4c2;">
+      &nbsp;
+    </div>
+
+    <div class="span1 hair" id="e6cea8" style="background-color: #e6cea8;">
+      &nbsp;
+    </div>
+
+
+    <div class="clear"></div>
+
+    <p>Skin Color</p>
+    <div class="span1 skin" id="2d221e" style="background-color: #2d221e;">
+      &nbsp;
+    </div>
+    <div class="span1 skin" id="ffd8b6" style="background-color: #ffd8b6;">
+      &nbsp;
+    </div>
+    <div class="span1 skin" id="dfad96" style="background-color: #dfad96;">
+      &nbsp;
+    </div>
+    <div class="span1 skin" id="57463f" style="background-color: #57463f;">
+      &nbsp;
+    </div>
+    <div class="span1 skin" id="a57e6d" style="background-color:#a57e6d;">
+      &nbsp;
+    </div>
+
+  </div>
+  <div class="float_r">
+    <div class="span2">
+      <%= adv_image(advisor) %>
+    </div>
+  </div>
+
+</div>
+<div class="clear">
+
+</div>
+<hr></hr>

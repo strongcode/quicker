@@ -1,0 +1,86 @@
+<div class="container insider_container_margin" style="text-align: center;">
+  <div class="insider_row_bottom">
+    <div class="row-fluid">
+      <div class="span12 ast-goal-min-height custom-assistant-title"><%= t('assistant.goal.title.my_friends_goals') %></div>
+    </div>
+    <div class="row-fluid">
+      <div class="span1 slider_arrow disabled hidden-phone" style="margin-top:80px;">
+        <%= paginate @trackers, :theme => 'sg_left', :param_name => 'friends_goal_page' %>
+      </div>
+      <div class="span10" style="text-align: left; border-top: 1px solid; border-bottom: 1px solid;">
+        <% for tracker in @trackers %>
+          <div class="span6">
+            <div class="row-fluid">
+              <div class="span12">
+                <div class="">
+                  <div><strong><%= tracker.trackable.user.full_name %></strong></div>
+                  <div>
+                    <%= get_traker_image(tracker.trackable.user.user_profile, Share.get_trackable_or_shareable(tracker.trackable).first) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row-fluid">
+              <div class="span7">
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">
+                    Goal
+                  </div>
+                  <div class="span7 ast-goal-min-height"><%= tracker.trackable.description %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">
+                    Start
+                  </div>
+                  <div class="span7 ast-goal-min-height"><%= l tracker.trackable.started_date.to_date %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">
+                    End
+                  </div>
+                  <div class="span7 ast-goal-min-height"><%= l tracker.trackable.end_date.to_date %></div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span5 ast-goal-min-height">
+                    Complete
+                  </div>
+                  <div class="span7 ast-goal-min-height"><%= "#{tracker.trackable.status_percentage.to_i}%" %></div>
+                </div>
+              </div>
+              <div class="span5">
+                <div class="row-fluid" style="margin-top: 15px;">
+                  <% for photo in tracker.trackable.photos %>
+                    <div class="ast_profile_img <%= tracker.trackable.photos.limit(3).map(&:id).include?(photo.id) ? 'dBlock' : 'dNone' %>">
+                      <a rel="example_group_friend_<%= tracker.trackable.id %>" href="<%= photo.image.url %>">
+                        <%= image_tag photo.image.standard_image.url, :style => 'height:45px;' %>
+                      </a>
+                    </div>
+                    <script type='text/javascript'>
+                      jQuery(document).ready(function () {
+                        $("a[rel=example_group_friend_<%= tracker.trackable.id%>]").fancybox({
+                          'transitionIn':'none',
+                          'transitionOut':'none',
+                          'titlePosition':'over'
+                        });
+                      });
+                    </script>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <div class="asst_stop_btn ">
+              <%= link_to 'Stop Tracking', [:assistant, tracker], :class=> "btn btn-info stop-track-btn", :method => :delete, :data => {:confirm => "Are you Sure?"}%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="span1 slider_arrow hidden-phone" style="margin-top:80px;">
+        <%= paginate @trackers, :theme => 'sg_right', :param_name => 'friends_goal_page' %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<% if params[:controller].match(/dashboard/i) && params[:action].match(/my_dashboard/i) && current_user.user_profile.show_dashboard_guide && session[:show_dashboard_help_guide] == "true" %>
+  <%= render :partial => 'home/dashboard_guide' %>
+  <%= link_to "", '#jQueryDashboardGuide', :style => 'display:none;', :class => 'jQueryDashboardTrigger fancybox_sidekick_guide fancybox' %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('.jQueryDashboardTrigger').trigger('click');
+    });
+  </script>
+<% end %>

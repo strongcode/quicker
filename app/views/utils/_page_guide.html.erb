@@ -1,0 +1,38 @@
+<% if params[:controller].match(/offers/i) && params[:action].match(/index/i) && current_user.user_profile.show_insider_guide && session[:show_insider_help_guide] == "true" && @user_profile.all_preferences_unset? %>
+  <%= render :partial => 'home/insider_guide' %>
+  <%= link_to "", '#jQueryInsiderGuide', :style => 'display:none;', :class => 'jQueryInsiderTrigger fancybox_sidekick_guide fancybox' %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('.jQueryInsiderTrigger').trigger('click');
+    });
+  </script>
+
+<% elsif params[:controller].match(/sidekick/i) && params[:action].match(/main/i) && current_user.user_profile.show_sidekick_guide && session[:show_sidekick_help_guide] == "true" %>
+  <%= render :partial => 'home/sidekick_guide' %>
+  <%= link_to "", '#jQuerySidekickGuide', :style => 'display:none;', :class => 'jQuerySidekickTrigger fancybox_sidekick_guide fancybox' %>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('.jQuerySidekickTrigger').trigger('click');
+    });
+  </script>
+
+<% elsif params[:controller].match(/goals/i) && params[:action].match(/index/i) && current_user.user_profile.show_assistant_guide && session[:show_assistant_help_guide] == "true" %>
+  <%= render :partial => 'home/assistant_guide' %>
+  <%= link_to "", '#jQueryAssistantGuide', :style => 'display:none;', :class => 'jQueryAssistantTrigger fancybox_sidekick_guide fancybox' %>
+  <script type="text/javascript">
+  jQuery(document).ready(function($){
+  $('.jQueryAssistantTrigger').trigger('click');
+  });
+  </script>
+
+<% elsif params[:controller].match(/dashboard/i) && params[:action].match(/my_dashboard/i) && current_user.user_profile.show_dashboard_guide && session[:show_dashboard_help_guide] == "true" %>
+  <%= render :partial => 'home/dashboard_guide' %>
+  <%= link_to "", '#jQueryDashboardGuide', :style => 'display:none;', :class => 'jQueryDashboardTrigger fancybox_sidekick_guide fancybox' %>
+  <script type="text/javascript">
+  jQuery(document).ready(function($){
+  $('.jQueryDashboardTrigger').trigger('click');
+  });
+  </script>
+
+<% end %>
+

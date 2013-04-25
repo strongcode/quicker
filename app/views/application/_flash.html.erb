@@ -1,0 +1,14 @@
+<div class="sgNotice alert alert-block fade in" id="ajax-notice" style="display:none;"></div>
+<% if flash[:notice].present? %>
+    <div class="sgNotice alert alert-block" id="jQueryFlashNotice">
+      <label class="sgClose" style="cursor: pointer"><%= image_tag '/assets/close_icon.gif', :alt => 'Logo Image' %></label>
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+<% if flash[:alert] %>
+    <div class="sgAlert alert alert-block alert-error" id="jQueryAlertNotice">
+      <label class="sgClose" style="cursor: pointer"><%= image_tag '/assets/close_icon.gif', :alt => 'Logo Image' %></label>
+      <%= flash[:alert] %>
+    </div>
+<% end %>
+

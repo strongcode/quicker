@@ -1,0 +1,1 @@
+$("#search_minor_categories").html("<%= escape_javascript(options_for_select(@minor_categories.collect {|category| [category.minor_category, category.minor_category.downcase] })) %>")

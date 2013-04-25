@@ -1,0 +1,667 @@
+Groupon Category ID,SnapGadgetCategoryID
+Arts and Entertainment-Arts and Entertainment,27
+Arts and Entertainment-Amusement Parks,26
+Arts and Entertainment-Aquariums,47
+Arts and Entertainment-Arcades,47
+Arts and Entertainment-Art Galleries,27
+Arts and Entertainment-Arts & Crafts Activites,27
+Arts and Entertainment-Ballet & Dance,28
+Arts and Entertainment-Biking,26
+Arts and Entertainment-Boating,47
+Arts and Entertainment-Botanical Gardens,47
+Arts and Entertainment-Bowling,78
+Arts and Entertainment-Canoe & Kayak Rentals,26
+Arts and Entertainment-Casinos,47
+Arts and Entertainment-Children's Museum,32
+Arts and Entertainment-Circus,32
+Arts and Entertainment-Country Clubs,47
+Arts and Entertainment-Dance Companies,42
+Arts and Entertainment-Dinner Theater,42
+Arts and Entertainment-Entertainment,42
+Arts and Entertainment-Festivals,36
+Arts and Entertainment-Fishing,46
+Arts and Entertainment-Fun Centers,32
+Arts and Entertainment-Gambling & Gaming,47
+Arts and Entertainment-Go Karts,32
+Arts and Entertainment-Plane & Helicopter Tours,43
+Arts and Entertainment-Hot Air Balloon,26
+Arts and Entertainment-Kid's Activities,32
+Arts and Entertainment-Laser Tag,32
+Arts and Entertainment-Live Music,36
+Arts and Entertainment-Miniature Golf,80
+Arts and Entertainment-Movie Theaters,35
+Arts and Entertainment-Museums,27
+Arts and Entertainment-Opera,42
+Arts and Entertainment-Paintball,26
+Arts and Entertainment-Psychics & Astrologers,47
+Arts and Entertainment-Segway Tours,43
+Arts and Entertainment-Skating,26
+Arts and Entertainment-Skydiving,26
+Arts and Entertainment-Speedway,26
+Arts and Entertainment-Sporting Events,26
+Arts and Entertainment-Symphony & Orchestra,36
+Arts and Entertainment-Theater & Plays,42
+Arts and Entertainment-Theme Parks,26
+Arts and Entertainment-Tours,43
+Arts and Entertainment-Walking Tours,43
+Arts and Entertainment-Water Parks,26
+Arts and Entertainment-Yacht Clubs,47
+Arts and Entertainment-Zoos,32
+Automotive-Automotive,1
+Automotive-Auto Glass Services,1
+Automotive-Auto Parts & Accessories,1
+Automotive-Auto Repair & Services,1
+Automotive-Body Shops & Painting,1
+Automotive-Car Dealers,1
+Automotive-Car Wash & Detailing,1
+Automotive-Gas & Services Stations,1
+Automotive-Motorcycle Dealers,1
+Automotive-Motorcycle Repair,1
+Automotive-Oil Change Stations,1
+Automotive-Parking,1
+Automotive-Scooters & Mopeds,1
+Automotive-Stereo Installation,1
+Automotive-Tires & Wheels,1
+Automotive-Towing,1
+Beauty & Spas-Beauty & Spas,39
+Beauty & Spas-Beauty Supply,39
+Beauty & Spas-Day Spas,39
+Beauty & Spas-Eyelash Services,39
+Beauty & Spas-Hair Removal,39
+Beauty & Spas-Hair Salons & Barbers,39
+Beauty & Spas-Makeup Artists,39
+Beauty & Spas-Massage,34
+Beauty & Spas-Medical Spas,39
+Beauty & Spas-Men's Salons,39
+Beauty & Spas-Nail Salons,39
+Beauty & Spas-Piercing,41
+Beauty & Spas-Skin Care & Facials,29
+Beauty & Spas-Tanning Salons,40
+Beauty & Spas-Tattoo Removal,41
+Beauty & Spas-Tattoos,41
+Beauty & Spas-Waxing,39
+Education-Education,3
+Education-Acting Classes,3
+Education-Adult Education,3
+Education-Art Classes,3
+Education-Bartending Schools,3
+Education-Boating & Sailing Classes,3
+Education-Business Schools,3
+Education-Catholic Schools,3
+Education-Charter Schools,3
+Education-Colleges & Universities,3
+Education-Comedy Classes,3
+Education-Cooking Classes,3
+Education-Cosmetology Schools,3
+Education-Culinary Schools,3
+Education-Dance Lessons,3
+Education-Driving Lessons,3
+Education-Educational Services,3
+Education-Educational Supply Stores,3
+Education-Elementary Schools,3
+Education-Flight Instruction,3
+Education-Graduate Schools,3
+Education-Language Schools,3
+Education-Massage Schools,3
+Education-Middle Schools & High Schools,3
+Education-Music Lessons,3
+Education-Parochial Schools,3
+Education-Preparatory Schools,3
+Education-Preschools,3
+Education-Private Schools,3
+Education-Private Tutors,3
+Education-Specialty Schools,3
+Education-Swimming Lessons,3
+Education-Training & Vocational Schools,3
+Education-Trucking Schools,3
+Education-Voice Lessons,3
+Education-Wine Classes,3
+Financial Services-Financial Services,4
+Financial Services-Banks & Credit Unions,4
+Financial Services-Check Cashing/Pay-day Loans,4
+Financial Services-Credit Counseling Services,4
+Financial Services-Financial Advising,4
+Financial Services-Insurance,4
+Financial Services-Investing,4
+Financial Services-Mortgage Brokers,4
+Financial Services-Stock Brokers,4
+Financial Services-Tax Preparation,4
+Food & Drink-Food & Drink,21
+Food & Drink-Bagel Shops,18
+Food & Drink-Bakeries,18
+Food & Drink-Breweries,19
+Food & Drink-Butchers & Meat Shops,60
+Food & Drink-Candy Stores,60
+Food & Drink-Cheese Shops,60
+Food & Drink-Chocolate Shops,60
+Food & Drink-Convenience Stores,60
+Food & Drink-Espresso Bars,25
+Food & Drink-Ethnic Foods,25
+Food & Drink-Farmers Market,60
+Food & Drink-Food Delivery Services,60
+Food & Drink-Fruits & Veggies,60
+Food & Drink-Gourmet Foods,60
+Food & Drink-Grocery Stores,60
+Food & Drink-Health Stores,60
+Food & Drink-Home Brewing,60
+Food & Drink-Ice Cream & Frozen Yogurt,25
+Food & Drink-Juice Bars & Smoothies,25
+Food & Drink-Liquor Stores,60
+Food & Drink-Seafood Markets,60
+Food & Drink-Snack Bars,25
+Food & Drink-Specialty Food,25
+Food & Drink-Takeout,25
+Food & Drink-Wine Shops,60
+Food & Drink-Wineries,60
+Health & Fitness-Health & Fitness,30
+Health & Fitness-Acupuncture,30
+Health & Fitness-Addiction Treatment Centers,30
+Health & Fitness-Adult Day Care Centers,30
+Health & Fitness-Allergists,30
+Health & Fitness-Alternative Medicine Practitioners,30
+Health & Fitness-Ambulance Services,30
+Health & Fitness-Anesthesiologists,30
+Health & Fitness-Aromatherapy,30
+Health & Fitness-Assisted Living Facilities,30
+Health & Fitness-Bootcamps,5
+Health & Fitness-Cannabis Clinics/Evaluations,30
+Health & Fitness-Cardiologists,30
+Health & Fitness-Child Psychologists,30
+Health & Fitness-Chiropractors,30
+Health & Fitness-Cosmetic Dentistry / Teeth Whitening,30
+Health & Fitness-Cosmetic Surgeons,30
+Health & Fitness-Counseling & Mental Health,30
+Health & Fitness-Dentists,30
+Health & Fitness-Dermatologists,30
+Health & Fitness-Detoxification,30
+Health & Fitness-Doctors,30
+"Health & Fitness-Ear, Nose & Throat",30
+Health & Fitness-Endodontists,30
+Health & Fitness-Exercise Equipment,30
+Health & Fitness-Family Practice,30
+Health & Fitness-Fertility,30
+Health & Fitness-Gerontologists,30
+Health & Fitness-Golf,80
+Health & Fitness-Gyms & Fitness Centers,31
+Health & Fitness-Health Clubs,31
+Health & Fitness-Holistic Medicine,30
+Health & Fitness-Home Health Care,30
+Health & Fitness-Hospitals,30
+Health & Fitness-Infectious Disease Physicians,30
+Health & Fitness-Internal Medicine,30
+Health & Fitness-Laser Eye Surgery/Lasik,30
+Health & Fitness-Martial Arts,79
+Health & Fitness-Medical Groups,30
+Health & Fitness-Midwives,30
+Health & Fitness-Naturopathic,30
+Health & Fitness-Neonatal Physicians,30
+Health & Fitness-Nutritionists,30
+Health & Fitness-Obstetricians and Gynecologists,30
+Health & Fitness-Occupational Medical Physicians,30
+Health & Fitness-Ophthalmologists,30
+Health & Fitness-Optometrists,30
+Health & Fitness-Oral Surgeons,30
+Health & Fitness-Orthodontists,30
+Health & Fitness-Orthopedists,30
+Health & Fitness-Osteopathic Physicians,30
+Health & Fitness-Pain Management Physicians,30
+Health & Fitness-Pediatric Dentists,30
+Health & Fitness-Pediatricians,30
+Health & Fitness-Periodontists,30
+Health & Fitness-Personal Trainers,5
+Health & Fitness-Pharmacies,30
+Health & Fitness-Physical Therapy,30
+Health & Fitness-Pilates,48
+Health & Fitness-Podiatrists,30
+Health & Fitness-Proctologists,30
+Health & Fitness-Psychiatrists,30
+Health & Fitness-Racquetball Clubs,26
+Health & Fitness-Recreation Centers,31
+Health & Fitness-Retirement Homes,30
+Health & Fitness-Rock Climbing,30
+Health & Fitness-Skiing,30
+Health & Fitness-Adventure Medicine,30
+Health & Fitness-Tennis,30
+Health & Fitness-Urgent Care,30
+Health & Fitness-Weight Loss Centers,30
+Health & Fitness-Yoga,44
+Home Services-Home Services,8
+Home Services-Agricultural Services,8
+Home Services-Appliance Repair & Supplies,8
+Home Services-Building Supplies,8
+Home Services-Cable & Satellite Equipment & Services,8
+Home Services-Carpet Cleaning,8
+Home Services-Carpeting,8
+Home Services-Chimney Sweep,8
+Home Services-Cleaning Services & Supplies,8
+Home Services-Contractors,8
+Home Services-Custom Home Builders,8
+Home Services-Electricians,8
+Home Services-Fire Protection,8
+Home Services-Fireplaces,8
+Home Services-Garage Doors,8
+Home Services-Gardeners,8
+Home Services-Gutter Cleaning Services,8
+Home Services-Handyman Services,8
+"Home Services-Heating, Ventilation & Air Conditioning",8
+Home Services-Home Cleaning,8
+Home Services-Home Inspectors,8
+Home Services-Home Repair,8
+Home Services-Home Theatre Installation,8
+Home Services-Interior Designers & Decorators,8
+Home Services-Keys & Locksmiths,8
+Home Services-Landscape Architects,8
+Home Services-Landscaping,8
+Home Services-Lawn Care Services,8
+Home Services-Movers,8
+Home Services-Painters,8
+Home Services-Pest & Animal Control,8
+Home Services-Plumbing,8
+Home Services-Pool Cleaners,8
+Home Services-Roofing,8
+Home Services-Security Systems,8
+Home Services-Snow Removal Services,8
+Home Services-Solar Installation,8
+Home Services-Sprinklers & Irrigation,8
+Home Services-Swimming Pool Equipment & Supplies,8
+Home Services-Tree Services,8
+"Home Services-Utilities-Gas, Water & Electric",8
+Home Services-Vacuum Cleaners,8
+Home Services-Waste Management Services,8
+Home Services-Water Heaters,8
+Home Services-Window Installation,8
+Home Services-Window Washing,8
+Legal Services-Legal Services,10
+Legal Services-Adoption Services,10
+Legal Services-Bail Bonds,10
+Legal Services-Business & Corporate Lawyers,10
+Legal Services-Criminal Lawyers,10
+Legal Services-Divorce and Family Law,10
+Legal Services-Driving & Traffic Law,10
+Legal Services-Family Law Attorney,10
+Legal Services-Financial & Bankruptcy,10
+Legal Services-General Litigation Lawyers,10
+Legal Services-Governmental Law,10
+Legal Services-Juvenile Lawyers,10
+Legal Services-Labor & Employment Lawyers,10
+Legal Services-Malpractice Lawyers,10
+"Legal Services-Patent, Trademark & Copyright Lawyers",10
+Legal Services-Personal Injury Lawyers,10
+Legal Services-Real Estate Lawyers,10
+Legal Services-Wills & Estate Planning,10
+Nightlife-Nightlife,37
+Nightlife-Bars,19
+Nightlife-Champagne Bars,19
+Nightlife-Cigar Bars,19
+Nightlife-Cocktail Bars,19
+Nightlife-Comedy Clubs,42
+Nightlife-Dance Clubs,28
+Nightlife-Dive Bars,19
+Nightlife-Gay Bars,19
+Nightlife-Hookah Bars,19
+Nightlife-Irish Pubs,19
+Nightlife-Jazz & Blues Clubs,19
+Nightlife-Karaoke,19
+Nightlife-Lounges,19
+Nightlife-Music Venues,19
+Nightlife-Night Clubs,19
+Nightlife-Piano Bars,19
+Nightlife-Pool Halls,19
+Nightlife-Pubs,19
+Nightlife-Social Clubs,19
+Nightlife-Sports Bars,19
+Nightlife-Wine Bars,19
+Pets-Pets,15
+Pets-Animal Hospitals,15
+Pets-Animal Shelters,15
+Pets-Breeders,15
+Pets-Dog Walkers,15
+Pets-Horse Services & Equipment,15
+Pets-Pet Boarding/Pet Sitting,15
+Pets-Pet Groomers,15
+Pets-Pet Stores,15
+Pets-Pet Training,15
+Pets-Veterinarians,15
+Professional Services-Professional Services,12
+Professional Services-Accountants,12
+Professional Services-Advertising,12
+Professional Services-Appraisers,12
+Professional Services-Architects,12
+Professional Services-Career Counseling,12
+Professional Services-Caretakers,12
+Professional Services-Catering & Bartending Services,12
+Professional Services-Charity,12
+Professional Services-Child Day Care,12
+Professional Services-Construction Companies,12
+Professional Services-Consultants,12
+Professional Services-Copy Shops,12
+Professional Services-Courier & Delivery Services,12
+Professional Services-Dating Services,12
+Professional Services-Demolition Companies,12
+Professional Services-Diaper Services,12
+Professional Services-DJs,12
+Professional Services-Dry Cleaning & Laundry,12
+Professional Services-Electronics Repair,12
+Professional Services-Employment Agencies,12
+Professional Services-Engineers,12
+Professional Services-Equipment Rental,12
+Professional Services-Equipment Repair,12
+Professional Services-Event Planner,12
+Professional Services-Family Counselors,12
+Professional Services-Fashion Design,12
+Professional Services-Florists,12
+Professional Services-Freight Services,12
+Professional Services-Funeral Services & Cemeteries,12
+Professional Services-Furniture Reupholstery,12
+Professional Services-Genealogists,12
+Professional Services-General Contractors,12
+Professional Services-Graphic Design,12
+Professional Services-Internet Services Providers,12
+Professional Services-Investigation Services,12
+Professional Services-IT Services & Computer Repair,12
+Professional Services-Junk Removal and Hauling,12
+Professional Services-Life Coaches,12
+Professional Services-Marketing,12
+Professional Services-Modeling,12
+Professional Services-Music Production,12
+Professional Services-Non-Profit Organizations,12
+Professional Services-Notaries,12
+Professional Services-Party & Event Planning,12
+Professional Services-Personal Chefs,12
+Professional Services-Personal Shopping,12
+Professional Services-Photographers,12
+Professional Services-Portrait Studios,12
+Professional Services-Printing & Copying Equipment & Services,12
+Professional Services-Public & Social Services,12
+Professional Services-Publishers,12
+Professional Services-Recording & Rehearsal Studios,12
+Professional Services-Recruiters,12
+Professional Services-Recycling Centers,12
+Professional Services-Screen Printing & Embroidery,12
+Professional Services-Secretarial Services,12
+Professional Services-Security Guards,12
+Professional Services-Self Storage,12
+Professional Services-Sewing & Alterations,12
+Professional Services-Shipping Centers & Mail Services,12
+Professional Services-Shoe Repair,12
+Professional Services-Singing Telegrams,12
+Professional Services-Taxidermy,12
+Professional Services-Ticket Sales,12
+Professional Services-Video & Film Production,12
+Professional Services-Volunteer Organizations,12
+Professional Services-Watch Repair,12
+Professional Services-Website Design,12
+Professional Services-Wedding Planning,12
+Professional Services-Writing Services,12
+Public Services & Government-Public Services & Government,12
+Public Services & Government-Departments of Motor Vehicles,12
+Public Services & Government-Government Services,12
+Public Services & Government-Landmarks & Historical Buildings,12
+Public Services & Government-Libraries,12
+Public Services & Government-Police Departments,12
+Public Services & Government-Post Offices,12
+Real Estate-Real Estate,14
+Real Estate-Apartments,14
+Real Estate-Appraisers,14
+Real Estate-Condominiums,14
+Real Estate-Facilities & Warehouses,14
+Real Estate-Home Staging,14
+Real Estate-Housing Assistance & Shelters,14
+Real Estate-Mobile Home Dealers,14
+Real Estate-Mobile Home Parks,14
+Real Estate-Moving Services,14
+Real Estate-Portable Buildings,14
+Real Estate-Property Management,14
+Real Estate-Real Estate Agents,14
+Real Estate-Real Estate Appraisers,14
+Real Estate-Real Estate Services,14
+Real Estate-Retirement Communities,14
+Real Estate-Title Companies,14
+Real Estate-Truck Rental,14
+Real Estate-University Housing,14
+Religious Organizations-Religious Organizations,16
+Religious Organizations-Anglican Churches,16
+Religious Organizations-Baptist Churches,16
+Religious Organizations-Buddhist Temples,16
+Religious Organizations-Catholic Churches,16
+Religious Organizations-Christian Churchless,16
+Religious Organizations-Church of Jesus Christ of Latter-day Saints,16
+Religious Organizations-Evangelical Churches,16
+Religious Organizations-Hindu Temples,16
+Religious Organizations-Hispanic Churches,16
+Religious Organizations-Jehovah's Witness Churches,16
+Religious Organizations-Korean Churches,16
+Religious Organizations-Lutheran Churches,16
+Religious Organizations-Methodist Churches,16
+Religious Organizations-Missions,16
+Religious Organizations-Monasteries,16
+Religious Organizations-Mosques,16
+Religious Organizations-Non-Denominational Churches,16
+Religious Organizations-Orthodox Churches,16
+Religious Organizations-Pentecostal Churches,16
+Religious Organizations-Presbyterian Churches,16
+Religious Organizations-Protestant Churches,16
+Religious Organizations-Reformed Churches,16
+Religious Organizations-Seventh-day Adventist Churches,16
+Religious Organizations-Synagogues,16
+Religious Organizations-Temples,16
+Religious Organizations-Unitarian Churches,16
+Restaurants-Restaurants,21
+Restaurants-Afghan,25
+Restaurants-African,25
+Restaurants-American,17
+Restaurants-Andouille,25
+Restaurants-Argentine,25
+Restaurants-Armenian,25
+Restaurants-Asian Fusion,25
+Restaurants-Barbeque,25
+Restaurants-Basque,25
+Restaurants-Belgian,25
+Restaurants-Brasseries,25
+Restaurants-Brazilian,25
+Restaurants-Breakfast & Brunch,25
+Restaurants-British,25
+Restaurants-Buffets,25
+Restaurants-Burgers,25
+Restaurants-Burmese,25
+Restaurants-Café,25
+Restaurants-Cafeteria,25
+Restaurants-Cajun,25
+Restaurants-Cambodian,25
+Restaurants-Caribbean,25
+Restaurants-Cheese steaks,25
+Restaurants-Chicken Wings,25
+Restaurants-Chinese,25
+Restaurants-Coffee House,25
+Restaurants-Continental,25
+Restaurants-Creole,25
+Restaurants-Creperies,25
+Restaurants-Cuban,25
+Restaurants-Cyber Café,25
+Restaurants-Delis,25
+Restaurants-Dessert,25
+Restaurants-Dim Sum,25
+Restaurants-Diners,25
+Restaurants-English,25
+Restaurants-Ethiopian,25
+Restaurants-Family,25
+Restaurants-Fast Food,25
+Restaurants-Filipino,25
+Restaurants-Fine Dining,25
+Restaurants-Fish & Chips,25
+Restaurants-Fondue,25
+Restaurants-Food Stands,25
+Restaurants-French,25
+Restaurants-Gastropubs,25
+Restaurants-German,25
+Restaurants-Gluten-Free,25
+Restaurants-Greek,25
+Restaurants-Halal,25
+Restaurants-Hawaiian,25
+Restaurants-Himalayan,25
+Restaurants-Hot Dogs,25
+Restaurants-Hungarian,25
+Restaurants-Indian,25
+Restaurants-Indonesian,25
+Restaurants-Iranian,25
+Restaurants-Irish,25
+Restaurants-Italian,22
+Restaurants-Jamaican,25
+Restaurants-Japanese,23
+Restaurants-Korean,25
+Restaurants-Kosher,25
+Restaurants-Latin American,25
+Restaurants-Lebanese,25
+Restaurants-Live Food,25
+Restaurants-Malaysian,25
+Restaurants-Mediterranean,25
+Restaurants-Mexican,24
+Restaurants-Mexican/Latin,24
+Restaurants-Middle Eastern,25
+Restaurants-Modern European,25
+Restaurants-Mongolian,25
+Restaurants-Moroccan,25
+Restaurants-Nepalese,25
+Restaurants-Organic,25
+Restaurants-Oyster Bars,25
+Restaurants-Packaged Meals,25
+Restaurants-Pakistani,25
+Restaurants-Pancake House,25
+Restaurants-Persian,25
+Restaurants-Peruvian,25
+Restaurants-Pizza,25
+Restaurants-Po Boys,25
+Restaurants-Polish,25
+Restaurants-Portuguese,25
+Restaurants-Raw Food,25
+Restaurants-Russian,25
+Restaurants-Sandwiches,25
+Restaurants-Scandinavian,25
+Restaurants-Seafood,25
+Restaurants-Singaporean,25
+Restaurants-Small Plates,25
+Restaurants-Soul Food,25
+Restaurants-Soup,25
+Restaurants-Southern,25
+Restaurants-Southwestern,25
+Restaurants-Spanish,25
+Restaurants-Steakhouses,25
+Restaurants-Surinamese,25
+Restaurants-Sushi Bars,23
+Restaurants-Swiss,25
+Restaurants-Taiwanese,25
+Restaurants-Tapas,25
+Restaurants-Tea Rooms,25
+Restaurants-Tex-Mex,25
+Restaurants-Thai,25
+Restaurants-Turkish,25
+Restaurants-Ukrainian,25
+Restaurants-Vegan,25
+Restaurants-Vegetarian,25
+Restaurants-Vietnamese,25
+Shopping-Shopping,60
+Shopping-Accessories,58
+Shopping-Antiques,60
+Shopping-Appliances,50
+Shopping-Art,60
+Shopping-Arts & Crafts Supplies,60
+Shopping-Athletic Apparel,60
+Shopping-Auctions,60
+Shopping-Baby Furniture,49
+Shopping-Baby Gear,49
+Shopping-Bike Shops,60
+Shopping-Book Stores,60
+Shopping-Boutiques,60
+Shopping-Bridal,60
+Shopping-Cards & Stationery,60
+Shopping-Carpet & Flooring,60
+Shopping-Children's Clothing,52
+Shopping-Collectibles,60
+Shopping-Comic Books,60
+Shopping-Computers,50
+Shopping-Costumes,60
+Shopping-Dance Apparel,60
+Shopping-Department Stores,60
+Shopping-Discount Stores,60
+Shopping-Drugstores,59
+Shopping-Electronics,50
+Shopping-Eyewear & Opticians,60
+Shopping-Fabric Stores,60
+Shopping-Flea Markets,60
+Shopping-Formal Wear,60
+Shopping-Framing,60
+Shopping-Furniture Stores,60
+Shopping-Gift Shops,60
+Shopping-Hardware Stores,60
+Shopping-Hobby Shops,60
+Shopping-Home Décor,60
+Shopping-Home Improvement Stores,60
+Shopping-Hot Tub and Pool,60
+Shopping-Industrial Equipment Supplier,60
+Shopping-Jewelry,60
+Shopping-Junk & Scrap Dealers,60
+Shopping-Kitchen & Bath,60
+Shopping-Leather Goods,60
+Shopping-Lighting Fixtures,60
+Shopping-Lingerie,57
+Shopping-Luggage,60
+Shopping-Maternity Stores,60
+Shopping-Mattresses,60
+Shopping-Men's Clothing,53
+Shopping-Mobile Phones,60
+Shopping-Music & DVDs,60
+Shopping-Musical Instruments,60
+Shopping-Newspapers & Magazines,60
+Shopping-Nurseries & Garden Centers,60
+Shopping-Office Supplies & Equipment,60
+Shopping-Outlet Stores,60
+Shopping-Party Supplies,60
+Shopping-Pawn Shops,60
+Shopping-Photography Stores & Services,60
+Shopping-Religious Goods,60
+Shopping-Shades & Blinds,60
+Shopping-Shoe Stores,55
+Shopping-Shopping Centers,60
+Shopping-Sporting Goods,61
+Shopping-Swimwear,61
+Shopping-Thrift Stores,60
+Shopping-Tobacco Shops,60
+Shopping-Toy Stores,52
+Shopping-Trophies & Engraving,60
+Shopping-Uniforms,60
+"Shopping-Used, Vintage & Consignment",60
+Shopping-Vending Machines,60
+Shopping-Videos and Video Game Rental,60
+Shopping-Watches,60
+Shopping-Wholesale Stores,60
+Shopping-Women's Clothing,57
+Services-Services,15
+Travel-Travel,66
+Travel-Airlines,64
+Travel-Bed & Breakfasts,65
+Travel-Bus Lines,66
+Travel-Car Rental,62
+Travel-Cruises,63
+Travel-Hostels,65
+Travel-Hotels,65
+Travel-Lodging,65
+Travel-Motels,65
+Travel-Resorts,67
+Travel-RV-Recreational Vehicles,66
+Travel-Taxis,66
+Travel-Timeshare Agencies,66
+Travel-Travel Agencies,66
+Travel-Vacation Home Rental,68
+Arts and Entertainment-Arts/Crafts/Hobbies,27
+Arts and Entertainment-Bus Tours,43
+Beauty & Spas-Hair Salon,39
+Beauty & Spas-Spa Package,39
+Food & Drink-Dessert/Bakery,18
+Professional Services-Photography,11
+Restaurants-Sandwich/Deli,25
+Shopping-Clothing Sales,60
+Tickets-Tickets,38
+Travel-Hotel,65
+Beauty & Spas-Laser Hair Removal,39
+Food & Drink-Alcohol Store,60
+Arts and Entertainment-Music Concert,36

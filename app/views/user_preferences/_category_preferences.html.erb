@@ -1,0 +1,12 @@
+<% if controller.action_name == 'new' %>
+    <% (1..3).each do |index| %>
+        <%= render :partial => 'user_preferences/category_img', :locals => {:category => nil, :slider => false, :index => index} %>
+    <% end %>
+
+<% else %>
+    <%= render :partial => 'user_preferences/category_img', :locals => {:category => @offer_category_1, :slider => @offer_category_1.present?, :index => 1} %>
+    <%= render :partial => 'user_preferences/category_img', :locals => {:category => @offer_category_2, :slider => @offer_category_2.present?, :index => 2} %>
+    <%= render :partial => 'user_preferences/category_img', :locals => {:category => @offer_category_3, :slider => @offer_category_3.present?, :index => 3} %>
+<% end %>
+
+

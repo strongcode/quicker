@@ -1,0 +1,24 @@
+<% if friends.present? %>
+  <div class="row-fluid">
+    <div class="span1 db_slider_arrow big close hidden-phone"> </div>
+    <div class="span10">
+      <div class="row-fluid">
+        <ul class="<%= slider %>">
+          <% friends.each do |friend| %>
+            <li class="friends">
+              <div class="span2">
+                <label for="<%= friend.id %>">
+                  <%= get_friends_image(friend.user_profile) %>
+                  <div class="friend-info"><%= friend.full_name %></div>
+                  <div class="friend-info"><%= friend.user_profile.location_name %></div>
+                  <%= check_box_tag 'friends[]', friend.id, false, :id => friend.id, :class => 'jQueryFriendsSelector', :style => 'display:none;' %>
+                </label>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="span1 db_slider_arrow big hidden-phone"></div>
+  </div>
+<% end %>

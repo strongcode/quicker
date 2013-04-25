@@ -1,0 +1,24 @@
+<% location_picture = location.default_image(current_user) %>
+<div class="span2" style="margin-bottom:5px;<%= location_counter % 6 == 0 ? ('margin-left: 0;'): ('') %>">
+  <div class="location_images">
+    <%= image_tag location_picture.present? ? (location_picture) : ('default_images/LocationBlank.png'),
+                  :id => "location-#{location.id}-list-#{location_list.id}", :class => 'jQuery-Location-List',
+                  :alt => '' %>
+    <%= link_to 'Delete', remove_location_list_location_list_path(location_list, :location_id => location.id),
+      :method => :delete,
+      :remote => true,
+      :data => {:confirm => location_list.confirm_message},
+      :class => 'delete' unless params[:action].match(/friend/i) %>
+
+  </div>
+  <div class="location_images_text"><%= location.name %>
+  </div>
+
+</div>
+
+<% if location_picture.blank? %>
+  <script type="text/javascript">
+    Google_Map.street_view_service(<%= location.latitude %>, <%= location.longitude %>, <%= location.id %>,
+	                                 <%= location_list.id %>);
+  </script>
+<% end %>

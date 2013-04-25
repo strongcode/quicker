@@ -1,0 +1,13 @@
+<% if review.present? && review.location.present? %>
+  <div class="span4 reviewer_spans">
+    <div class="reviwer_title"><%= review.location.name %></div>
+    <div class="reviwer_text">
+      <%= truncate review.review_details, :length => 40 %>
+      <% if review.review_details.length > 45 %>
+        <div class="reviewer_pls_btn">
+          <%= link_to (image_tag 'plus_icon.png'), sidekick_location_review_path(review.location, review), :class => 'fancybox fancybox.ajax' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

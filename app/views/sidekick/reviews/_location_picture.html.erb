@@ -1,0 +1,11 @@
+<% if @location.present? %>
+  <div class="sd-images-1 jQuery-Location-Photo">
+    <%= image_tag @location.location_pics.present? ? (@location.location_pics[0].image_url(:standard_image)) : (''), :id => "location-#{@location.id}", :alt => '' %>
+  </div>
+  <div class="sd-images-1"><%= location_image @location.location_pics[1] %></div>
+  <div class="sd-images-1"><%= location_image @location.location_pics[2] %></div>
+<% else %>
+  <div class="sd-images-1 jQuery-Location-Photo"></div>
+  <div class="sd-images-1"></div>
+  <div class="sd-images-1"></div>
+<% end %>

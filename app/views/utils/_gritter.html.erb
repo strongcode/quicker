@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    $(function () {
+
+        $.gritter.add({
+            title:'<%= j defined?(title) ? title : configatron.site_name %>',
+            text:'<%= j text %>'
+            //image:'/favicons/apple-touch-icon-72-precomposed.png'
+        });
+    });
+</script>

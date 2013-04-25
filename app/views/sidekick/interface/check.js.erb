@@ -1,0 +1,14 @@
+<% if @location.present? && @location_list.present? %>
+  jQuery.ajax({
+  url: '<%= update_list_sidekick_location_list_path(@location_list) %>',
+  data: '<%= "location_id=#{@location.id}" %>',
+  type: 'GET'
+  });
+
+<% elsif @location.present? && @location_list.blank? %>
+  jQuery('#anchor_location_add_form').attr('href', '<%= j (dummy_path(:target_path => new_sidekick_location_list_path(:location_id => @location.id))) %>').click();
+<% elsif @location.blank? && @location_list.present? %>
+  jQuery('.jQuerydBAddLoc').attr('href', '<%= j(dummy_path(:target_path => new_sidekick_location_path(:location_list_id => @location_list.id))) %>').click();
+<% elsif @location.blank? && @location_list.blank? %>
+  jQuery('.jQuerydBAddLoc').attr('href', '<%= j(dummy_path(:target_path => new_sidekick_location_path)) %>').click();
+<% end %>

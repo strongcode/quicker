@@ -1,0 +1,50 @@
+<!-- search result rows -->
+<div class="container insider_container_margin">
+  <% if @sorted_offers.present? %>
+    <div class="" style="margin-bottom:18px; width: 200px;">
+      <button class="btn btn-info" data-href="<%= insider_offers_url %>" data-type="anchor"><i class="icon-search icon-white"></i>Search Again</button>
+    </div>
+    <% @sorted_offers.each do|offer| %>
+    <div class="container insider_container_margin">
+        <div class="row-fluid">
+          <div class="insider_row">
+            <div class="span3">
+              <div class="insider_offer_image_div">
+                <img class="" alt="" src='<%= offer_image_path(offer) %>' />
+              </div>
+            </div>
+            <div class="span4 sg-insider-details">
+              <div class="insider_sug_title bold-font black-on-gray margin-top18"><%= formatted_offer_title(offer) %></div>
+              <div class="insider_sug_title normal-font black-on-gray margin-top10"><%= offer.deal_header %></div>
+              <% if offer.offer_options.present? %>
+                <div class="insider_sug_title bold-font black-on-gray margin-top10">
+                  <%= offer.you_save_description %>
+                </div>
+              <% end %>
+            </div>
+            <div class="span3">
+              <div class="insider_btn text_align_center">
+                <%= snap_or_learn_more(offer) %>
+              </div>
+            </div>
+            <div class="span2 insider-share">
+              <div class="insider_share_btn text_align_center">
+                <%= custom_share_link(offer, new_insider_offer_share_url(offer),
+                  'fancybox_iframe_large fancybox.iframe') %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <button class="btn btn-info" data-href="<%= insider_offers_url %>" data-type="anchor"><i class="icon-search icon-white"></i>Search Again</button>
+  <% end %>
+</div>
+
+<% if @sorted_offers.blank? %>
+  <script type="text/javascript">
+    alert("No Deals Present!");
+    window.location.href = "<%= insider_offers_url %>";
+  </script>
+
+<% end %>

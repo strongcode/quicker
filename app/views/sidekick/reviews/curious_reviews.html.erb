@@ -1,0 +1,83 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/obj' %>
+<% end %>
+
+<div class="popup-container sd_header">
+  <div class="row-fluid ">
+    <div class="span5">
+      <!--<div class="sd-images-1 jQuery-Location-Photo"> -->
+      <%= render :partial => 'location_picture' %>
+      <!--</div> -->
+      <div class="sd-images-1">
+        <% if @location.present? %>
+          <%= get_static_map(@location, nil, 169, 143) %>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="span3 address">
+      <% if @location.present? %>
+        <div class="text"><%= @location.name %></div>
+        <div class="text"><%= @location.full_address %></div>
+      <% else %>
+        <div class="text"><%= params[:location][:city] %></div>
+        <div class="text"><%= "#{params[:location][:street]}, #{params[:location][:city]}, #{params[:location][:state]}" %></div>
+      <% end %>
+    </div>
+    <div class="span2 address ">
+      <div class=" sidekick_drill_title">Reviews</div>
+      <% if @location.present? %>
+        <div class="progress sk_progress_height1">
+          <div class="bar bar-success" style="width: <%= "#{get_review_percentage(@my_and_friends_reviews.count, (@my_and_friends_reviews.count + @snapgadget_reviews.count))}%" %>;">
+            <div class="sk_profress_bar_text1"><%= @my_and_friends_reviews.count %></div>
+          </div>
+          <div class="bar progress-info" style="width:<%= "#{get_review_percentage(@snapgadget_reviews.count, (@my_and_friends_reviews.count + @snapgadget_reviews.count))}%" %>;">
+            <div class="sk_profress_bar_text1"><%= @snapgadget_reviews.count %></div>
+          </div>
+        </div>
+      <% else %>
+        <div class="progress sk_progress_height1">
+          <div class="bar bar-success" style="width:0%;">
+            <div class="sk_profress_bar_text1">0</div>
+          </div>
+          <div class="bar progress-info" style="width:0%;">
+            <div class="sk_profress_bar_text1">0</div>
+          </div>
+        </div>
+      <% end %>
+      
+    </div>
+    <div class="span2 address">
+      <div style="padding-left: 15px;" class="sidekick_drill_title">Popular?</div>
+      <div style="margin-bottom: 12px;" class="row-fluid">
+        <div class="sidekick_drill_progress_bar">
+          <div class="isdd_pinboard">
+            <div class="db_location_score">0</div>
+          </div>
+        </div>
+        <!-- Passionate Section -->
+        <!-- <div class="sidekick_drill_progress_bar_text">
+          <div class="isdd_heart">
+            <div class="db_location_score db_sgheart_score"><%#= @passionates.count %></div>
+          </div>
+        </div> -->
+        <!-- Passionate Ends -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => 'curious_reviews' %>
+
+<% if @location.blank? %>
+  <script type="text/javascript">
+    Google_Map.street_view_service(<%= params[:location][:latitude] %>, <%= params[:location][:longitude] %>, 0, '');
+  </script>
+<% elsif @location.location_pics.blank? %>
+  <script type="text/javascript">
+    Google_Map.street_view_service(<%= @location.latitude %>, <%= @location.longitude %>, <%= @location.id %>, '');
+  </script>
+<% end %>
+

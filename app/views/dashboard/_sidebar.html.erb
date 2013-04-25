@@ -1,0 +1,23 @@
+<div class="span3 bs-docs-sidebar">
+  <ul class="nav_m nav-list bs-docs-sidenav jQueryDashboardSidebar">
+    <li class=""><a href="<%= db_status_url %>"><%= t('dashboard.status') %></a></li>
+    <li class=""><a href="<%= db_activities_url %>"><%= t('dashboard.activities') %></a></li>
+    <li class=""><a href="<%= db_friends_url %>"><%= t(:friends) %></a></li>
+    <li class=""><a href="<%= location_lists_url%> "><%= t('dashboard.location_lists') %></a></li>
+    <li class=""><a href="<%= passionates_url%>"><%= t('dashboard.passionates') %></a></li>
+  </ul>
+</div> 
+
+<script type="text/javascript">
+<% if controller.action_name == 'db_status' %>
+    $('ul.jQueryDashboardSidebar li').eq(0).addClass('active');
+<% elsif controller.action_name == 'db_activities' %>
+    $('ul.jQueryDashboardSidebar li').eq(1).addClass('active')
+<% elsif controller.action_name == 'db_friends' || (params[:controller].match(/friends_requests/i) && controller.action_name == 'new') %>
+    $('ul.jQueryDashboardSidebar li').eq(2).addClass('active')
+<% elsif (params[:controller] == 'location_lists') && (controller.action_name == 'new' || controller.action_name == 'index') %>
+    $('ul.jQueryDashboardSidebar li').eq(3).addClass('active')
+<% elsif params[:controller].match(/passionates/i) %>
+    $('ul.jQueryDashboardSidebar li').eq(4).addClass('active')
+<% end %>
+</script>

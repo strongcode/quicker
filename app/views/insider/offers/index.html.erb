@@ -1,0 +1,55 @@
+<% content_for :google_map do %>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <%= javascript_include_tag 'google_map/obj' %>
+<% end %>
+
+<div class="container">
+  <div class="span9 edit_profile_title">
+    <% if @special_offer.present? || @you_deserve_it_offer || @preferred_deal_offer.present? || @trending_deal.present? || @deal_trackers.present? %>
+      <%= current_user.first_name.capitalize %>, Insider Deals
+    <% else %>
+      &nbsp;
+    <% end %>
+  </div>
+
+  <div class="span3 category-heading" style="margin-top:11px;text-align: right;">
+    <a href="<%= new_insider_suggestion_path %>" class="fancybox_iframe_suggestion fancybox.iframe">
+      <h2>Make A Suggestion</h2>
+    </a>
+  </div>
+</div>
+
+<%= render :partial => 'offer', :locals => {:offer => @special_offer } %>
+<%#= render :partial => 'offer', :locals => {:offer => @insider_do_better_offer } %>
+<%= render :partial => 'offer', :locals => {:offer => @you_deserve_it_offer} %>
+<%= render :partial => 'offer', :locals => {:offer => @preferred_deal_offer} %>
+<%= render :partial => 'offer', :locals => {:offer => @trending_deal} %>
+<% if @deal_trackers.first.present? && @deal_trackers.first.trackable_type == Offer.to_s %>
+  <%= render :partial => 'shared_offer', :locals => {:offer => @deal_trackers.first.trackable, :share => Share.get_share(@deal_trackers.first).first} %>
+<% end %>
+<%= render :partial => 'offer', :locals => {:offer => @snap_add} %>
+
+<% if @all_suggestions_execpt_friends.present? || @friends_suggestions.present? || @suggestion_trackers.present?  %>
+  <div class="container">
+    <div class="span9 edit_profile_title">
+      <%= current_user.first_name.capitalize %>, Insider Suggestions
+    </div>
+    <div class="span3 edit_profile_title">&nbsp;</div>
+  </div>
+<% end %>
+
+<%= render :partial => 'insider/suggestions/suggestion', :locals => {:suggestion => @all_suggestions_execpt_friends.first } %>
+<%= render :partial => 'insider/suggestions/friends_suggestion', :locals => {:suggestion => @friends_suggestions.first } %>
+
+<% if @suggestion_trackers.present? && @suggestion_trackers.first.present? && @suggestion_trackers.first.trackable_type == Suggestion.to_s  %>
+  <%= render :partial => 'insider/suggestions/shared_suggestion', :locals => {:suggestion => @suggestion_trackers.first.trackable, :share => Share.get_share(@suggestion_trackers.first).first } %>
+<% end %>
+
+<%= render :partial => 'search' %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    top.location !== self.location && (top.location = self.location);
+  });
+</script>

@@ -1,0 +1,41 @@
+<div id="jQueryDashboardGuide" class="popup-container" style="display: none;">
+  <%= form_tag save_guide_setting_path, :id => 'jQueryGuideForm', :remote => true do %>
+    <fieldset class="fieldset-border" style="padding:18px 45px 25px 45px;">
+      <legend>
+        <h2 class="sg-legend-margin">Welcome to the SnapGadget Dashboard!</h2>
+      </legend>
+      <div class="row-fluid" style="text-align:justify;">
+        <p>Dashboard provides an ongoing summary of all of your activities on SnapGadget. It’s also the place where you can add friends or respond to friend requests.</p>
+        <p>Other info you can track on Dashboard includes:</p>
+        <ol>
+          <li style="line-height: 30px;">
+            Membership Level – For those who joined us early on, you’ll notice you have Social Pioneer Status. (That’ll come in handy down the line.) Most others who join will have a standard membership.  Membership is FREE!
+          </li>
+          <li style="line-height: 30px;">
+            Influence meter – As your reviews, recommendations and suggestions are viewed by others, watch your influence grow!
+          </li>
+          <li style="line-height: 30px;">
+            Kudos Points – Kudos points are a great way to get special benefits and are gained as you perform activities on SnapGadget. We are currently working on a redemption plan that’ll extend great offers in exchange for Kudos Points. So keep adding them up!
+          </li>
+
+          <li style="line-height: 30px;">
+            Share Notifications – If your friends share lists of their favorite restaurants, special offers to Snap Up or new goals while you’ve been away from SnapGadget, you’ll be notified here.
+          </li>
+
+        </ol>
+      </div>
+      <div class="span5">
+        <div class="row-fluid">
+          <div class="span1">
+            <%= check_box_tag 'user_profile[show_dashboard_guide]', "false" %>
+          </div>
+          <div class="span6">
+            <label for="user_profile_show_dashboard_guide" style="line-height: 25px;">Don't Show Again</label>
+          </div>
+        </div>
+      </div>
+
+      <%= hidden_field_tag 'guide_page', 'dashboard' %>
+    </fieldset>
+  <% end %>
+</div>

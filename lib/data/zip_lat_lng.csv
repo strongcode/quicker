@@ -1,0 +1,595 @@
+zip,primary_city,state,latitude,longitude,Division
+80002,Arvada,CO,39.82,-105.1,denver
+80003,Arvada,CO,39.82,-105.1,denver
+80004,Arvada,CO,39.82,-105.1,denver
+80005,Arvada,CO,39.82,-105.1,denver
+80007,Arvada,CO,39.82,-105.1,denver
+80010,Aurora,CO,39.69,-104.81,denver
+80011,Aurora,CO,39.69,-104.81,denver
+80012,Aurora,CO,39.69,-104.81,denver
+80013,Aurora,CO,39.69,-104.81,denver
+80014,Aurora,CO,39.69,-104.81,denver
+80015,Aurora,CO,39.69,-104.81,denver
+80016,Aurora,CO,39.69,-104.81,denver
+80017,Aurora,CO,39.69,-104.81,denver
+80018,Aurora,CO,39.69,-104.81,denver
+80019,Aurora,CO,39.69,-104.81,denver
+80020,Broomfield,CO,39.94,-105.06,denver
+80021,Broomfield,CO,39.94,-105.06,denver
+80022,Commerce City,CO,39.86,-104.86,denver
+80023,Broomfield,CO,39.96,-105.02,denver
+80026,Lafayette,CO,39.99,-105.09,denver
+80027,Louisville,CO,39.96,-105.14,denver
+80030,Westminster,CO,39.88,-105.05,denver
+80031,Westminster,CO,39.88,-105.05,denver
+80033,Wheat Ridge,CO,39.77,-105.09,denver
+80045,Aurora,CO,39.69,-104.81,denver
+80047,Aurora,CO,39.69,-104.81,denver
+80101,Agate,CO,39.47,-103.95,colorado-springs
+80102,Bennett,CO,39.75,-104.42,
+80103,Byers,CO,39.71,-104.22,
+80104,Castle Rock,CO,39.37,-104.85,
+80105,Deer Trail,CO,39.61,-104.04,
+80106,Elbert,CO,39.22,-104.53,
+80107,Elizabeth,CO,39.36,-104.6,
+80108,Castle Rock,CO,39.37,-104.85,denver
+80109,Castle Rock,CO,39.36,-104.9,denver
+80110,Englewood,CO,39.64,-104.99,
+80111,Englewood,CO,39.64,-104.99,
+80112,Englewood,CO,39.64,-104.99,
+80113,Englewood,CO,39.64,-104.96,
+80116,Franktown,CO,39.38,-104.75,
+80117,Kiowa,CO,39.34,-104.46,
+80118,Larkspur,CO,39.18,-104.89,
+80120,Littleton,CO,39.59,-105.01,
+80121,Littleton,CO,39.59,-105.01,
+80122,Littleton,CO,39.59,-105.01,
+80123,Littleton,CO,39.59,-105.01,
+80124,Lone Tree,CO,39.59,-105.01,
+80125,Littleton,CO,39.59,-105.01,
+80126,Littleton,CO,39.59,-105.01,
+80127,Littleton,CO,39.57,-105.14,
+80128,Littleton,CO,39.59,-105.01,
+80129,Littleton,CO,39.54,-105,
+80130,Littleton,CO,39.54,-104.93,
+80132,Monument,CO,39.07,-104.85,
+80133,Palmer Lake,CO,39.11,-104.9,
+80134,Parker,CO,39.5,-104.76,
+80135,Sedalia,CO,39.43,-104.97,
+80136,Strasburg,CO,39.73,-104.3,
+80137,Watkins,CO,39.75,-104.6,
+80138,Parker,CO,39.5,-104.76,
+80202,Denver,CO,39.76,-104.87,denver
+80203,Denver,CO,39.76,-104.87,denver
+80204,Denver,CO,39.76,-104.87,denver
+80205,Denver,CO,39.76,-104.87,denver
+80206,Denver,CO,39.76,-104.87,denver
+80207,Denver,CO,39.76,-104.87,denver
+80209,Denver,CO,39.76,-104.87,denver
+80210,Denver,CO,39.76,-104.87,denver
+80211,Denver,CO,39.76,-104.87,denver
+80212,Denver,CO,39.76,-104.87,denver
+80214,Denver,CO,39.76,-104.87,denver
+80215,Denver,CO,39.76,-104.87,denver
+80216,Denver,CO,39.76,-104.87,denver
+80218,Denver,CO,39.76,-104.87,denver
+80219,Denver,CO,39.76,-104.87,denver
+80220,Denver,CO,39.76,-104.87,denver
+80221,Denver,CO,39.76,-104.87,denver
+80222,Denver,CO,39.76,-104.87,denver
+80223,Denver,CO,39.76,-104.87,denver
+80224,Denver,CO,39.76,-104.87,denver
+80225,Denver,CO,39.76,-104.87,denver
+80226,Denver,CO,39.76,-104.87,denver
+80227,Denver,CO,39.76,-104.87,denver
+80228,Denver,CO,39.76,-104.87,denver
+80229,Denver,CO,39.76,-104.87,denver
+80230,Denver,CO,39.76,-104.87,denver
+80231,Denver,CO,39.76,-104.87,denver
+80232,Denver,CO,39.76,-104.87,denver
+80233,Denver,CO,39.76,-104.87,denver
+80234,Denver,CO,39.76,-104.87,denver
+80235,Denver,CO,39.76,-104.87,denver
+80236,Denver,CO,39.76,-104.87,denver
+80237,Denver,CO,39.76,-104.87,denver
+80238,Denver,CO,39.76,-104.87,denver
+80239,Denver,CO,39.76,-104.87,denver
+80241,Thornton,CO,39.76,-104.87,denver
+80246,Denver,CO,39.76,-104.87,denver
+80247,Denver,CO,39.69,-104.88,denver
+80249,Denver,CO,39.76,-104.87,denver
+80260,Denver,CO,39.76,-104.87,denver
+80264,Denver,CO,39.76,-104.87,denver
+80265,Denver,CO,39.76,-104.87,denver
+80266,Denver,CO,39.76,-104.87,denver
+80290,Denver,CO,39.76,-104.87,denver
+80293,Denver,CO,39.76,-104.87,denver
+80294,Denver,CO,39.76,-104.87,denver
+80295,Denver,CO,39.76,-104.87,denver
+80299,Denver,CO,39.76,-104.87,denver
+80301,Boulder,CO,40.02,-105.25,denver
+80302,Boulder,CO,40.02,-105.25,denver
+80303,Boulder,CO,40.02,-105.25,denver
+80304,Boulder,CO,40.02,-105.25,denver
+80305,Boulder,CO,40.02,-105.25,denver
+80401,Golden,CO,39.73,-105.21,
+80403,Golden,CO,39.73,-105.21,
+80421,Bailey,CO,39.4,-105.47,
+80422,Black Hawk,CO,39.8,-105.49,
+80423,Bond,CO,39.87,-106.7,
+80424,Breckenridge,CO,39.5,-106.04,
+80428,Clark,CO,40.7,-106.92,
+80430,Coalmont,CO,40.57,-106.43,
+80433,Conifer,CO,39.52,-105.3,
+80435,Dillon,CO,39.62,-106.03,
+80439,Evergreen,CO,39.63,-105.34,
+80440,Fairplay,CO,39.22,-105.99,
+80446,Granby,CO,40.08,-105.93,
+80447,Grand Lake,CO,40.25,-105.82,
+80449,Hartsel,CO,39.02,-105.8,
+80452,Idaho Springs,CO,39.74,-105.51,
+80455,Jamestown,CO,40.11,-105.39,
+80456,Jefferson,CO,39.38,-105.8,
+80459,Kremmling,CO,40.05,-106.37,
+80461,Leadville,CO,39.24,-106.29,denver
+80463,Mc Coy,CO,39.92,-106.72,
+80465,Morrison,CO,39.65,-105.18,
+80466,Nederland,CO,39.96,-105.5,
+80467,Oak Creek,CO,40.27,-106.95,
+80468,Parshall,CO,40.05,-106.18,
+80470,Pine,CO,39.42,-105.33,
+80474,Rollinsville,CO,39.92,-105.5,
+80479,Toponas,CO,40.07,-106.8,
+80480,Walden,CO,40.73,-106.28,
+80481,Ward,CO,40.07,-105.51,
+80487,Steamboat Springs,CO,40.47,-106.82,
+80498,Silverthorne,CO,39.65,-106.08,
+80501,Longmont,CO,40.17,-105.11,
+80503,Longmont,CO,40.17,-105.11,
+80504,Longmont,CO,40.17,-105.11,
+80510,Allenspark,CO,40.2,-105.52,
+80512,Bellvue,CO,40.63,-105.17,
+80513,Berthoud,CO,40.3,-105.08,
+80514,Dacono,CO,40.07,-104.94,
+80515,Drake,CO,40.43,-105.33,
+80516,Erie,CO,40.02,-105.04,
+80517,Estes Park,CO,40.37,-105.52,
+80521,Fort Collins,CO,40.55,-105.06,denver
+80524,Fort Collins,CO,40.55,-105.06,denver
+80525,Fort Collins,CO,40.55,-105.06,denver
+80526,Fort Collins,CO,40.55,-105.06,denver
+80528,Fort Collins,CO,40.55,-105.06,denver
+80530,Frederick,CO,40.1,-104.94,
+80534,Johnstown,CO,40.33,-104.91,
+80535,Laporte,CO,40.62,-105.13,
+80536,Livermore,CO,40.75,-105.23,
+80537,Loveland,CO,40.41,-105.07,
+80538,Loveland,CO,40.41,-105.07,
+80540,Lyons,CO,40.22,-105.26,
+80542,Mead,CO,40.23,-104.98,
+80543,Milliken,CO,40.31,-104.85,
+80545,Red Feather Lakes,CO,40.8,-105.58,
+80549,Wellington,CO,40.7,-105,
+80550,Windsor,CO,40.48,-104.9,
+80601,Brighton,CO,39.95,-104.79,
+80602,Brighton,CO,39.95,-104.9,
+80603,Brighton,CO,39.97,-104.74,
+80610,Ault,CO,40.58,-104.73,
+80611,Briggsdale,CO,40.63,-104.32,
+80612,Carr,CO,40.9,-104.87,
+80615,Eaton,CO,40.52,-104.71,
+80620,Evans,CO,40.37,-104.69,
+80621,Fort Lupton,CO,40.08,-104.8,
+80622,Galeton,CO,40.52,-104.58,
+80624,Gill,CO,40.45,-104.53,
+80631,Greeley,CO,40.42,-104.74,
+80634,Greeley,CO,40.42,-104.74,
+80640,Henderson,CO,39.92,-104.87,
+80642,Hudson,CO,40.07,-104.64,
+80643,Keenesburg,CO,40.1,-104.51,
+80644,Kersey,CO,40.38,-104.56,
+80645,La Salle,CO,40.34,-104.7,
+80648,Nunn,CO,40.7,-104.78,
+80649,Orchard,CO,40.33,-104.12,
+80650,Pierce,CO,40.63,-104.75,
+80651,Platteville,CO,40.21,-104.82,
+80652,Roggen,CO,40.17,-104.37,
+80653,Weldona,CO,40.35,-103.97,
+80654,Wiggins,CO,40.23,-104.07,
+80701,Fort Morgan,CO,40.26,-103.79,
+80705,Log Lane Village,CO,40.27,-103.82,
+80720,Akron,CO,40.16,-103.21,
+80721,Amherst,CO,40.68,-102.17,
+80722,Atwood,CO,40.55,-103.27,
+80723,Brush,CO,40.25,-103.63,
+80726,Crook,CO,40.85,-102.8,
+80727,Eckley,CO,40.11,-102.48,
+80728,Fleming,CO,40.68,-102.84,
+80729,Grover,CO,40.86,-104.22,
+80731,Haxtun,CO,40.64,-102.62,
+80733,Hillrose,CO,40.32,-103.52,
+80734,Holyoke,CO,40.58,-102.3,
+80735,Idalia,CO,39.7,-102.3,
+80736,Iliff,CO,40.75,-103.06,
+80737,Julesburg,CO,40.98,-102.26,
+80740,Lindon,CO,39.73,-103.4,
+80741,Merino,CO,40.48,-103.35,
+80742,New Raymer,CO,40.62,-103.78,
+80743,Otis,CO,40.14,-102.96,
+80744,Ovid,CO,40.95,-102.38,
+80745,Padroni,CO,40.77,-103.17,
+80747,Peetz,CO,40.96,-103.11,
+80749,Sedgwick,CO,40.93,-102.52,
+80750,Snyder,CO,40.32,-103.58,
+80751,Sterling,CO,40.62,-103.19,
+80754,Stoneham,CO,40.63,-103.65,
+80755,Vernon,CO,39.93,-102.28,
+80757,Woodrow,CO,39.98,-103.58,
+80758,Wray,CO,40.07,-102.22,
+80759,Yuma,CO,40.12,-102.72,
+80801,Anton,CO,39.75,-103.22,
+80802,Arapahoe,CO,38.85,-102.17,
+80804,Arriba,CO,39.28,-103.27,
+80805,Bethune,CO,39.3,-102.42,
+80807,Burlington,CO,39.3,-102.27,
+80808,Calhan,CO,39.03,-104.29,
+80809,Cascade,CO,38.9,-104.97,
+80810,Cheyenne Wells,CO,38.81,-102.35,
+80812,Cope,CO,39.67,-102.85,
+80813,Cripple Creek,CO,38.74,-105.17,
+80814,Divide,CO,38.94,-105.16,
+80815,Flagler,CO,39.29,-103.06,
+80816,Florissant,CO,38.95,-105.29,
+80817,Fountain,CO,38.66,-104.69,
+80818,Genoa,CO,39.27,-103.49,
+80820,Guffey,CO,38.75,-105.53,
+80821,Hugo,CO,39.13,-103.46,
+80822,Joes,CO,39.65,-102.68,
+80823,Karval,CO,38.73,-103.53,
+80824,Kirk,CO,39.62,-102.6,
+80825,Kit Carson,CO,38.76,-102.79,
+80827,Lake George,CO,38.98,-105.37,
+80828,Limon,CO,39.26,-103.68,
+80829,Manitou Springs,CO,38.85,-104.91,
+80830,Matheson,CO,39.17,-103.98,
+80831,Peyton,CO,39.03,-104.48,
+80832,Ramah,CO,39.12,-104.16,
+80833,Rush,CO,38.84,-104.08,
+80834,Seibert,CO,39.29,-102.86,
+80835,Simla,CO,39.14,-104.08,
+80836,Stratton,CO,39.3,-102.6,
+80840,U S A F Academy,CO,38.99,-104.85,
+80861,Vona,CO,39.3,-102.74,
+80863,Woodland Park,CO,38.99,-105.05,
+80864,Yoder,CO,38.84,-104.22,
+80902,Colorado Springs,CO,38.72,-104.8,colorado-springs
+80903,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80904,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80905,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80906,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80907,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80908,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80909,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80910,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80911,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80912,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80913,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80915,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80916,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80917,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80918,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80919,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80920,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80921,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80922,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80923,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80924,Colorado Springs,CO,38.94,-104.7,colorado-springs
+80925,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80926,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80927,Colorado Springs,CO,38.92,-104.67,colorado-springs
+80928,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80929,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80930,Colorado Springs,CO,38.86,-104.76,colorado-springs
+80938,Colorado Springs,CO,38.9,-104.66,colorado-springs
+80939,Colorado Springs,CO,38.88,-104.67,colorado-springs
+80951,Colorado Springs,CO,38.86,-104.76,colorado-springs
+81001,Pueblo,CO,38.27,-104.62,
+81003,Pueblo,CO,38.27,-104.62,
+81004,Pueblo,CO,38.27,-104.62,
+81005,Pueblo,CO,38.27,-104.62,
+81006,Pueblo,CO,38.27,-104.62,
+81007,Pueblo,CO,38.27,-104.62,
+81008,Pueblo,CO,38.27,-104.62,
+81020,Aguilar,CO,37.4,-104.65,
+81021,Arlington,CO,38.33,-103.33,
+81022,Avondale,CO,38.23,-104.35,
+81023,Beulah,CO,38.08,-104.98,
+81025,Boone,CO,38.25,-104.25,
+81027,Branson,CO,37.01,-103.87,
+81029,Campo,CO,37.1,-102.57,
+81036,Eads,CO,38.48,-102.77,
+81039,Fowler,CO,38.12,-104.02,
+81040,Gardner,CO,37.78,-105.17,
+81041,Granada,CO,38.06,-102.31,
+81044,Hasty,CO,38.12,-102.97,
+81045,Haswell,CO,38.45,-103.16,
+81047,Holly,CO,38.05,-102.12,
+81049,Kim,CO,37.24,-103.35,
+81050,La Junta,CO,37.98,-103.54,
+81052,Lamar,CO,38.08,-102.61,
+81054,Las Animas,CO,38.06,-103.22,
+81055,La Veta,CO,37.51,-105,
+81057,Mc Clave,CO,38.19,-102.93,
+81058,Manzanola,CO,38.1,-103.86,
+81059,Model,CO,37.34,-104.27,
+81062,Olney Springs,CO,38.16,-103.94,
+81063,Ordway,CO,38.22,-103.75,
+81064,Pritchett,CO,37.37,-102.85,
+81067,Rocky Ford,CO,38.04,-103.72,
+81069,Rye,CO,37.92,-104.93,
+81071,Sheridan Lake,CO,38.46,-102.29,
+81073,Springfield,CO,37.4,-102.61,
+81075,Stonington,CO,37.29,-102.18,
+81076,Sugar City,CO,38.23,-103.66,
+81081,Trinchera,CO,37.05,-104.03,
+81082,Trinidad,CO,37.16,-104.5,
+81084,Two Buttes,CO,37.56,-102.39,
+81089,Walsenburg,CO,37.62,-104.77,
+81090,Walsh,CO,37.38,-102.28,
+81091,Weston,CO,37.13,-105.01,
+81092,Wiley,CO,38.15,-102.71,
+81101,Alamosa,CO,37.46,-105.87,
+81120,Antonito,CO,37.07,-106.01,
+81122,Bayfield,CO,37.23,-107.59,
+81123,Blanca,CO,37.43,-105.51,
+81125,Center,CO,37.75,-106.11,
+81127,Chimney Rock,CO,37.21,-107.34,
+81130,Creede,CO,37.85,-106.92,
+81132,Del Norte,CO,37.67,-106.35,
+81133,Fort Garland,CO,37.43,-105.43,
+81134,San Luis,CO,37,-105.53,
+81136,Hooper,CO,37.74,-105.87,
+81137,Ignacio,CO,37.11,-107.63,
+81140,La Jara,CO,37.27,-105.96,
+81143,Moffat,CO,38,-105.9,
+81144,Monte Vista,CO,37.57,-106.14,
+81146,Mosca,CO,37.65,-105.88,
+81147,Pagosa Springs,CO,37.24,-107.03,
+81149,Saguache,CO,38.08,-106.14,
+81151,Sanford,CO,37.25,-105.9,
+81152,San Luis,CO,37.2,-105.42,
+81154,South Fork,CO,37.67,-106.64,
+81155,Villa Grove,CO,38.25,-105.95,
+81201,Salida,CO,38.53,-106,
+81210,Almont,CO,38.67,-106.83,
+81211,Buena Vista,CO,38.83,-106.14,
+81212,Canon City,CO,38.44,-105.23,
+81220,Cimarron,CO,38.37,-107.5,
+81223,Cotopaxi,CO,38.37,-105.68,
+81224,Crested Butte,CO,38.87,-106.98,
+81226,Florence,CO,38.38,-105.11,
+81228,Granite,CO,39.05,-106.27,
+81230,Gunnison,CO,38.54,-106.92,
+81233,Howard,CO,38.45,-105.84,
+81235,Lake City,CO,38.07,-107.3,
+81236,Nathrop,CO,38.73,-106.08,
+81237,Ohio City,CO,38.54,-106.58,
+81239,Parlin,CO,38.5,-106.72,
+81240,Penrose,CO,38.43,-105.01,
+81243,Powderhorn,CO,38.27,-107.08,
+81247,Gunnison,CO,38.54,-106.92,
+81251,Twin Lakes,CO,39.1,-106.47,
+81252,Westcliffe,CO,38.13,-105.46,
+81253,Wetmore,CO,38.23,-105.08,
+81301,Durango,CO,37.27,-107.88,
+81303,Durango,CO,37.14,-107.88,
+81320,Cahone,CO,37.65,-108.82,
+81321,Cortez,CO,37.35,-108.57,
+81323,Dolores,CO,37.47,-108.49,
+81324,Dove Creek,CO,37.76,-108.9,
+81325,Egnar,CO,37.92,-108.93,
+81326,Hesperus,CO,37.28,-108.03,
+81327,Lewis,CO,37.5,-108.67,
+81328,Mancos,CO,37.34,-108.29,
+81331,Pleasant View,CO,37.58,-108.76,
+81335,Yellow Jacket,CO,37.53,-108.72,
+81401,Montrose,CO,38.49,-107.87,
+81403,Montrose,CO,38.3,-107.9,
+81410,Austin,CO,38.78,-107.93,
+81411,Bedrock,CO,38.32,-108.88,
+81413,Cedaredge,CO,38.89,-107.92,
+81415,Crawford,CO,38.7,-107.6,
+81416,Delta,CO,38.74,-108.07,
+81418,Eckert,CO,38.84,-107.95,
+81419,Hotchkiss,CO,38.8,-107.71,
+81422,Naturita,CO,38.21,-108.56,
+81424,Nucla,CO,38.26,-108.55,
+81425,Olathe,CO,38.6,-107.98,
+81428,Paonia,CO,38.86,-107.59,
+81431,Redvale,CO,38.18,-108.42,
+81432,Ridgway,CO,38.15,-107.75,
+81434,Somerset,CO,38.92,-107.43,
+81435,Telluride,CO,37.94,-107.9,
+81501,Grand Junction,CO,39.08,-108.55,
+81503,Grand Junction,CO,39.08,-108.55,
+81504,Grand Junction,CO,39.08,-108.55,
+81505,Grand Junction,CO,39.08,-108.55,
+81506,Grand Junction,CO,39.08,-108.55,
+81507,Grand Junction,CO,38.99,-108.66,
+81520,Clifton,CO,39.07,-108.46,
+81521,Fruita,CO,39.15,-108.72,
+81522,Gateway,CO,38.68,-108.99,
+81523,Glade Park,CO,39,-108.73,
+81524,Loma,CO,39.2,-108.82,
+81525,Mack,CO,39.22,-108.87,
+81526,Palisade,CO,39.1,-108.35,
+81527,Whitewater,CO,38.98,-108.43,
+81601,Glenwood Springs,CO,39.54,-107.33,
+81610,Dinosaur,CO,40.24,-109,
+81611,Aspen,CO,39.19,-106.82,
+81621,Basalt,CO,39.36,-107.02,
+81623,Carbondale,CO,39.39,-107.21,
+81624,Collbran,CO,39.23,-107.95,
+81625,Craig,CO,40.52,-107.55,
+81630,De Beque,CO,39.33,-108.21,
+81632,Edwards,CO,39.65,-106.6,
+81633,Dinosaur,CO,40.24,-109,
+81635,Parachute,CO,39.44,-108.05,
+81637,Gypsum,CO,39.64,-106.94,
+81638,Hamilton,CO,40.37,-107.6,
+81639,Hayden,CO,40.48,-107.26,
+81640,Maybell,CO,40.52,-108.08,
+81641,Meeker,CO,40.05,-107.89,
+81642,Meredith,CO,39.27,-106.59,
+81643,Mesa,CO,39.17,-108.13,
+81647,New Castle,CO,39.58,-107.53,
+81648,Rangely,CO,40.08,-108.77,
+81650,Rifle,CO,39.53,-107.77,
+81652,Silt,CO,39.54,-107.65,
+81653,Slater,CO,40.99,-107.37,
+81654,Snowmass,CO,39.33,-106.98,
+81657,Vail,CO,39.64,-106.39,
+89001,Alamo,NV,37.27,-115.2,
+89002,Henderson,NV,36,-114.96,
+89005,Boulder City,NV,35.91,-114.8,
+89008,Caliente,NV,37.32,-114.53,
+89010,Dyer,NV,37.68,-117.93,
+89011,Henderson,NV,36.09,-114.9,
+89012,Henderson,NV,36,-115.04,
+89013,Goldfield,NV,37.53,-117.51,
+89014,Henderson,NV,36.05,-115.05,
+89015,Henderson,NV,36.01,-114.95,
+89017,Hiko,NV,37.72,-115.33,
+89019,Jean,NV,35.75,-115.53,
+89020,Amargosa Valley,NV,36.53,-116.47,
+89027,Mesquite,NV,36.78,-114.14,
+89029,Laughlin,NV,35.1,-114.71,
+89030,North Las Vegas,NV,36.21,-115.12,
+89031,North Las Vegas,NV,36.27,-115.13,
+89032,North Las Vegas,NV,36.22,-115.16,
+89033,North Las Vegas,NV,36.3,-115.14,
+89034,Mesquite,NV,36.81,-114.07,
+89037,Coyote Springs,NV,36.54,-114.44,
+89039,Cal Nev Ari,NV,35.24,-114.87,
+89040,Overton,NV,36.39,-114.37,
+89043,Pioche,NV,38.1,-114.38,
+89044,Henderson,NV,35.88,-115.04,
+89045,Round Mountain,NV,38.79,-117.11,
+89046,Searchlight,NV,35.49,-114.89,
+89048,Pahrump,NV,36.36,-116.15,
+89049,Tonopah,NV,38.35,-116.61,
+89052,Henderson,NV,35.98,-115.11,
+89054,Sloan,NV,35.93,-115.22,
+89060,Pahrump,NV,36.29,-116.09,
+89061,Pahrump,NV,36.08,-115.92,
+89067,Coyote Springs,NV,36.54,-114.44,
+89074,Henderson,NV,36.03,-115.07,
+89081,North Las Vegas,NV,36.25,-115.08,
+89084,North Las Vegas,NV,36.3,-115.15,
+89085,North Las Vegas,NV,36.31,-115.2,
+89086,North Las Vegas,NV,36.28,-115.13,
+89087,North Las Vegas,NV,36.2,-115.12,
+89101,Las Vegas,NV,36.17,-115.12,
+89102,Las Vegas,NV,36.14,-115.18,
+89103,Las Vegas,NV,36.11,-115.21,
+89104,Las Vegas,NV,36.15,-115.11,
+89106,Las Vegas,NV,36.18,-115.17,
+89107,Las Vegas,NV,36.17,-115.2,
+89108,Las Vegas,NV,36.21,-115.21,
+89109,Las Vegas,NV,36.11,-115.12,
+89110,Las Vegas,NV,36.17,-115.05,
+89113,Las Vegas,NV,36.06,-115.27,
+89115,Las Vegas,NV,36.23,-115.05,
+89117,Las Vegas,NV,36.14,-115.27,
+89118,Las Vegas,NV,36.07,-115.21,
+89119,Las Vegas,NV,36.08,-115.14,
+89120,Las Vegas,NV,36.07,-115.08,
+89121,Las Vegas,NV,36.12,-115.08,
+89122,Las Vegas,NV,36.1,-115.02,
+89123,Las Vegas,NV,36,-115.14,
+89124,Las Vegas,NV,36.16,-115.43,
+89128,Las Vegas,NV,36.19,-115.26,
+89129,Las Vegas,NV,36.23,-115.29,
+89130,Las Vegas,NV,36.24,-115.23,
+89131,Las Vegas,NV,36.3,-115.24,
+89134,Las Vegas,NV,36.19,-115.31,
+89135,Las Vegas,NV,36.09,-115.38,
+89138,Las Vegas,NV,36.18,-115.38,
+89139,Las Vegas,NV,36.03,-115.21,
+89141,Las Vegas,NV,35.97,-115.21,
+89142,Las Vegas,NV,36.14,-115.03,
+89143,Las Vegas,NV,36.31,-115.29,
+89144,Las Vegas,NV,36.17,-115.31,
+89145,Las Vegas,NV,36.16,-115.28,
+89146,Las Vegas,NV,36.14,-115.22,
+89147,Las Vegas,NV,36.11,-115.27,
+89148,Las Vegas,NV,36.06,-115.31,
+89149,Las Vegas,NV,36.28,-115.28,
+89156,Las Vegas,NV,36.22,-115.03,
+89158,Las Vegas,NV,36.2,-115.22,
+89161,Las Vegas,NV,35.99,-115.4,
+89165,Las Vegas,NV,35.99,-115.09,
+89166,Las Vegas,NV,36.32,-115.35,
+89169,Las Vegas,NV,36.12,-115.13,
+89178,Las Vegas,NV,35.9,-115.33,
+89179,Las Vegas,NV,35.99,-115.25,
+89183,Las Vegas,NV,35.99,-115.15,
+89199,Las Vegas,NV,36.15,-115.1,
+89301,Ely,NV,39.42,-115,
+89310,Austin,NV,39.54,-117.19,
+89311,Baker,NV,38.9,-114.2,
+89314,Duckwater,NV,38.86,-115.73,
+89316,Eureka,NV,39.82,-116.19,
+89403,Dayton,NV,39.26,-119.48,
+89406,Fallon,NV,39.5,-118.29,
+89408,Fernley,NV,39.66,-119.06,
+89410,Gardnerville,NV,38.75,-119.61,
+89413,Glenbrook,NV,39.05,-119.92,
+89414,Golconda,NV,40.93,-117.33,
+89415,Hawthorne,NV,38.65,-118.83,
+89418,Imlay,NV,40.59,-118.06,
+89419,Lovelock,NV,40.32,-118.2,
+89420,Luning,NV,38.47,-118.3,
+89423,Minden,NV,39.01,-119.75,
+89425,Orovada,NV,41.63,-118,
+89429,Silver Springs,NV,39.37,-119.26,
+89430,Smith,NV,38.8,-119.32,
+89431,Sparks,NV,39.53,-119.73,
+89433,Sun Valley,NV,39.59,-119.77,
+89434,Sparks,NV,39.53,-119.41,
+89436,Sparks,NV,39.64,-119.69,
+89441,Sparks,NV,39.68,-119.68,
+89444,Wellington,NV,38.7,-119.32,
+89445,Winnemucca,NV,41.12,-118.05,
+89447,Yerington,NV,38.87,-119.14,
+89451,Incline Village,NV,39.24,-119.92,
+89460,Gardnerville,NV,38.91,-119.79,
+89501,Reno,NV,39.52,-119.81,
+89502,Reno,NV,39.48,-119.74,
+89503,Reno,NV,39.54,-119.84,
+89506,Reno,NV,39.76,-119.86,
+89508,Reno,NV,39.52,-119.81,
+89509,Reno,NV,39.49,-119.84,
+89510,Reno,NV,39.91,-119.68,
+89511,Reno,NV,39.38,-119.87,
+89512,Reno,NV,39.55,-119.8,
+89519,Reno,NV,39.52,-119.81,
+89521,Reno,NV,39.38,-119.67,
+89523,Reno,NV,39.49,-119.9,
+89701,Carson City,NV,39.14,-119.71,
+89703,Carson City,NV,39.16,-119.86,
+89704,Washoe Valley,NV,39.26,-119.79,
+89705,Carson City,NV,39.05,-119.83,
+89706,Carson City,NV,39.21,-119.71,
+89801,Elko,NV,40.95,-115.79,
+89815,Spring Creek,NV,40.55,-115.61,
+89820,Battle Mountain,NV,40.47,-117.03,
+89821,Crescent Valley,NV,40.52,-116.36,
+89822,Carlin,NV,40.73,-116.1,
+89823,Deeth,NV,41.4,-115.48,
+89825,Jackpot,NV,41.85,-114.75,
+89828,Lamoille,NV,40.76,-115.41,
+89831,Mountain City,NV,41.77,-116.08,
+89833,Ruby Valley,NV,40.49,-115.32,
+89834,Tuscarora,NV,41.45,-116.27,
+89835,Wells,NV,41.35,-114.8,

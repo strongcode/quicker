@@ -1,0 +1,21 @@
+<fieldset class="fieldset-border sg-fieldset-location-surround">
+  <legend>
+    <h2 class="sg-legend-margin heading-font-bold">Personalize Your Advisors</h2>
+  </legend>
+<%= form_tag customize_avatar_user_profile_url, :remote => true do %>
+  <%= render :partial => 'advisor', :locals => {:advisor => 'sidekick', :advisor_icon => @user_profile.sidekick_icon_img} %>
+  <%= render :partial => 'advisor', :locals => {:advisor => 'insider', :advisor_icon => @user_profile.insider_icon_img} %>
+  <%= render :partial => 'advisor', :locals => {:advisor => 'assistant', :advisor_icon => @user_profile.assistant_icon_img} %>
+
+  <div class="row-fluid">
+    <div class="float_r category-btn-margin">
+      <a style="" class="jQueryFancyboxClose btn btn-info cancelbtn" href="#">Cancel</a>
+    </div>
+    <div class="float_r">
+      <button style="" class="jQueryAvatarBoxClose btn btn-info savebtn" type="submit">Save</button>
+    </div>
+  </div>
+
+<% end %>
+</fieldset>
+

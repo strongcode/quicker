@@ -1,0 +1,9 @@
+<div class="span2 control-label">
+  <%= t('user_profile.passionate_about') %>
+</div>
+<div class="span7 control-label">
+  <%= current_user.passionate.present? ? (current_user.passionate.name) : ('') %>
+</div>
+<div class="span3 bp_revisit_btn">
+  <%= get_passionate_link(current_user.passionate) %>
+</div>

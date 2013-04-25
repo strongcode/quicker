@@ -1,0 +1,85 @@
+<% content_for :facebook_initialize do %>
+  <div id="fb-root"></div>
+  <script>
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script type="text/javascript">
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '<%= configatron.omniAuth.facebook.api_key %>', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+      
+      FB.getLoginStatus(function(response)
+      {
+        if(response.status === 'connected') {
+          // connected
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          // not_authorized
+          login();
+        } else {
+          // not_logged_in
+          //setTimeout(login, 1000);
+          login();
+        }
+      });
+      
+    }
+
+    function login() {
+      FB.login(function(response) {
+        if (response.authResponse) {
+          // connected
+          testAPI();
+        } else {
+
+        }
+      });
+    }
+
+    function testAPI() {
+      FB.api('/me/friends', { fields: 'name,id,picture' }, function(response) {
+        jQuery.ajax({
+          url: '<%= facebook_friends_url %>',
+          data: JSON.stringify(response),
+          type: 'POST',
+          contentType: "application/json",
+          error : function(xhr, status, response) {
+            alert(response);
+          }
+
+        });
+      });
+    }
+
+    //Facebook Send Message to a friend
+    $(document).on('click', '.button-facebook-friend-invite', function(e){
+      e.preventDefault();
+      facebook_send_message($(this).attr('id'), '<%= j current_user.full_name %>', '<%= j get_profile_image_full_path %>');
+    });
+  </script>
+
+<% end %>
+
+<div class="container" style="width: 800px;">
+  <fieldset class="fieldset-border sg-fieldset-location-surround">
+    <legend>
+      <h2 class="sg-legend-margin">Add Facebook Friends</h2>
+    </legend>
+    <div class="jQueryFriends"></div>
+  </fieldset>
+</div>
+
+

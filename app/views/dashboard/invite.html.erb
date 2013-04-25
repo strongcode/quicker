@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  window.fbAsyncInit = function () {
+    facebook_initialize('<%= configatron.omniAuth.facebook.api_key %>');
+    FB.ui(
+    {
+      method: 'feed',
+      to: ['100003997647338'],
+      name: 'Sign up for SnapGadget - Just like Alan!',
+      link: 'http://www.snapgadget.com',
+      picture: 'http://beta.snapgadget.com/system/photo/image/1015/standard_image_SnapGadgetScreens.jpg',
+      description: 'Join Alan on SnapGadget.',
+      message: "Testing"
+    },
+    function(response) {
+      if (response) {
+        alert('Post was published.');
+      } else {
+        alert('Post was not published.');
+      }
+    }
+  );
+  }
+  
+</script>

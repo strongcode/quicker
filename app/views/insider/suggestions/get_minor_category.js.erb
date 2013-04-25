@@ -1,0 +1,1 @@
+$('#jQueryMinorCategoryListSuggestion').empty().append('<%= j options_for_select(@categories.collect {|category| [get_category_description(category.description), category.id]}) %>');

@@ -1,0 +1,63 @@
+<div class="container">
+  <%= form_for [:assistant, @goal], :html => {:class => "form-horizontal"} do |f| %>
+    <div class="row-fluid ">
+      <div class="span2 ast_new_goal_label"><%= t "activerecord.attributes.goal.description" %></div>
+      <div class="span10">
+        <%= f.text_field :description, :placeholder => t('assistant.goal.add_a_description'), :class => "signup_input span9" %>
+        <div class="span" style="margin-left:0px;">
+          <%= custom_error_message_no_margin(@goal, :description) %>
+        </div>
+      </div>
+
+    </div><br />
+
+    <div class="row-fluid ">
+      <div class="span2 ast_new_goal_label"><%= t "activerecord.attributes.goal.goal_type" %></div>
+      <div class="span10">
+        <% Goal::GoalType.constants.map do |_constant| %>
+          <div class="goal_type_img">
+            <%= image_tag Goal::GoalType.const_get(_constant)[:disabled_image_path],
+              :class => "img",:title => get_title(Goal::GoalType.const_get(_constant)[:name]),:data => {:radio_button_image => true,
+              :enabled_image_path => Goal::GoalType.const_get(_constant)[:enabled_image_path],
+              :disabled_image_path => Goal::GoalType.const_get(_constant)[:disabled_image_path],
+              :selected => @goal.goal_type == Goal::GoalType.const_get(_constant)[:name]} %>
+            <%= f.radio_button :goal_type, Goal::GoalType.const_get(_constant)[:name], :class => 'dNone' %>
+          </div>
+        <% end %>
+        <div class="span" style="margin-left:0px;">
+          <%= custom_error_message_no_margin(@goal, :goal_type) %>
+        </div>
+      </div>
+    </div><br />
+
+    <div class="row-fluid ">
+      <div class="span2"><%= t "activerecord.attributes.goal.started_date" %></div>
+      <div class="span10">
+        <%= f.text_field :started_date, :class => 'datetime_select span3' %>
+        <div class="span" style="margin-left:0px;">
+          <%= custom_error_message_no_margin(@goal, :started_date) %>
+        </div>
+
+      </div>
+
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="span2"><%= t "activerecord.attributes.goal.end_date" %></div>
+      <div class="span10"><%= f.text_field :end_date, :class => 'datetime_select span3' %>
+        <div class="span" style="margin-left:0px;">
+          <%= custom_error_message_no_margin(@goal, :end_date) %>
+        </div>
+      </div>
+    </div><br />
+
+    <div class="row-fluid">
+      <div class="float_r category-btn-margin" style="">
+        <a class="btn btn-info cancelbtn" href="<%= assistant_goals_path %>"><%= t :cancel %></a>
+      </div>
+      <div class="float_r" style="">
+        <%= f.submit t(:save), :class => "btn btn-info savebtn" %></div>
+    </div>
+
+  <% end %>
+</div>

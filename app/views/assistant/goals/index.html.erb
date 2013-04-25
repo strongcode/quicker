@@ -1,0 +1,33 @@
+<div class="container goal-title">
+  <div class="span6 heading-font">
+    <%= t('assistant.goal.title.index', :name => @profile_user.first_name) -%>&nbsp;<%= t('activerecord.models.pluralize_goal', :count => @goals.total_count).titleize -%>
+  </div>
+  <div class="float_r">
+    <button class="btn1 btn-info bold" type="button" style="" data-href="<%= new_assistant_goal_path %>" data-type='anchor'>
+      <%= t 'assistant.goal.new' %>
+    </button>
+  </div>
+</div>
+
+
+<!-- Current Goals -->
+<%  if @goals.present? %>
+  <div class="container jQueryCurrentGoals border-surround-custom">
+    <%= render :partial => 'current_goals' %>
+  </div>
+<% end %>
+
+<!-- Friends Goals -->
+
+<%= render 'friends_goals' if @trackers.present? %>
+
+<!-- Completed Goals -->
+<% if @finished_goals.present? %>
+  <%= render :partial => 'completed_goals'%>
+<% end %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    top.location !== self.location && (top.location = self.location);
+  })
+</script>

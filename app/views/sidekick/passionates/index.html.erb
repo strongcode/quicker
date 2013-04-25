@@ -1,0 +1,81 @@
+<% content_for :dashboard_css do %>
+    <%= stylesheet_link_tag "db_forms", :media => "all" %>
+<% end %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <!-- side menu bar --><!--   <div class="span3 bs-docs-sidebar">
+       <ul class="nav_m nav-list bs-docs-sidenav">
+           <li><a href="#Status"> Status</a></li>
+           <li><a href="#Activities"> Activities</a></li>
+           <li class=""><a href="#Friends"> Friends</a></li>
+           <li><a href="#Locations"> Locations</a></li>
+           <li class="active"><a href="#Passionates">Passionates</a></li>
+       </ul>
+   </div> --> <!-- side menu bar end-->
+
+    <!-- title starts -->
+    <div class="span12 act_title_margin">
+      <div class="status_head row-fluid">
+        <div class="span9 insider_title db_head_margin"><%= @profile_user.first %>, <%= t('dashboard.your_passionates_are') %>
+        </div>
+        <div class="span3">
+          <div class="db_frd_head_btn">
+            <button class="btn btn-info" data-type="anchor" data-href="<%= new_passionate_url %>"><%= t('dashboard.new_passionate') %></button>
+            <% if flash[:notice] %>
+                <div class="signin_error" style="font-size:11.5px;">
+                  <%= flash[:notice] %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- title ends -->
+
+
+    <!-- Passionate form -->
+    <div class="span9">
+      <div class="profile_outer">
+        <%= render @passionates, :readonly => false %>
+      </div>
+    </div>
+  </div>
+  <!-- Passionate list end --><!-- title starts -->
+  <% if @trackers.present? %>
+      <div class="row-fluid">
+        <div class="span12 act_title_margin">
+          <div class="status_head row-fluid">
+            <div class="span12 insider_title db_head_margin">My Friends Passionate List
+            </div>
+          </div>
+        </div>
+        <!-- Passionate form -->
+        <div class="span9">
+          <div class="profile_outer">
+            <!-- Passionate - First Item starts here -->
+            <% for tracker in @trackers %>
+                <%= render 'passionate', :passionate => tracker.trackable, :readonly => true %>
+            <% end %>
+            <!-- Passionate Item ends here -->
+          </div>
+        </div>
+      </div>
+      <!-- title ends -->
+  <% end %>
+</div>
+<script type="text/javascript">
+    if ($.browser.mozilla) {
+        $(document).on('click', 'label', function (e) {
+            if (e.currentTarget === this && e.target.nodeName !== 'INPUT') {
+                $(this.control).click();
+            }
+        });
+    }
+    //After uploading image passionate should be in the expanded. Without this page refreshes and closes the expanded div
+    <% if session[:passionate_id].present?%>
+    jQuery(document).ready(function () {
+        $("*[data-target='#passionate<%= session[:passionate_id] %>']").click();
+    });
+    <% end %>
+</script>
+

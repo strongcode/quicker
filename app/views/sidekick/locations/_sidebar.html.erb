@@ -1,0 +1,54 @@
+<div class="sidebar" style="height: auto;">
+  <div class="row-fluid border_bootom cst-wh">
+    <div class="sidebar_images_group">
+
+      <% Location::Categories::All.sort.each do |category| %>
+        <label for="<%= category %>" class="sidebar_images <%= @user_profile.get_class(category) %>" title="<%= get_category_title(category) %>"></label>
+        <%= check_box_tag category, '', @user_profile.send("#{category}_on_sidekick"), :style => 'display:none;' %>
+      <% end %>
+      <div class="divde_vertical_div sk_frnd_seperator">
+        <div class="profile_divider-vertical"></div>
+      </div>
+
+      <label for="friends" class="sidebar_images <%= @user_profile.get_class("friends") %> sidebar_images_right" title="<%= t(:friends) %>"></label>
+      <%= check_box_tag 'friends', '', @user_profile.friends_on_sidekick, :style => 'display:none;'  %>
+      <label class="clear"></label>
+    </div>
+    <%= select_tag 'user_id[]', options_for_select(current_user.get_friends.map { |user| [user.full_name, user.id] }, {:prompt => false}), :multiple => true, :class => "span4 ast_select_margin" %>
+    <%= link_to t('dashboard.location_list'), location_lists_url, :class => 'fancybox fancybox.iframe' %>-<%= current_user.location_lists.count %>
+    <%= link_to t('dashboard.my_friends_location_list'), friends_location_lists_url %>
+    <%= select_tag 'location_lists[]', options_for_select([[]]) %>
+    <%= link_to image_tag('reset.png'), sidekick_url  %>
+  </div>
+  <div class="row-fluid border_bootom cst-wh cst-height">
+    <%= form_tag show_my_sidekick_locations_path, :remote => true do %>
+      <div><%= t(:show_my) %>
+        <%= select_tag 'location_list_id', options_for_select([["-- #{t('sidekick.please_select')} --", nil]] + @location_lists.collect { |loc_list| [loc_list.name, loc_list.id] }), :style => 'width:auto;', :class => 'jQueryShowMy' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row-fluid border_bootom cst-wh">
+
+    <div class="help_img btn_help btn-info" title="<%= t(:reviews_help) %>"><a class="" href="#">
+        <img src="/assets/icon_question.png" alt="icon_question image"/></a>
+    </div>
+    <div class="progress_text">
+      <div><%= t(:friends) %></div>
+      <div>Snapgadget</div>
+    </div>
+    <div class="sidekick_progress_bar">
+      <div class="progress freind_progress progress-info">
+        <div class="bar progress_bar_width" title="<%=  t(:number_of_friends_reviews)%>" > </div>
+      </div>
+      <div class="progress freind_progress">
+        <div class="bar progress_bar_width2" title="<%= t(:number_of_snapGadget_reviews)%>"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    
+  });
+</script>
